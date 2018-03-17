@@ -1,7 +1,8 @@
-package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.adresse;
+package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schueler;
 
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schule.SchuleForm;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -17,8 +18,8 @@ import org.vaadin.teemusa.flexlayout.*;
 import javax.inject.Inject;
 
 @CDIView("SchuleView")
-public class SchuleView extends HorizontalLayout implements View {
-    private static Logger logger = LoggerFactory.getLogger(SchuleView.class.getName());
+public class SchuelerView extends HorizontalLayout implements View {
+    private static Logger logger = LoggerFactory.getLogger(SchuelerView.class.getName());
 
     TextField filterTextBezeichnung = new TextField();
 
@@ -68,7 +69,7 @@ public class SchuleView extends HorizontalLayout implements View {
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         grid.addColumn(Schule::getId).setCaption("id");
-        grid.addColumn(Schule::getBezeichung).setCaption("Bezeichnung");
+        grid.addColumn(Schule::getBezeichnung).setCaption("Bezeichnung");
         grid.addColumn(Schule::getOrt).setCaption("Ort");
 
 

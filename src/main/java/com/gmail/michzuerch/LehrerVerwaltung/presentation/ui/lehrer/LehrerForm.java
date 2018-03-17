@@ -1,4 +1,4 @@
-package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.adresse;
+package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.lehrer;
 
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.vaadin.ui.*;
@@ -6,12 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.vaadin.viritin.form.AbstractForm;
 
-public class SchuleForm extends AbstractForm<Schule> {
-    private static Logger logger = LoggerFactory.getLogger(SchuleForm.class.getName());
+public class LehrerForm extends AbstractForm<Schule> {
+    private static Logger logger = LoggerFactory.getLogger(LehrerForm.class.getName());
 
     TextField bezeichnung = new TextField("Bezeichnung");
 
-    public SchuleForm() {
+    public LehrerForm() {
         super(Schule.class);
     }
 

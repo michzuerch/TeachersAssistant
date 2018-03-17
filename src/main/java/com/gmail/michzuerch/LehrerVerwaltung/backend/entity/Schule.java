@@ -14,7 +14,7 @@ public class Schule extends AbstractEntity {
     @Column
     @NotNull
     @NotBlank
-    private String bezeichung;
+    private String bezeichnung;
 
     @Column
     private String ort;
@@ -25,12 +25,13 @@ public class Schule extends AbstractEntity {
     @OneToMany(mappedBy = "schule", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lehrer> lehrers = new ArrayList<>();
 
-    public String getBezeichung() {
-        return bezeichung;
+
+    public String getBezeichnung() {
+        return bezeichnung;
     }
 
-    public void setBezeichung(String bezeichung) {
-        this.bezeichung = bezeichung;
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
     }
 
     public String getOrt() {
