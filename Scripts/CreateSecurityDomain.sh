@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-/bin/cp /java/Source/Anouman/usersAnouman.properties /java/wildfly-11.0.0.Final/standalone/configuration/usersAnouman.properties
-/bin/cp /java/Source/Anouman/rolesAnouman.properties /java/wildfly-11.0.0.Final/standalone/configuration/rolesAnouman.properties
+/bin/cp /java/Source/LehrerVerwaltung/usersLehrerVerwaltung.properties /java/wildfly-11.0.0.Final/standalone/configuration/usersLehrerVerwaltung.properties
+/bin/cp /java/Source/LehrerVerwaltung/rolesLehrerVerwaltung.properties /java/wildfly-11.0.0.Final/standalone/configuration/rolesLehrerVerwaltung.properties
 
-/java/wildfly-11.0.0.Final/bin/jboss-cli.sh --file=/java/Source/Anouman/Scripts/CreateSecurityDomain.cli
+/java/wildfly-11.0.0.Final/bin/jboss-cli.sh --file=/java/Source/LehrerVerwaltung/Scripts/CreateSecurityDomain.cli
