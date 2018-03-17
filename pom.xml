@@ -293,7 +293,7 @@
     </dependencies>
 
     <build>
-        <finalName>Anouman</finalName>
+        <finalName>LehrerVerwaltung</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -432,7 +432,7 @@
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
             <build>
-                <finalName>Anouman</finalName>
+                <finalName>LehrerVerwaltng</finalName>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>

@@ -20,8 +20,8 @@ import javax.inject.Inject;
 /**
  * Created by michzuerch on 09.05.17.
  */
-@Theme("anouman")
-@Title("Anouman")
+@Theme("valo")
+@Title("LehrerVerwaltung 0.1")
 @Push(PushMode.AUTOMATIC)
 @PreserveOnRefresh
 @SuppressWarnings("serial")
