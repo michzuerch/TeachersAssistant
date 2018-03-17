@@ -81,7 +81,7 @@ public class SchuleView extends HorizontalLayout implements View {
         grid.setSizeFull();
 
         // Render a button that deletes the data row (item)
-        grid.addColumn(adresse -> "löschen",
+        grid.addColumn(schule -> "löschen",
                 new ButtonRenderer(event -> {
                     Notification.show("Lösche Schule id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
                     facade.delete((Schule) event.getItem());
@@ -89,7 +89,7 @@ public class SchuleView extends HorizontalLayout implements View {
                 })
         );
 
-        grid.addColumn(adresse -> "ändern",
+        grid.addColumn(schule -> "ändern",
                 new ButtonRenderer(event -> {
                     form.setEntity((Schule) event.getItem());
                     form.openInModalPopup();

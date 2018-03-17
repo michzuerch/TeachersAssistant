@@ -61,7 +61,6 @@ public class Menu extends CustomComponent {
         });
 
 
-
         layout.addComponent(menuBar);
         setCompositionRoot(layout);
     }
