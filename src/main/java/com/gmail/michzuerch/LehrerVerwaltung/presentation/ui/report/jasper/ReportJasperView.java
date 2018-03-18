@@ -16,7 +16,7 @@ import org.vaadin.teemusa.flexlayout.*;
 import javax.inject.Inject;
 
 @CDIView("ReportJasperView")
-public class ReportJasperView extends VerticalLayout implements View {
+public class ReportJasperView extends HorizontalLayout implements View {
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(ReportJasperView.class.getName());
 
     Grid<ReportJasper> grid = new Grid<>();
