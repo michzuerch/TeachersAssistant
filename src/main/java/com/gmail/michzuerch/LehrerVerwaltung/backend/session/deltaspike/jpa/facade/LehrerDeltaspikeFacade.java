@@ -2,6 +2,7 @@ package com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.fac
 
 
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Lehrer;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.repository.LehrerDeltaspikeRepository;
 
 import javax.ejb.Stateless;
@@ -31,5 +32,9 @@ public class LehrerDeltaspikeFacade {
 
     public List<Lehrer> findByNachnameLikeIgnoreCase(String nachname) {
         return repo.findByNachnameLikeIgnoreCase(nachname);
+    }
+
+    public List<Lehrer> findBySchule(Schule schule) {
+        return repo.findBySchule(schule);
     }
 }

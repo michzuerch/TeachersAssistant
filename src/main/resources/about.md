@@ -1,11 +1,17 @@
-# Buchhaltung mit Generator für PDF-Rechnungen
+# Verwaltungsprogramm für Lehrer
 
-Als Datenbank braucht es Postgresql mit einer Datenbank 'Anouman'.
+Vorbild ist eine kommerzielle Software.
 
-Reports können als Jasper-Dateien über das Menü 'Report Templates' hochgeladen werden.
+Datenbank Postgresql.
 
-Vorbild ist die sehr einfache Buchhaltungssoftware Banana.
+Verwaltung der Stammdaten, Schule, Lehrer, Klasse, Schüler.
+
+Stundenpläne mit Schnittstelle zu Google Kalender.
+
+Zeugnisse drucken, Formulare mit Jasperreport und XML-FO.
+
+Geplant ist eine Umstellung auf Mongo DB und die Integration von Keycloak.
 
 Sourcecode
-[from github](https://github.com/michzuerch/Anouman).
+[from github](https://github.com/michzuerch/LehrerVerwaltung).
 

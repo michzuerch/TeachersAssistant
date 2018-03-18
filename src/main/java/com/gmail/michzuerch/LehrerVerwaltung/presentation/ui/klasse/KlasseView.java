@@ -1,7 +1,9 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.klasse;
 
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Klasse;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.KlasseDeltaspikeFacade;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -21,11 +23,15 @@ public class KlasseView extends HorizontalLayout implements View {
     private static Logger logger = LoggerFactory.getLogger(KlasseView.class.getName());
 
     TextField filterTextBezeichnung = new TextField();
+    ComboBox<Schule> filterSchule = new ComboBox<>();
 
     Grid<Klasse> grid = new Grid<>();
 
     @Inject
     private KlasseDeltaspikeFacade facade;
+
+    @Inject
+    private SchuleDeltaspikeFacade schuleDeltaspikeFacade;
 
     @Inject
     private KlasseForm form;
@@ -43,16 +49,23 @@ public class KlasseView extends HorizontalLayout implements View {
         filterTextBezeichnung.addValueChangeListener(e -> updateList());
         filterTextBezeichnung.setValueChangeMode(ValueChangeMode.LAZY);
 
+        filterSchule.setPlaceholder("Filter für Schule");
+        filterSchule.setItems(schuleDeltaspikeFacade.findAll());
+        filterSchule.setItemCaptionGenerator(item -> item.getBezeichnung());
+        filterSchule.addValueChangeListener(event -> updateList());
+
         Button clearFilterTextBtn = new Button(VaadinIcons.RECYCLE);
         clearFilterTextBtn.setDescription("Entferne Filter");
         clearFilterTextBtn.addClickListener(e -> {
             filterTextBezeichnung.clear();
+            filterSchule.clear();
         });
 
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
             Klasse klasse = new Klasse();
+            if (filterSchule.getValue() != null) klasse.setSchule(filterSchule.getValue());
             form.setEntity(klasse);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
@@ -64,7 +77,7 @@ public class KlasseView extends HorizontalLayout implements View {
         });
 
         CssLayout tools = new CssLayout();
-        tools.addComponents(filterTextBezeichnung, clearFilterTextBtn, addBtn);
+        tools.addComponents(filterTextBezeichnung, filterSchule, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         grid.addColumn(Klasse::getId).setCaption("id");
@@ -129,7 +142,10 @@ public class KlasseView extends HorizontalLayout implements View {
                     id = Long.valueOf(msg);
                 }
             }
-            if (target.equals("id")) {
+            if (target.equals("schuleId")) {
+                filterSchule.setSelectedItem(schuleDeltaspikeFacade.findBy(id));
+                updateList();
+            } else if (target.equals("id")) {
                 grid.select(facade.findBy(id));
             }
         }
@@ -137,6 +153,11 @@ public class KlasseView extends HorizontalLayout implements View {
     }
 
     public void updateList() {
+        if (filterSchule.getValue() != null) {
+            logger.debug("Suche mit Schule:" + filterSchule.getValue().getBezeichnung());
+            grid.setItems(facade.findBySchule(filterSchule.getValue()));
+            return;
+        }
         if (!filterTextBezeichnung.isEmpty()) {
             //Suche mit Bezeichnung
             logger.debug("Suche mit Bezeichnung:" + filterTextBezeichnung.getValue());

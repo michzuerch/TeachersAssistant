@@ -17,10 +17,7 @@ import org.vaadin.teemusa.flexlayout.FlexLayout;
 
 import javax.inject.Inject;
 
-/**
- * Created by michzuerch on 09.05.17.
- */
-@Theme("valo")
+@Theme("lehrerverwaltung")
 @Title("LehrerVerwaltung 0.1")
 @Push(PushMode.AUTOMATIC)
 @PreserveOnRefresh

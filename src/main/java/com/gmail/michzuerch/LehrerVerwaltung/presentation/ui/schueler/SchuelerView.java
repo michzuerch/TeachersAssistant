@@ -1,6 +1,8 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schueler;
 
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Klasse;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schueler;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.KlasseDeltaspikeFacade;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuelerDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
@@ -21,11 +23,15 @@ public class SchuelerView extends HorizontalLayout implements View {
     private static Logger logger = LoggerFactory.getLogger(SchuelerView.class.getName());
 
     TextField filterTextNachname = new TextField();
+    ComboBox<Klasse> filterKlasse = new ComboBox<>();
 
     Grid<Schueler> grid = new Grid<>();
 
     @Inject
     private SchuelerDeltaspikeFacade facade;
+
+    @Inject
+    private KlasseDeltaspikeFacade klasseDeltaspikeFacade;
 
     @Inject
     private SchuelerForm form;
@@ -43,16 +49,23 @@ public class SchuelerView extends HorizontalLayout implements View {
         filterTextNachname.addValueChangeListener(e -> updateList());
         filterTextNachname.setValueChangeMode(ValueChangeMode.LAZY);
 
+        filterKlasse.setPlaceholder("Filter für Klasse");
+        filterKlasse.setItems(klasseDeltaspikeFacade.findAll());
+        filterKlasse.setItemCaptionGenerator(item -> item.getBezeichnung());
+        filterKlasse.addValueChangeListener(event -> updateList());
+
         Button clearFilterTextBtn = new Button(VaadinIcons.RECYCLE);
         clearFilterTextBtn.setDescription("Entferne Filter");
         clearFilterTextBtn.addClickListener(e -> {
             filterTextNachname.clear();
+            filterKlasse.clear();
         });
 
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
             Schueler schueler = new Schueler();
+            if (filterKlasse.getValue() != null) schueler.setKlasse(filterKlasse.getValue());
             form.setEntity(schueler);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
@@ -64,7 +77,7 @@ public class SchuelerView extends HorizontalLayout implements View {
         });
 
         CssLayout tools = new CssLayout();
-        tools.addComponents(filterTextNachname, clearFilterTextBtn, addBtn);
+        tools.addComponents(filterTextNachname, filterKlasse, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         grid.addColumn(Schueler::getId).setCaption("id");
@@ -122,7 +135,10 @@ public class SchuelerView extends HorizontalLayout implements View {
                     id = Long.valueOf(msg);
                 }
             }
-            if (target.equals("id")) {
+            if (target.equals("klasseId")) {
+                filterKlasse.setSelectedItem(klasseDeltaspikeFacade.findBy(id));
+                updateList();
+            } else if (target.equals("id")) {
                 grid.select(facade.findBy(id));
             }
         }
@@ -130,6 +146,11 @@ public class SchuelerView extends HorizontalLayout implements View {
     }
 
     public void updateList() {
+        if (filterKlasse.getValue() != null) {
+            logger.debug("Suche mit Klasse: " + filterKlasse.getValue().getBezeichnung());
+            grid.setItems(facade.findByKlasse(filterKlasse.getValue()));
+            return;
+        }
         if (!filterTextNachname.isEmpty()) {
             //Suche mit Nachname
             logger.debug("Suche mit Nachname:" + filterTextNachname.getValue());

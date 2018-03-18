@@ -3,6 +3,7 @@ package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.lehrer;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Lehrer;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.LehrerDeltaspikeFacade;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -30,6 +31,9 @@ public class LehrerView extends HorizontalLayout implements View {
     private LehrerDeltaspikeFacade facade;
 
     @Inject
+    private SchuleDeltaspikeFacade schuleDeltaspikeFacade;
+
+    @Inject
     private LehrerForm form;
 
     private Component createContent() {
@@ -45,16 +49,24 @@ public class LehrerView extends HorizontalLayout implements View {
         filterTextNachname.addValueChangeListener(e -> updateList());
         filterTextNachname.setValueChangeMode(ValueChangeMode.LAZY);
 
+        filterSchule.setPlaceholder("Filter für Schule");
+        filterSchule.setItems(schuleDeltaspikeFacade.findAll());
+        filterSchule.setItemCaptionGenerator(item -> item.getBezeichnung());
+        filterSchule.addValueChangeListener(event -> updateList());
+
+
         Button clearFilterTextBtn = new Button(VaadinIcons.RECYCLE);
         clearFilterTextBtn.setDescription("Entferne Filter");
         clearFilterTextBtn.addClickListener(e -> {
             filterTextNachname.clear();
+            filterSchule.clear();
         });
 
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
             Lehrer lehrer = new Lehrer();
+            if (filterSchule.getValue() != null) lehrer.setSchule(filterSchule.getValue());
             form.setEntity(lehrer);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
@@ -66,7 +78,7 @@ public class LehrerView extends HorizontalLayout implements View {
         });
 
         CssLayout tools = new CssLayout();
-        tools.addComponents(filterTextNachname, clearFilterTextBtn, addBtn);
+        tools.addComponents(filterTextNachname, filterSchule, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         grid.addColumn(Lehrer::getId).setCaption("id");
@@ -124,7 +136,11 @@ public class LehrerView extends HorizontalLayout implements View {
                     id = Long.valueOf(msg);
                 }
             }
-            if (target.equals("id")) {
+
+            if (target.equals("schuleId")) {
+                filterSchule.setSelectedItem(schuleDeltaspikeFacade.findBy(id));
+                updateList();
+            } else if (target.equals("id")) {
                 grid.select(facade.findBy(id));
             }
         }
@@ -132,6 +148,12 @@ public class LehrerView extends HorizontalLayout implements View {
     }
 
     public void updateList() {
+        if (filterSchule.getValue() != null) {
+            logger.debug("Suche mit Schule: " + filterSchule.getValue().getBezeichnung());
+            grid.setItems(facade.findBySchule(filterSchule.getValue()));
+            return;
+        }
+
         if (!filterTextNachname.isEmpty()) {
             //Suche mit Nachname
             logger.debug("Suche mit Nachname:" + filterTextNachname.getValue());
