@@ -15,6 +15,14 @@ public class Schueler extends AbstractEntity {
     @ManyToOne
     private Klasse klasse;
 
+    public Schueler() {
+    }
+
+    public Schueler(String vorname, String nachname) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+    }
+
     public String getVorname() {
         return vorname;
     }

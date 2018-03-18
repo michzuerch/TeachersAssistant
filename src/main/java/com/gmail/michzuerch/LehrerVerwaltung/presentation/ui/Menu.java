@@ -60,6 +60,13 @@ public class Menu extends CustomComponent {
             }
         });
 
+        stammdatenComponents.addItem("Testdaten", VaadinIcons.SAFE, new MenuBar.Command() {
+            @Override
+            public void menuSelected(MenuBar.MenuItem selectedItem) {
+                getUI().getNavigator().navigateTo("TestdatenView");
+            }
+        });
+
 
         layout.addComponent(menuBar);
         setCompositionRoot(layout);

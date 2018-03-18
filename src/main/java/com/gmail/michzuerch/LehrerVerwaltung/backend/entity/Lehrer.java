@@ -15,6 +15,14 @@ public class Lehrer extends AbstractEntity {
     @ManyToOne
     private Schule schule;
 
+    public Lehrer() {
+    }
+
+    public Lehrer(String vorname, String nachname) {
+        this.nachname = nachname;
+        this.vorname = vorname;
+    }
+
     public String getNachname() {
         return nachname;
     }

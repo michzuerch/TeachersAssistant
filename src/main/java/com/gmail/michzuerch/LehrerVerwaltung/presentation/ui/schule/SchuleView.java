@@ -71,13 +71,20 @@ public class SchuleView extends HorizontalLayout implements View {
         grid.addColumn(Schule::getBezeichnung).setCaption("Bezeichnung");
         grid.addColumn(Schule::getOrt).setCaption("Ort");
 
+        grid.addColumn(schule -> schule.getKlasses().size(), new ButtonRenderer(event -> {
+            Schule schule = (Schule) event.getItem();
+            if (schule.getKlasses().size() > 0) {
+                UI.getCurrent().getNavigator().navigateTo("KlasseView/schuleId/" + schule.getId().toString());
+            }
+        })).setCaption("Anzahl Klassen").setStyleGenerator(item -> "v-align-center");
+        grid.setSizeFull();
 
-//        grid.addColumn(adresse -> adresse.getAnzahlRechnungen(), new ButtonRenderer(event -> {
-//            Adresse adresse = (Adresse) event.getItem();
-//            if (adresse.getAnzahlRechnungen() > 0) {
-//                UI.getCurrent().getNavigator().navigateTo("RechnungView/adresseId/" + adresse.getId().toString());
-//            }
-//        })).setCaption("Anzahl Rechnungen").setStyleGenerator(item -> "v-align-center");
+        grid.addColumn(schule -> schule.getLehrers().size(), new ButtonRenderer(event -> {
+            Schule schule = (Schule) event.getItem();
+            if (schule.getLehrers().size() > 0) {
+                UI.getCurrent().getNavigator().navigateTo("LehrerView/schuleId/" + schule.getId().toString());
+            }
+        })).setCaption("Anzahl Lehrer").setStyleGenerator(item -> "v-align-center");
         grid.setSizeFull();
 
         // Render a button that deletes the data row (item)

@@ -1,8 +1,8 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.lehrer;
 
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Lehrer;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
-import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schule.SchuleForm;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.LehrerDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -17,19 +17,20 @@ import org.vaadin.teemusa.flexlayout.*;
 
 import javax.inject.Inject;
 
-@CDIView("SchuleView")
+@CDIView("LehrerView")
 public class LehrerView extends HorizontalLayout implements View {
     private static Logger logger = LoggerFactory.getLogger(LehrerView.class.getName());
 
-    TextField filterTextBezeichnung = new TextField();
+    TextField filterTextNachname = new TextField();
+    ComboBox<Schule> filterSchule = new ComboBox<>();
 
-    Grid<Schule> grid = new Grid<>();
-
-    @Inject
-    private SchuleDeltaspikeFacade facade;
+    Grid<Lehrer> grid = new Grid<>();
 
     @Inject
-    private SchuleForm form;
+    private LehrerDeltaspikeFacade facade;
+
+    @Inject
+    private LehrerForm form;
 
     private Component createContent() {
         FlexLayout layout = new FlexLayout();
@@ -40,21 +41,21 @@ public class LehrerView extends HorizontalLayout implements View {
         layout.setAlignContent(AlignContent.Stretch);
         layout.setFlexWrap(FlexWrap.Wrap);
 
-        filterTextBezeichnung.setPlaceholder("Filter für Bezeichnung");
-        filterTextBezeichnung.addValueChangeListener(e -> updateList());
-        filterTextBezeichnung.setValueChangeMode(ValueChangeMode.LAZY);
+        filterTextNachname.setPlaceholder("Filter für Nachname");
+        filterTextNachname.addValueChangeListener(e -> updateList());
+        filterTextNachname.setValueChangeMode(ValueChangeMode.LAZY);
 
         Button clearFilterTextBtn = new Button(VaadinIcons.RECYCLE);
         clearFilterTextBtn.setDescription("Entferne Filter");
         clearFilterTextBtn.addClickListener(e -> {
-            filterTextBezeichnung.clear();
+            filterTextNachname.clear();
         });
 
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
-            Schule schule = new Schule();
-            form.setEntity(schule);
+            Lehrer lehrer = new Lehrer();
+            form.setEntity(lehrer);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
                 facade.save(val);
@@ -65,38 +66,34 @@ public class LehrerView extends HorizontalLayout implements View {
         });
 
         CssLayout tools = new CssLayout();
-        tools.addComponents(filterTextBezeichnung, clearFilterTextBtn, addBtn);
+        tools.addComponents(filterTextNachname, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
-        grid.addColumn(Schule::getId).setCaption("id");
-        grid.addColumn(Schule::getBezeichnung).setCaption("Bezeichnung");
-        grid.addColumn(Schule::getOrt).setCaption("Ort");
-
-
-//        grid.addColumn(adresse -> adresse.getAnzahlRechnungen(), new ButtonRenderer(event -> {
-//            Adresse adresse = (Adresse) event.getItem();
-//            if (adresse.getAnzahlRechnungen() > 0) {
-//                UI.getCurrent().getNavigator().navigateTo("RechnungView/adresseId/" + adresse.getId().toString());
-//            }
-//        })).setCaption("Anzahl Rechnungen").setStyleGenerator(item -> "v-align-center");
+        grid.addColumn(Lehrer::getId).setCaption("id");
+        grid.addColumn(Lehrer::getVorname).setCaption("Vorname");
+        grid.addColumn(Lehrer::getNachname).setCaption("Nachname");
+        grid.addColumn(lehrer -> lehrer.getSchule().getBezeichnung(), new ButtonRenderer(event -> {
+            Lehrer lehrer = (Lehrer) event.getItem();
+            UI.getCurrent().getNavigator().navigateTo("SchuleView/id/" + lehrer.getSchule().getId().toString());
+        })).setCaption("Schule").setStyleGenerator(item -> "v-align-center");
         grid.setSizeFull();
 
         // Render a button that deletes the data row (item)
         grid.addColumn(adresse -> "löschen",
                 new ButtonRenderer(event -> {
-                    Notification.show("Lösche Schule id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
-                    facade.delete((Schule) event.getItem());
+                    Notification.show("Lösche Lehrer id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
+                    facade.delete((Lehrer) event.getItem());
                     updateList();
                 })
         );
 
         grid.addColumn(adresse -> "ändern",
                 new ButtonRenderer(event -> {
-                    form.setEntity((Schule) event.getItem());
+                    form.setEntity((Lehrer) event.getItem());
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
                         facade.save(val);
-                        System.err.println("Schule:" + val);
+                        System.err.println("Lehrer:" + val);
                         updateList();
                         grid.select(val);
                         form.closePopup();
@@ -135,10 +132,10 @@ public class LehrerView extends HorizontalLayout implements View {
     }
 
     public void updateList() {
-        if (!filterTextBezeichnung.isEmpty()) {
-            //Suche mit Bezeichnung
-            logger.debug("Suche mit Bezeichnung:" + filterTextBezeichnung.getValue());
-            grid.setItems(facade.findByBezeichungLikeIgnoreCase(filterTextBezeichnung.getValue() + "%"));
+        if (!filterTextNachname.isEmpty()) {
+            //Suche mit Nachname
+            logger.debug("Suche mit Nachname:" + filterTextNachname.getValue());
+            grid.setItems(facade.findByNachnameLikeIgnoreCase(filterTextNachname.getValue() + "%"));
             return;
         }
 
