@@ -1,5 +1,6 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.klasse;
 
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Klasse;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
 import com.vaadin.ui.*;
@@ -9,7 +10,7 @@ import org.vaadin.viritin.form.AbstractForm;
 
 import javax.inject.Inject;
 
-public class KlasseForm extends AbstractForm<Schule> {
+public class KlasseForm extends AbstractForm<Klasse> {
     private static Logger logger = LoggerFactory.getLogger(KlasseForm.class.getName());
 
     @Inject
@@ -19,13 +20,13 @@ public class KlasseForm extends AbstractForm<Schule> {
     ComboBox<Schule> schule = new ComboBox<>("Schule");
 
     public KlasseForm() {
-        super(Schule.class);
+        super(Klasse.class);
     }
 
     @Override
     public Window openInModalPopup() {
         final Window openInModalPopup = super.openInModalPopup();
-        openInModalPopup.setCaption("Schule");
+        openInModalPopup.setCaption("Klasse");
         openInModalPopup.setWidth("400px");
         return openInModalPopup;
     }

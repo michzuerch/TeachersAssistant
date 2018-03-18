@@ -1,8 +1,7 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.klasse;
 
-import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
-import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schule.SchuleForm;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Klasse;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.KlasseDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -23,13 +22,13 @@ public class KlasseView extends HorizontalLayout implements View {
 
     TextField filterTextBezeichnung = new TextField();
 
-    Grid<Schule> grid = new Grid<>();
+    Grid<Klasse> grid = new Grid<>();
 
     @Inject
-    private SchuleDeltaspikeFacade facade;
+    private KlasseDeltaspikeFacade facade;
 
     @Inject
-    private SchuleForm form;
+    private KlasseForm form;
 
     private Component createContent() {
         FlexLayout layout = new FlexLayout();
@@ -53,8 +52,8 @@ public class KlasseView extends HorizontalLayout implements View {
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
-            Schule schule = new Schule();
-            form.setEntity(schule);
+            Klasse klasse = new Klasse();
+            form.setEntity(klasse);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
                 facade.save(val);
@@ -68,35 +67,38 @@ public class KlasseView extends HorizontalLayout implements View {
         tools.addComponents(filterTextBezeichnung, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
-        grid.addColumn(Schule::getId).setCaption("id");
-        grid.addColumn(Schule::getBezeichnung).setCaption("Bezeichnung");
-        grid.addColumn(Schule::getOrt).setCaption("Ort");
+        grid.addColumn(Klasse::getId).setCaption("id");
+        grid.addColumn(Klasse::getBezeichnung).setCaption("Bezeichnung");
+        grid.addColumn(klasse -> klasse.getSchuelers().size(), new ButtonRenderer(event -> {
+            Klasse klasse = (Klasse) event.getItem();
+            if (klasse.getSchuelers().size() > 0) {
+                UI.getCurrent().getNavigator().navigateTo("SchuelerView/klasseId/" + klasse.getId().toString());
+            }
+        })).setCaption("Anzahl Schüler").setStyleGenerator(item -> "v-align-center");
+        grid.addColumn(klasse -> klasse.getSchule().getBezeichnung(), new ButtonRenderer(event -> {
+            Klasse klasse = (Klasse) event.getItem();
+            UI.getCurrent().getNavigator().navigateTo("SchuleView/id/" + klasse.getSchule().getId().toString());
+        })).setCaption("Schule").setStyleGenerator(item -> "v-align-center");
 
 
-//        grid.addColumn(adresse -> adresse.getAnzahlRechnungen(), new ButtonRenderer(event -> {
-//            Adresse adresse = (Adresse) event.getItem();
-//            if (adresse.getAnzahlRechnungen() > 0) {
-//                UI.getCurrent().getNavigator().navigateTo("RechnungView/adresseId/" + adresse.getId().toString());
-//            }
-//        })).setCaption("Anzahl Rechnungen").setStyleGenerator(item -> "v-align-center");
         grid.setSizeFull();
 
         // Render a button that deletes the data row (item)
         grid.addColumn(adresse -> "löschen",
                 new ButtonRenderer(event -> {
-                    Notification.show("Lösche Schule id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
-                    facade.delete((Schule) event.getItem());
+                    Notification.show("Lösche Klasse id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
+                    facade.delete((Klasse) event.getItem());
                     updateList();
                 })
         );
 
         grid.addColumn(adresse -> "ändern",
                 new ButtonRenderer(event -> {
-                    form.setEntity((Schule) event.getItem());
+                    form.setEntity((Klasse) event.getItem());
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
                         facade.save(val);
-                        System.err.println("Schule:" + val);
+                        System.err.println("Klasse:" + val);
                         updateList();
                         grid.select(val);
                         form.closePopup();

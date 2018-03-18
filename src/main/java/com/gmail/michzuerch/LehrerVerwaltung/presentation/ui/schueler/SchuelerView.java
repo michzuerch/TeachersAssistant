@@ -70,14 +70,10 @@ public class SchuelerView extends HorizontalLayout implements View {
         grid.addColumn(Schueler::getId).setCaption("id");
         grid.addColumn(Schueler::getNachname).setCaption("Nachname");
         grid.addColumn(Schueler::getVorname).setCaption("Vorname");
-
-
-//        grid.addColumn(adresse -> adresse.getAnzahlRechnungen(), new ButtonRenderer(event -> {
-//            Adresse adresse = (Adresse) event.getItem();
-//            if (adresse.getAnzahlRechnungen() > 0) {
-//                UI.getCurrent().getNavigator().navigateTo("RechnungView/adresseId/" + adresse.getId().toString());
-//            }
-//        })).setCaption("Anzahl Rechnungen").setStyleGenerator(item -> "v-align-center");
+        grid.addColumn(schueler -> schueler.getKlasse().getBezeichnung(), new ButtonRenderer(event -> {
+            Schueler schueler = (Schueler) event.getItem();
+            UI.getCurrent().getNavigator().navigateTo("KlasseView/id/" + schueler.getKlasse().getId().toString());
+        })).setCaption("Klasse").setStyleGenerator(item -> "v-align-center");
         grid.setSizeFull();
 
         // Render a button that deletes the data row (item)
