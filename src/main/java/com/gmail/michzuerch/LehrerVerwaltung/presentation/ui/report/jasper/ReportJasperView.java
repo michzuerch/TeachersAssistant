@@ -54,7 +54,7 @@ public class ReportJasperView extends HorizontalLayout implements View {
             form.openInModalPopup();
             form.setSavedHandler(val -> {
                 //val.setTemplateCompiled(form.getCompiledReport());
-                //val.setFilename(form.getFilename());
+                val.setFilename(form.templateSource.getFilename());
                 if (val.getTemplateSource() == null) {
                     System.err.println("templateSource ist null!!!!!");
                 } else {
@@ -93,7 +93,7 @@ public class ReportJasperView extends HorizontalLayout implements View {
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
                         //val.setTemplateCompiled(form.getCompiledReport());
-                        //val.setFilename(form.getFilename());
+                        val.setFilename(form.templateSource.getFilename());
                         facade.save(val);
                         updateList();
                         grid.select(val);

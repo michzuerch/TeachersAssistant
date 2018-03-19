@@ -60,6 +60,7 @@ public class ReportJasperImageView extends VerticalLayout implements View {
             form.openInModalPopup();
             form.setSavedHandler(val -> {
                 System.err.println("Save:" + val);
+                val.setMimeType(form.image.getMimetype());
                 reportJasperImageDeltaspikeFacade.save(val);
                 updateList();
                 grid.select(val);
@@ -94,6 +95,7 @@ public class ReportJasperImageView extends VerticalLayout implements View {
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
                         //val.setTemplateCompiled(form.getCompiledReport());
+                        val.setMimeType(form.image.getMimetype());
                         reportJasperImageDeltaspikeFacade.save(val);
                         updateList();
                         grid.select(val);

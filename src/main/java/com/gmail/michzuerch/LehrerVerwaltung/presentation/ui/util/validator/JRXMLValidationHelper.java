@@ -1,9 +1,5 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator;
 
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.xmlvalidation.ResourceResolver;
-import com.vaadin.data.ValidationResult;
-import com.vaadin.data.Validator;
-import com.vaadin.data.ValueContext;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 import org.w3c.dom.Document;
@@ -22,10 +18,10 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class JRXMLValidator implements Validator<byte[]> {
+public class JRXMLValidationHelper {
     private String errormessage = new String();
 
-    private boolean compileJRXML(byte[] val) {
+    public boolean compileJRXML(byte[] val) {
         JasperReport jasperReport = null;
         try {
             jasperReport = JasperCompileManager
@@ -49,7 +45,7 @@ public class JRXMLValidator implements Validator<byte[]> {
 
             SchemaFactory factory = SchemaFactory
                     .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            factory.setResourceResolver(new ResourceResolver());
+            factory.setResourceResolver(new com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.xmlvalidation.ResourceResolver());
             Source schemaFile = new StreamSource(getClass().getClassLoader()
                     .getResourceAsStream("/schema/jasperreport.xsd"));
 
@@ -78,12 +74,4 @@ public class JRXMLValidator implements Validator<byte[]> {
         this.errormessage = errormessage;
     }
 
-    @Override
-    public ValidationResult apply(byte[] value, ValueContext context) {
-        //@todo Wildfly hängt nach Compilierung
-        if (compileJRXML(value) == false) return ValidationResult.error("Compiler-Fehler: " + errormessage);
-        if (verifyValidatesInternalXsd(value) == false)
-            return ValidationResult.error("Validierung XML-Schema fehlgeschlagen" + errormessage);
-        return ValidationResult.ok();
-    }
 }
