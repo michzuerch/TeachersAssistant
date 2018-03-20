@@ -10,8 +10,9 @@ public class UploadReceiver implements Upload.Receiver {
 
     @Override
     public OutputStream receiveUpload(String filename, String mimeType) {
-        outputStream = new ByteArrayOutputStream(100 + 1024);
-        return outputStream;
+        return new ByteArrayOutputStream() {
+
+        };
     }
 
     public byte[] getBytes() {

@@ -35,6 +35,7 @@ public class JRXMLValidator implements Validator<byte[]> {
             errormessage = e.getMessage();
             return false;
         }
+        System.err.println("Validate Compile erfolgreich");
         return true;
     }
 
@@ -58,6 +59,7 @@ public class JRXMLValidator implements Validator<byte[]> {
             javax.xml.validation.Validator validator = schema.newValidator();
             validator.validate(new DOMSource(document));
 
+            System.err.println("Validate Xsd erfolgreich");
             return true;
         } catch (FileNotFoundException e) {
             return false;
@@ -80,7 +82,8 @@ public class JRXMLValidator implements Validator<byte[]> {
 
     @Override
     public ValidationResult apply(byte[] value, ValueContext context) {
-        //@todo Wildfly hängt nach Compilierung
+        System.err.println("Validator apply len: " + value.length);
+        if (value.length == 0) return ValidationResult.error("Länge 0");
         if (compileJRXML(value) == false) return ValidationResult.error("Compiler-Fehler: " + errormessage);
         if (verifyValidatesInternalXsd(value) == false)
             return ValidationResult.error("Validierung XML-Schema fehlgeschlagen" + errormessage);

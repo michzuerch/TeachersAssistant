@@ -1,33 +1,29 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field;
 
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.UploadReceiver;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.JRXMLValidator;
+import com.vaadin.data.Validator;
 import com.vaadin.server.FileDownloader;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.*;
+import server.droporchoose.UploadComponent;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
-public class JasperXmlField extends CustomField<byte[]> implements Upload.SucceededListener {
-    UploadReceiver uploadReceiver = new UploadReceiver();
+public class JasperXmlField extends CustomField<byte[]> {
     private byte[] fieldValue;
     private String filename = new String();
     private StreamResource streamResource = new StreamResource(new JasperSource(), "Jasper.jrxml");
-    private Upload upload = new Upload("Jasperreport", uploadReceiver);
-    //private UploadComponent upload = new UploadComponent();
+    private UploadComponent upload = new UploadComponent();
     private TextArea textArea = new TextArea("JXRML");
     private Button btnDownloadJasperSource = new Button("Download");
 
     @Override
     protected Component initContent() {
-        upload.setImmediateMode(true);
-        upload.addSucceededListener(this);
-
-        //upload.setReceivedCallback(this::upload);
+        upload.setReceivedCallback(this::upload);
         VerticalLayout layout = new VerticalLayout();
         layout.setSpacing(false);
         layout.setMargin(false);
@@ -41,9 +37,12 @@ public class JasperXmlField extends CustomField<byte[]> implements Upload.Succee
 
         layout.addComponent(new HorizontalLayout(upload, btnDownloadJasperSource));
         layout.addComponent(textArea);
-        textArea.addValueChangeListener(
-                event -> fireEvent(new ValueChangeEvent<byte[]>(this,
-                        event.getOldValue().getBytes(), event.isUserOriginated())));
+        textArea.addValueChangeListener(new ValueChangeListener<String>() {
+            @Override
+            public void valueChange(ValueChangeEvent<String> event) {
+                doSetValue(textArea.getValue().getBytes());
+            }
+        });
         return layout;
     }
 
@@ -53,15 +52,20 @@ public class JasperXmlField extends CustomField<byte[]> implements Upload.Succee
         return new byte[0];
     }
 
-    private void upload(String s, Path path) {
+    @Override
+    public Validator<byte[]> getDefaultValidator() {
+        return new JRXMLValidator();
+    }
+
+    private void upload(String filename, Path path) {
         try {
-            byte[] uploaded = Files.readAllBytes(Paths.get(path.toUri()));
-            setFilename(s);
+            byte[] uploaded = Files.readAllBytes(path);
+            setFilename(filename);
+
             streamResource.setFilename(getFilename());
-            System.err.println("Uploaded Bytes: " + uploaded);
+            System.err.println("Uploaded Bytes: " + uploaded.length);
             doSetValue(uploaded);
             btnDownloadJasperSource.setEnabled(true);
-            fireEvent(new ValueChangeEvent<byte[]>(this, getValue(), true));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -70,19 +74,15 @@ public class JasperXmlField extends CustomField<byte[]> implements Upload.Succee
     @Override
     protected void doSetValue(byte[] value) {
         streamResource = new StreamResource(new JasperSource(), getFilename());
+        byte[] oldValue = getValue();
         this.fieldValue = value;
         textArea.setValue(new String(value));
+        fireEvent(new ValueChangeEvent<byte[]>(this, oldValue, true));
     }
-
 
     @Override
     public byte[] getValue() {
         return fieldValue;
-    }
-
-    @Override
-    public void uploadSucceeded(Upload.SucceededEvent event) {
-        System.err.println("Succeeded:" + uploadReceiver.getBytes().length);
     }
 
     public String getFilename() {
