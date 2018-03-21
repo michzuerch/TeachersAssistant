@@ -1,5 +1,10 @@
+
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator;
 
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.xmlvalidation.ResourceResolver;
+import com.vaadin.data.ValidationResult;
+import com.vaadin.data.Validator;
+import com.vaadin.data.ValueContext;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperReport;
 import org.w3c.dom.Document;
@@ -18,10 +23,10 @@ import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class JRXMLValidationHelper {
+public class FOPXmlValidator implements Validator<byte[]> {
     private String errormessage = new String();
 
-    public boolean compileJRXML(byte[] val) {
+    private boolean compileJRXML(byte[] val) {
         JasperReport jasperReport = null;
         try {
             jasperReport = JasperCompileManager
@@ -31,6 +36,7 @@ public class JRXMLValidationHelper {
             errormessage = e.getMessage();
             return false;
         }
+        System.err.println("Validate Compile erfolgreich");
         return true;
     }
 
@@ -45,7 +51,7 @@ public class JRXMLValidationHelper {
 
             SchemaFactory factory = SchemaFactory
                     .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            factory.setResourceResolver(new com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.xmlvalidation.ResourceResolver());
+            factory.setResourceResolver(new ResourceResolver());
             Source schemaFile = new StreamSource(getClass().getClassLoader()
                     .getResourceAsStream("/schema/jasperreport.xsd"));
 
@@ -54,6 +60,7 @@ public class JRXMLValidationHelper {
             javax.xml.validation.Validator validator = schema.newValidator();
             validator.validate(new DOMSource(document));
 
+            System.err.println("Validate Xsd erfolgreich");
             return true;
         } catch (FileNotFoundException e) {
             return false;
@@ -74,4 +81,13 @@ public class JRXMLValidationHelper {
         this.errormessage = errormessage;
     }
 
+    @Override
+    public ValidationResult apply(byte[] value, ValueContext context) {
+        System.err.println("Validator apply len: " + value.length);
+        if (value.length == 0) return ValidationResult.error("Länge 0");
+        if (compileJRXML(value) == false) return ValidationResult.error("Compiler-Fehler: " + errormessage);
+        if (verifyValidatesInternalXsd(value) == false)
+            return ValidationResult.error("Validierung XML-Schema fehlgeschlagen" + errormessage);
+        return ValidationResult.ok();
+    }
 }

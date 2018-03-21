@@ -2,6 +2,7 @@ package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper;
 
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.jasper.ReportJasper;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.ReportJasperDeltaspikeFacade;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.JasperReportCompiler;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -53,13 +54,8 @@ public class ReportJasperView extends HorizontalLayout implements View {
             form.setEntity(reportJasper);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
-                //val.setTemplateCompiled(form.getCompiledReport());
+                val.setTemplateCompiled(JasperReportCompiler.compileJRXML(val.getTemplateSource()));
                 val.setFilename(form.templateSource.getFilename());
-                if (val.getTemplateSource() == null) {
-                    System.err.println("templateSource ist null!!!!!");
-                } else {
-                    System.err.println("ReportJasper Template Source length:" + val.getTemplateSource().length);
-                }
                 facade.save(val);
                 updateList();
                 grid.select(val);
@@ -74,7 +70,7 @@ public class ReportJasperView extends HorizontalLayout implements View {
 
         grid.addColumn(ReportJasper::getId).setCaption("id");
         grid.addColumn(ReportJasper::getBezeichnung).setCaption("Bezeichnung");
-        grid.addColumn(ReportJasper::getFilename).setCaption("Dateiname");
+//        grid.addColumn(ReportJasper::getFilename).setCaption("Dateiname");
         grid.addColumn(ReportJasper::getSizeSource).setCaption("Source Size");
         grid.addColumn(ReportJasper::getSizeCompiled).setCaption("Compiled Size");
         grid.addColumn(ReportJasper::getAnzahlReportJasperImages).setCaption("Anzahl Bilder");
@@ -92,7 +88,7 @@ public class ReportJasperView extends HorizontalLayout implements View {
                     form.setEntity((ReportJasper) event.getItem());
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
-                        //val.setTemplateCompiled(form.getCompiledReport());
+                        val.setTemplateCompiled(JasperReportCompiler.compileJRXML(val.getTemplateSource()));
                         val.setFilename(form.templateSource.getFilename());
                         facade.save(val);
                         updateList();

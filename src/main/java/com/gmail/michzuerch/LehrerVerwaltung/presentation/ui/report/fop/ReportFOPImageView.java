@@ -18,7 +18,7 @@ import org.vaadin.teemusa.flexlayout.*;
 import javax.inject.Inject;
 
 @CDIView("ReportFOPImageView")
-public class ReportFOPImageView extends VerticalLayout implements View {
+public class ReportFOPImageView extends HorizontalLayout implements View {
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(ReportFOPImageView.class.getName());
 
     Grid<ReportFOPImage> grid = new Grid<>();

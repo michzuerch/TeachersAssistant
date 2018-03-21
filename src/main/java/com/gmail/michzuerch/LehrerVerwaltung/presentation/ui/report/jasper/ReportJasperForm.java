@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.vaadin.viritin.form.AbstractForm;
 
 public class ReportJasperForm extends AbstractForm<ReportJasper> {
-    private static Logger logger = LoggerFactory.getLogger(ReportJasperForm.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.ReportJasperForm.class.getName());
 
     TextField bezeichnung = new TextField("Bezeichnung");
     JasperXmlField templateSource = new JasperXmlField();

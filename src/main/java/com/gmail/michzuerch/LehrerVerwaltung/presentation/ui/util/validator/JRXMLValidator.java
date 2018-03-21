@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator;
 
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.xmlvalidation.ResourceResolver;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.xmlvalidation.ResourceResolver;
 import com.vaadin.data.ValidationResult;
 import com.vaadin.data.Validator;
 import com.vaadin.data.ValueContext;

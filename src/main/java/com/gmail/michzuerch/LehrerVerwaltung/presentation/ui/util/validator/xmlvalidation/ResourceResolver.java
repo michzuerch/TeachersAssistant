@@ -1,4 +1,4 @@
-package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.jasper.xmlvalidation;
+package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.xmlvalidation;
 
 import org.w3c.dom.ls.LSInput;
 import org.w3c.dom.ls.LSResourceResolver;
