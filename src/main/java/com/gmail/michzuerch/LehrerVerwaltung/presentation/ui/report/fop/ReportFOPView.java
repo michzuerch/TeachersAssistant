@@ -68,7 +68,7 @@ public class ReportFOPView extends HorizontalLayout implements View {
 
         grid.addColumn(ReportFOP::getId).setCaption("id");
         grid.addColumn(ReportFOP::getBezeichnung).setCaption("Bezeichnung");
-        grid.addColumn(ReportFOP::getSize).setCaption("Report Grösse");
+        //grid.addColumn(ReportFOP::getSize).setCaption("Report Grösse");
 
         // Render a button that deletes the data row (item)
         grid.addColumn(report -> "löschen",

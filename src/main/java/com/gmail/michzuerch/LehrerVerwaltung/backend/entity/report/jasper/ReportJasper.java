@@ -17,6 +17,7 @@ public class ReportJasper extends com.gmail.michzuerch.LehrerVerwaltung.backend.
     private String bezeichnung;
 
     @Column
+    @NotNull
     @Basic(fetch = FetchType.LAZY)
     private byte[] templateSource;
 

@@ -14,6 +14,7 @@ public class ReportFOP extends AbstractEntity {
     private String bezeichnung;
 
     @Column
+    @NotNull
     @Basic(fetch = FetchType.LAZY)
     private byte[] template;
 
