@@ -3,7 +3,7 @@ package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.fop;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.fop.ReportFOP;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.fop.ReportFOPImage;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.ReportFOPDeltaspikeFacade;
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field.ImageAndMimetypeField;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field.ImageField;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,9 +17,9 @@ public class ReportFOPImageForm extends AbstractForm<ReportFOPImage> {
     @Inject
     ReportFOPDeltaspikeFacade reportFOPDeltaspikeFacade;
 
-    NativeSelect<ReportFOP> reportFop = new NativeSelect<>("Report FOP");
+    NativeSelect<ReportFOP> reportFOP = new NativeSelect<>("Report FOP");
     TextField bezeichnung = new TextField("Bezeichnung");
-    ImageAndMimetypeField image = new ImageAndMimetypeField();
+    ImageField image = new ImageField();
 
     private String filename;
 
@@ -31,20 +31,21 @@ public class ReportFOPImageForm extends AbstractForm<ReportFOPImage> {
     public Window openInModalPopup() {
         final Window openInModalPopup = super.openInModalPopup();
         openInModalPopup.setCaption("Report FOP Image");
+        openInModalPopup.setWidth(600, Unit.PIXELS);
         return openInModalPopup;
     }
 
     @Override
     protected Component createContent() {
-        reportFop.setItems(reportFOPDeltaspikeFacade.findAll());
-        reportFop.setItemCaptionGenerator(item -> item.getBezeichnung() + " " + item.getId());
+        reportFOP.setItems(reportFOPDeltaspikeFacade.findAll());
+        reportFOP.setItemCaptionGenerator(item -> item.getBezeichnung() + " " + item.getId());
 
         image.setCaption("Bild");
         image.setHeight(300, Unit.PIXELS);
         image.setWidth(400, Unit.PIXELS);
 
         return new VerticalLayout(new FormLayout(
-                reportFop, bezeichnung, image), getToolbar());
+                reportFOP, bezeichnung, image), getToolbar());
     }
 
     public String getFilename() {

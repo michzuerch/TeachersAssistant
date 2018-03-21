@@ -3,7 +3,7 @@ package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.report.css;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.css.ReportCSS;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.css.ReportCSSImage;
 import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.ReportCSSDeltaspikeFacade;
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field.ImageAndMimetypeField;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field.ImageField;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class ReportCSSImageForm extends AbstractForm<ReportCSSImage> {
 
     NativeSelect<ReportCSS> reportCSS = new NativeSelect<>("Report CSS");
     TextField bezeichnung = new TextField("Bezeichnung");
-    ImageAndMimetypeField image = new ImageAndMimetypeField();
+    ImageField image = new ImageField();
 
     private String filename;
 
@@ -31,6 +31,7 @@ public class ReportCSSImageForm extends AbstractForm<ReportCSSImage> {
     public Window openInModalPopup() {
         final Window openInModalPopup = super.openInModalPopup();
         openInModalPopup.setCaption("Report CSS Image");
+        openInModalPopup.setWidth(600, Unit.PIXELS);
         return openInModalPopup;
     }
 
