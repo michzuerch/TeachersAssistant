@@ -36,11 +36,6 @@ public class ReportFOPImageForm extends AbstractForm<ReportFOPImage> {
 
     @Override
     protected Component createContent() {
-        //getBinder().forField(image).bind("image");
-        //StreamResource templateResource = new StreamResource(new ImageStreamSource(image.getValue()), "image.jpg");
-        //FileDownloader fileDownloader = new FileDownloader(templateResource);
-        //fileDownloader.extend(downloadButton);
-
         reportFop.setItems(reportFOPDeltaspikeFacade.findAll());
         reportFop.setItemCaptionGenerator(item -> item.getBezeichnung() + " " + item.getId());
 
