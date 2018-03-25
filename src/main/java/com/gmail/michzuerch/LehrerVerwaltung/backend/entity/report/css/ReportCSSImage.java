@@ -12,6 +12,9 @@ public class ReportCSSImage extends com.gmail.michzuerch.LehrerVerwaltung.backen
     private com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.css.ReportCSS reportCSS;
 
     @Column
+    private String mimeType;
+
+    @Column
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
@@ -38,5 +41,13 @@ public class ReportCSSImage extends com.gmail.michzuerch.LehrerVerwaltung.backen
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public String getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(String mimeType) {
+        this.mimeType = mimeType;
     }
 }
