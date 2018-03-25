@@ -75,6 +75,7 @@ public class ReportJasperImageView extends HorizontalLayout implements View {
 
         grid.addColumn(ReportJasperImage::getId).setCaption("id");
         grid.addColumn(ReportJasperImage::getBezeichnung).setCaption("Bezeichnung");
+        grid.addColumn(ReportJasperImage::getMimeType).setCaption("MIME Type");
         grid.addColumn(ReportJasperImage::getSize).setCaption("Grösse");
 
         // Render a button that deletes the data row (item)
