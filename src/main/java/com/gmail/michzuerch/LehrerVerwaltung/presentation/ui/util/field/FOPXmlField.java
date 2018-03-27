@@ -5,6 +5,7 @@ import com.vaadin.data.Validator;
 import com.vaadin.server.FileDownloader;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.*;
+import org.apache.commons.io.IOUtils;
 import server.droporchoose.UploadComponent;
 
 import java.io.ByteArrayInputStream;
@@ -48,8 +49,13 @@ public class FOPXmlField extends CustomField<byte[]> {
 
     @Override
     public byte[] getEmptyValue() {
-        btnDownloadFOPXmlSource.setEnabled(false);
-        return new byte[0];
+        byte[] emptyValue = new byte[0];
+        try {
+            emptyValue = IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("/EmptyFieldValues/LayoutA4Portrait.xsl"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return emptyValue;
     }
 
     @Override
@@ -62,7 +68,6 @@ public class FOPXmlField extends CustomField<byte[]> {
             byte[] uploaded = Files.readAllBytes(path);
             setFilename(filename);
             streamResource.setFilename(getFilename());
-            System.err.println("Uploaded Bytes: " + uploaded.length);
             doSetValue(uploaded);
             btnDownloadFOPXmlSource.setEnabled(true);
         } catch (IOException e) {
@@ -73,7 +78,8 @@ public class FOPXmlField extends CustomField<byte[]> {
     @Override
     protected void doSetValue(byte[] value) {
         streamResource = new StreamResource(new FOPXmlSource(), getFilename());
-        byte[] oldValue = getValue();
+        //@todo Alle getValue raus aus allen Fields
+        byte[] oldValue = fieldValue;
         this.fieldValue = value;
         textArea.setValue(new String(value));
         fireEvent(new ValueChangeEvent<byte[]>(this, oldValue, true));
@@ -81,6 +87,7 @@ public class FOPXmlField extends CustomField<byte[]> {
 
     @Override
     public byte[] getValue() {
+        if (fieldValue == null) fieldValue = getEmptyValue();
         if (fieldValue.length == 0) {
             btnDownloadFOPXmlSource.setEnabled(false);
         } else {

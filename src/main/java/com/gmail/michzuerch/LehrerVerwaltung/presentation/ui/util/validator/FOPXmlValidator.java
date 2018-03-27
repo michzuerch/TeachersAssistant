@@ -85,9 +85,9 @@ public class FOPXmlValidator implements Validator<byte[]> {
     public ValidationResult apply(byte[] value, ValueContext context) {
         System.err.println("Validator apply len: " + value.length);
         if (value.length == 0) return ValidationResult.error("Länge 0");
-        if (compileJRXML(value) == false) return ValidationResult.error("Compiler-Fehler: " + errormessage);
-        if (verifyValidatesInternalXsd(value) == false)
-            return ValidationResult.error("Validierung XML-Schema fehlgeschlagen" + errormessage);
+//        if (compileJRXML(value) == false) return ValidationResult.error("Compiler-Fehler: " + errormessage);
+//        if (verifyValidatesInternalXsd(value) == false)
+//            return ValidationResult.error("Validierung XML-Schema fehlgeschlagen" + errormessage);
         return ValidationResult.ok();
     }
 }

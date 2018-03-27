@@ -59,8 +59,7 @@ public class ReportFOPImageView extends HorizontalLayout implements View {
             form.setEntity(reportFOPImage);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
-                System.err.println("Save:" + val);
-                //reportFOPImageDeltaspikeFacade.save(val);
+                reportFOPImageDeltaspikeFacade.save(val);
                 updateList();
                 grid.select(val);
                 form.closePopup();

@@ -59,8 +59,7 @@ public class ReportCSSImageView extends HorizontalLayout implements View {
             form.setEntity(reportCSSImage);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
-                System.err.println("Save:" + val);
-                //reportCSSImageDeltaspikeFacade.save(val);
+                reportCSSImageDeltaspikeFacade.save(val);
                 updateList();
                 grid.select(val);
                 form.closePopup();

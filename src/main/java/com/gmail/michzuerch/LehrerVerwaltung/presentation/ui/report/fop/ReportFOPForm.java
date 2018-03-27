@@ -11,7 +11,7 @@ public class ReportFOPForm extends AbstractForm<ReportFOP> {
     private static Logger logger = LoggerFactory.getLogger(ReportFOPForm.class.getName());
 
     TextField bezeichnung = new TextField("Bezeichnung");
-    FOPXmlField templateSource = new FOPXmlField();
+    FOPXmlField template = new FOPXmlField();
 
     public ReportFOPForm() {
         super(ReportFOP.class);
@@ -28,7 +28,7 @@ public class ReportFOPForm extends AbstractForm<ReportFOP> {
     @Override
     protected Component createContent() {
         return new VerticalLayout(new FormLayout(
-                bezeichnung, templateSource), getToolbar());
+                bezeichnung, template), getToolbar());
     }
 
 

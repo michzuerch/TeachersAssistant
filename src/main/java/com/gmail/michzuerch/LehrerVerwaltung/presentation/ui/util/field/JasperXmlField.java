@@ -73,7 +73,7 @@ public class JasperXmlField extends CustomField<byte[]> {
     @Override
     protected void doSetValue(byte[] value) {
         streamResource = new StreamResource(new JasperSource(), getFilename());
-        byte[] oldValue = getValue();
+        byte[] oldValue = fieldValue;
         this.fieldValue = value;
         textArea.setValue(new String(value));
         if (fieldValue.length == 0) {

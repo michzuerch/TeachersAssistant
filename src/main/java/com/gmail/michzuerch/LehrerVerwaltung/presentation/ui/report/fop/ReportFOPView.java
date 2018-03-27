@@ -61,16 +61,14 @@ public class ReportFOPView extends HorizontalLayout implements View {
             });
         });
 
-
         CssLayout tools = new CssLayout();
         tools.addComponents(filterTextBezeichnung, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
         grid.addColumn(ReportFOP::getId).setCaption("id");
         grid.addColumn(ReportFOP::getBezeichnung).setCaption("Bezeichnung");
-        //grid.addColumn(ReportFOP::getSize).setCaption("Report Grösse");
+        grid.addColumn(ReportFOP::getSize).setCaption("Report Grösse");
 
-        // Render a button that deletes the data row (item)
         grid.addColumn(report -> "löschen",
                 new ButtonRenderer(event -> {
                     Notification.show("Lösche id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
@@ -94,9 +92,6 @@ public class ReportFOPView extends HorizontalLayout implements View {
                         form.closePopup();
                     });
                 }));
-
-
-        //@todo Downloadbutton für Report
         grid.setSizeFull();
         layout.addComponents(tools, grid);
         layout.setSizeFull();
