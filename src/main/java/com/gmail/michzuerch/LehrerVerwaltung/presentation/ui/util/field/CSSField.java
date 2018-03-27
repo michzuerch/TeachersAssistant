@@ -5,6 +5,7 @@ import com.vaadin.data.Validator;
 import com.vaadin.server.FileDownloader;
 import com.vaadin.server.StreamResource;
 import com.vaadin.ui.*;
+import org.apache.commons.io.IOUtils;
 import server.droporchoose.UploadComponent;
 
 import java.io.ByteArrayInputStream;
@@ -48,8 +49,13 @@ public class CSSField extends CustomField<byte[]> {
 
     @Override
     public byte[] getEmptyValue() {
-        btnDownloadCssSource.setEnabled(false);
-        return new byte[0];
+        byte[] emptyValue = new byte[0];
+        try {
+            emptyValue = IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("/EmptyFieldValues/Report.css"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return emptyValue;
     }
 
     @Override
