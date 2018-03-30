@@ -83,6 +83,23 @@ public class ReportCSSView extends HorizontalLayout implements View {
                     updateList();
                 })
         );
+        grid.addColumn(report -> "ändern",
+                new ButtonRenderer(event -> {
+                    form.setEntity((ReportCSS) event.getItem());
+                    form.openInModalPopup();
+                    form.setSavedHandler(val -> {
+                        facade.save(val);
+                        updateList();
+                        grid.select(val);
+                        form.closePopup();
+                    });
+                    form.setResetHandler(val -> {
+                        updateList();
+                        grid.select(val);
+                        form.closePopup();
+                    });
+                }));
+
 
         //@todo Downloadbutton für Report
         grid.setSizeFull();

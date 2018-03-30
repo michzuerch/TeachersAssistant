@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.field;
 
-import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.JRXMLValidator;
+import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.JavascriptValidator;
 import com.vaadin.data.Validator;
 import com.vaadin.server.FileDownloader;
 import com.vaadin.server.StreamResource;
@@ -60,7 +60,7 @@ public class JavascriptField extends CustomField<byte[]> {
 
     @Override
     public Validator<byte[]> getDefaultValidator() {
-        return new JRXMLValidator();
+        return new JavascriptValidator();
     }
 
     private void upload(String filename, Path path) {

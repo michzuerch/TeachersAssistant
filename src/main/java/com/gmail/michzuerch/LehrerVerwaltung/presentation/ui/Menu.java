@@ -35,7 +35,7 @@ public class Menu extends CustomComponent {
         menuBar.addItem("Schule", VaadinIcons.PUZZLE_PIECE, new MenuBar.Command() {
             @Override
             public void menuSelected(MenuBar.MenuItem selectedItem) {
-                getUI().getNavigator().navigateTo("SchuleView");
+                getUI().getNavigator().navigateTo("SchulfachView");
             }
         });
 
@@ -57,6 +57,27 @@ public class Menu extends CustomComponent {
             @Override
             public void menuSelected(MenuBar.MenuItem selectedItem) {
                 getUI().getNavigator().navigateTo("SchuelerView");
+            }
+        });
+
+        menuBar.addItem("Schulraum", VaadinIcons.DIPLOMA, new MenuBar.Command() {
+            @Override
+            public void menuSelected(MenuBar.MenuItem selectedItem) {
+                getUI().getNavigator().navigateTo("SchulraumView");
+            }
+        });
+
+        menuBar.addItem("Schulfach", VaadinIcons.TRAIN, new MenuBar.Command() {
+            @Override
+            public void menuSelected(MenuBar.MenuItem selectedItem) {
+                getUI().getNavigator().navigateTo("SchulfachView");
+            }
+        });
+
+        menuBar.addItem("Schulnote", VaadinIcons.DIPLOMA, new MenuBar.Command() {
+            @Override
+            public void menuSelected(MenuBar.MenuItem selectedItem) {
+                getUI().getNavigator().navigateTo("SchulnoteView");
             }
         });
 

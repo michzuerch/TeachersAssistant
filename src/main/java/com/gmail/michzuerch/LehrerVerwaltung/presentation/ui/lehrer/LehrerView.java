@@ -86,7 +86,7 @@ public class LehrerView extends HorizontalLayout implements View {
         grid.addColumn(Lehrer::getNachname).setCaption("Nachname");
         grid.addColumn(lehrer -> lehrer.getSchule().getBezeichnung(), new ButtonRenderer(event -> {
             Lehrer lehrer = (Lehrer) event.getItem();
-            UI.getCurrent().getNavigator().navigateTo("SchuleView/id/" + lehrer.getSchule().getId().toString());
+            UI.getCurrent().getNavigator().navigateTo("SchulfachView/id/" + lehrer.getSchule().getId().toString());
         })).setCaption("Schule").setStyleGenerator(item -> "v-align-center");
         grid.setSizeFull();
 

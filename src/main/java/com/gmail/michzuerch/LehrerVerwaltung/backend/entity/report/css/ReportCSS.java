@@ -90,7 +90,7 @@ public class ReportCSS extends AbstractEntity {
     }
 
     public int getSizeJavascript() {
-        return sizeJavascript;
+        return javascript.length;
     }
 
     public void setSizeJavascript(int sizeJavascript) {

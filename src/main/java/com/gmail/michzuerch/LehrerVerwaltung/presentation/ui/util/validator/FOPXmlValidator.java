@@ -1,4 +1,3 @@
-
 package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator;
 
 import com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.util.validator.xmlvalidation.ResourceResolver;

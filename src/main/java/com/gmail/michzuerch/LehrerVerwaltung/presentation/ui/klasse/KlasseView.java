@@ -90,7 +90,7 @@ public class KlasseView extends HorizontalLayout implements View {
         })).setCaption("Anzahl Schüler").setStyleGenerator(item -> "v-align-center");
         grid.addColumn(klasse -> klasse.getSchule().getBezeichnung(), new ButtonRenderer(event -> {
             Klasse klasse = (Klasse) event.getItem();
-            UI.getCurrent().getNavigator().navigateTo("SchuleView/id/" + klasse.getSchule().getId().toString());
+            UI.getCurrent().getNavigator().navigateTo("SchulfachView/id/" + klasse.getSchule().getId().toString());
         })).setCaption("Schule").setStyleGenerator(item -> "v-align-center");
 
 

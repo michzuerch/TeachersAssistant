@@ -1,0 +1,2806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="LehrerVerwaltung">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.8">
+    <root id="1"/>
+    <database id="2" parent="1" name="Anouman">
+      <ObjectId>45820</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12295</ObjectId>
+    </database>
+    <database id="4" parent="1" name="gitea">
+      <ObjectId>21998</ObjectId>
+      <Current>1</Current>
+    </database>
+    <database id="5" parent="1" name="LehrerVerwaltung">
+      <ObjectId>45336</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <role id="6" parent="1" name="michzuerch">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="13" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.21:17:47.420</IntrospectionTimestamp>
+      <IntrospectionStateNumber>7888</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="14" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:02:57.586</IntrospectionTimestamp>
+      <IntrospectionStateNumber>505</IntrospectionStateNumber>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:02:57.586</IntrospectionTimestamp>
+      <IntrospectionStateNumber>7860</IntrospectionStateNumber>
+    </schema>
+    <schema id="16" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:02:57.586</IntrospectionTimestamp>
+    </schema>
+    <schema id="17" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:02:57.586</IntrospectionTimestamp>
+    </schema>
+    <schema id="18" parent="2" name="information_schema">
+      <ObjectId>12004</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:02:57.586</IntrospectionTimestamp>
+      <IntrospectionStateNumber>503</IntrospectionStateNumber>
+    </schema>
+    <schema id="19" parent="5" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.21:17:47.068</IntrospectionTimestamp>
+      <IntrospectionStateNumber>8067</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="20" parent="5" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:03:05.938</IntrospectionTimestamp>
+      <IntrospectionStateNumber>505</IntrospectionStateNumber>
+    </schema>
+    <schema id="21" parent="5" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:03:05.938</IntrospectionTimestamp>
+      <IntrospectionStateNumber>7804</IntrospectionStateNumber>
+    </schema>
+    <schema id="22" parent="5" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:03:05.938</IntrospectionTimestamp>
+    </schema>
+    <schema id="23" parent="5" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:03:05.938</IntrospectionTimestamp>
+    </schema>
+    <schema id="24" parent="5" name="information_schema">
+      <ObjectId>12004</ObjectId>
+      <IntrospectionTimestamp>2018-03-28.17:03:05.938</IntrospectionTimestamp>
+      <IntrospectionStateNumber>503</IntrospectionStateNumber>
+    </schema>
+    <sequence id="25" parent="13" name="hibernate_sequence">
+      <ObjectId>46054</ObjectId>
+      <StateNumber>7861</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="26" parent="13" name="adresse">
+      <ObjectId>45821</ObjectId>
+      <StateNumber>7873</StateNumber>
+    </table>
+    <table id="27" parent="13" name="artikel">
+      <ObjectId>45829</ObjectId>
+      <StateNumber>7863</StateNumber>
+    </table>
+    <table id="28" parent="13" name="artikelbild">
+      <ObjectId>45837</ObjectId>
+      <StateNumber>7863</StateNumber>
+    </table>
+    <table id="29" parent="13" name="artikelkategorie">
+      <ObjectId>45845</ObjectId>
+      <StateNumber>7862</StateNumber>
+    </table>
+    <table id="30" parent="13" name="aufwand">
+      <ObjectId>45850</ObjectId>
+      <StateNumber>7864</StateNumber>
+    </table>
+    <table id="31" parent="13" name="buchhaltung">
+      <ObjectId>45858</ObjectId>
+      <StateNumber>7871</StateNumber>
+    </table>
+    <table id="32" parent="13" name="buchung">
+      <ObjectId>45863</ObjectId>
+      <StateNumber>7884</StateNumber>
+    </table>
+    <table id="33" parent="13" name="editortest">
+      <ObjectId>45868</ObjectId>
+      <StateNumber>7836</StateNumber>
+    </table>
+    <table id="34" parent="13" name="imagetest">
+      <ObjectId>45876</ObjectId>
+      <StateNumber>7837</StateNumber>
+    </table>
+    <table id="35" parent="13" name="konto">
+      <ObjectId>45884</ObjectId>
+      <StateNumber>7886</StateNumber>
+    </table>
+    <table id="36" parent="13" name="kontogruppe">
+      <ObjectId>45892</ObjectId>
+      <StateNumber>7868</StateNumber>
+    </table>
+    <table id="37" parent="13" name="kontohauptgruppe">
+      <ObjectId>45900</ObjectId>
+      <StateNumber>7869</StateNumber>
+    </table>
+    <table id="38" parent="13" name="kontoklasse">
+      <ObjectId>45908</ObjectId>
+      <StateNumber>7870</StateNumber>
+    </table>
+    <table id="39" parent="13" name="mehrwertsteuercode">
+      <ObjectId>45916</ObjectId>
+      <StateNumber>7872</StateNumber>
+    </table>
+    <table id="40" parent="13" name="rechnung">
+      <ObjectId>45924</ObjectId>
+      <StateNumber>7874</StateNumber>
+    </table>
+    <table id="41" parent="13" name="rechnungsposition">
+      <ObjectId>45929</ObjectId>
+      <StateNumber>7874</StateNumber>
+    </table>
+    <table id="42" parent="13" name="reportcss">
+      <ObjectId>45937</ObjectId>
+      <StateNumber>7875</StateNumber>
+    </table>
+    <table id="43" parent="13" name="reportcssimage">
+      <ObjectId>45945</ObjectId>
+      <StateNumber>7875</StateNumber>
+    </table>
+    <table id="44" parent="13" name="reportfop">
+      <ObjectId>45953</ObjectId>
+      <StateNumber>7876</StateNumber>
+    </table>
+    <table id="45" parent="13" name="reportfopimage">
+      <ObjectId>45961</ObjectId>
+      <StateNumber>7876</StateNumber>
+    </table>
+    <table id="46" parent="13" name="reportjasper">
+      <ObjectId>45969</ObjectId>
+      <StateNumber>7877</StateNumber>
+    </table>
+    <table id="47" parent="13" name="reportjasperimage">
+      <ObjectId>45977</ObjectId>
+      <StateNumber>7877</StateNumber>
+    </table>
+    <table id="48" parent="13" name="templatebuchhaltung">
+      <ObjectId>45985</ObjectId>
+      <StateNumber>7882</StateNumber>
+    </table>
+    <table id="49" parent="13" name="templatekonto">
+      <ObjectId>45990</ObjectId>
+      <StateNumber>7883</StateNumber>
+    </table>
+    <table id="50" parent="13" name="templatekontogruppe">
+      <ObjectId>45998</ObjectId>
+      <StateNumber>7879</StateNumber>
+    </table>
+    <table id="51" parent="13" name="templatekontohauptgruppe">
+      <ObjectId>46006</ObjectId>
+      <StateNumber>7880</StateNumber>
+    </table>
+    <table id="52" parent="13" name="templatekontoklasse">
+      <ObjectId>46014</ObjectId>
+      <StateNumber>7881</StateNumber>
+    </table>
+    <table id="53" parent="13" name="templatemehrwertsteuercode">
+      <ObjectId>46022</ObjectId>
+      <StateNumber>7883</StateNumber>
+    </table>
+    <table id="54" parent="13" name="unterbuchung">
+      <ObjectId>46030</ObjectId>
+      <StateNumber>7886</StateNumber>
+    </table>
+    <table id="55" parent="13" name="uzer">
+      <ObjectId>46035</ObjectId>
+      <StateNumber>7887</StateNumber>
+    </table>
+    <table id="56" parent="13" name="uzer_role">
+      <ObjectId>46043</ObjectId>
+      <StateNumber>7888</StateNumber>
+    </table>
+    <table id="57" parent="13" name="uzerrole">
+      <ObjectId>46046</ObjectId>
+      <StateNumber>7888</StateNumber>
+    </table>
+    <sequence id="58" parent="19" name="hibernate_sequence">
+      <ObjectId>45784</ObjectId>
+      <StateNumber>7805</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="59" parent="19" name="klasse">
+      <ObjectId>45707</ObjectId>
+      <StateNumber>7811</StateNumber>
+    </table>
+    <table id="60" parent="19" name="lehrer">
+      <ObjectId>45712</ObjectId>
+      <StateNumber>7807</StateNumber>
+    </table>
+    <table id="61" parent="19" name="reportcss">
+      <ObjectId>45720</ObjectId>
+      <StateNumber>7808</StateNumber>
+    </table>
+    <table id="62" parent="19" name="reportcssimage">
+      <ObjectId>45728</ObjectId>
+      <StateNumber>7808</StateNumber>
+    </table>
+    <table id="63" parent="19" name="reportfop">
+      <ObjectId>45736</ObjectId>
+      <StateNumber>7809</StateNumber>
+    </table>
+    <table id="64" parent="19" name="reportfopimage">
+      <ObjectId>45744</ObjectId>
+      <StateNumber>7809</StateNumber>
+    </table>
+    <table id="65" parent="19" name="reportjasper">
+      <ObjectId>45752</ObjectId>
+      <StateNumber>7810</StateNumber>
+    </table>
+    <table id="66" parent="19" name="reportjasperimage">
+      <ObjectId>45760</ObjectId>
+      <StateNumber>7810</StateNumber>
+    </table>
+    <table id="67" parent="19" name="schueler">
+      <ObjectId>45768</ObjectId>
+      <StateNumber>8065</StateNumber>
+    </table>
+    <table id="68" parent="19" name="schule">
+      <ObjectId>45776</ObjectId>
+      <StateNumber>8067</StateNumber>
+    </table>
+    <table id="69" parent="19" name="schulfach">
+      <ObjectId>46206</ObjectId>
+      <StateNumber>8066</StateNumber>
+    </table>
+    <table id="70" parent="19" name="schulnote">
+      <ObjectId>46211</ObjectId>
+      <StateNumber>8066</StateNumber>
+    </table>
+    <table id="71" parent="19" name="schulraum">
+      <ObjectId>46216</ObjectId>
+      <StateNumber>8067</StateNumber>
+    </table>
+    <column id="72" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="73" parent="26" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="74" parent="26" name="anrede">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="75" parent="26" name="firma">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="76" parent="26" name="nachname">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="77" parent="26" name="ort">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="78" parent="26" name="postleitzahl">
+      <Position>7</Position>
+      <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="79" parent="26" name="strasse">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="80" parent="26" name="stundensatz">
+      <Position>9</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7829</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="81" parent="26" name="vorname">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7829</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="82" parent="26" name="adresse_pkey">
+      <ObjectId>45827</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="83" parent="26" name="adresse_pkey">
+      <ObjectId>45828</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>adresse_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="84" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7830</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="85" parent="27" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7830</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="86" parent="27" name="anzahl">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7830</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="87" parent="27" name="bezeichnung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="88" parent="27" name="bezeichnunglang">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="89" parent="27" name="mengeneinheit">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="90" parent="27" name="stueckpreis">
+      <Position>7</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>7830</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="91" parent="27" name="artikelkategorie_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7830</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="92" parent="27" name="artikel_pkey">
+      <ObjectId>45835</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="93" parent="27" name="artikel_pkey">
+      <ObjectId>45836</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>artikel_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="94" parent="27" name="fkl75mue91225afb72emr0bklef">
+      <ObjectId>46056</ObjectId>
+      <ColNames>artikelkategorie_id</ColNames>
+      <RefTableId>45845</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>artikelkategorie</RefTableName>
+      <RefKeyName>artikelkategorie_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="95" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7831</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="96" parent="28" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7831</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="97" parent="28" name="image">
+      <Position>3</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7831</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="98" parent="28" name="mimetype">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7831</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="99" parent="28" name="titel">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7831</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="100" parent="28" name="artikel_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7831</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="101" parent="28" name="artikelbild_pkey">
+      <ObjectId>45843</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="102" parent="28" name="artikelbild_pkey">
+      <ObjectId>45844</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>artikelbild_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="103" parent="28" name="fklgxhbbg6gh99qyphvxoixg0ek">
+      <ObjectId>46061</ObjectId>
+      <ColNames>artikel_id</ColNames>
+      <RefTableId>45829</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>artikel</RefTableName>
+      <RefKeyName>artikel_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="104" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7832</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="105" parent="29" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7832</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="106" parent="29" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7832</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="107" parent="29" name="artikelkategorie_pkey">
+      <ObjectId>45848</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="108" parent="29" name="artikelkategorie_pkey">
+      <ObjectId>45849</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>artikelkategorie_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7833</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="110" parent="30" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7833</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="111" parent="30" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="112" parent="30" name="endzeit">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="113" parent="30" name="moveable">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="114" parent="30" name="resizable">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="115" parent="30" name="startzeit">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="116" parent="30" name="titel">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7833</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="117" parent="30" name="rechnung_id">
+      <Position>9</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7833</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="118" parent="30" name="aufwand_pkey">
+      <ObjectId>45856</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="119" parent="30" name="aufwand_pkey">
+      <ObjectId>45857</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>aufwand_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="120" parent="30" name="fkgs4pc2qc84edg3j7spvtdxl36">
+      <ObjectId>46066</ObjectId>
+      <ColNames>rechnung_id</ColNames>
+      <RefTableId>45924</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>rechnung</RefTableName>
+      <RefKeyName>rechnung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="121" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7834</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="122" parent="31" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7834</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="123" parent="31" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7834</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="124" parent="31" name="jahr">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7834</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="125" parent="31" name="buchhaltung_pkey">
+      <ObjectId>45861</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="126" parent="31" name="buchhaltung_pkey">
+      <ObjectId>45862</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>buchhaltung_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="127" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7835</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="128" parent="32" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7835</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="129" parent="32" name="belegkopie">
+      <Position>3</Position>
+      <DataType>oid|0s</DataType>
+      <StateNumber>7835</StateNumber>
+      <TypeId>26</TypeId>
+    </column>
+    <column id="130" parent="32" name="belegnummer">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>7835</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="131" parent="32" name="buchungstext">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7835</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="132" parent="32" name="buchhaltung_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7835</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="133" parent="32" name="mehrwertsteuercode_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7835</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="134" parent="32" name="buchung_pkey">
+      <ObjectId>45866</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="135" parent="32" name="buchung_pkey">
+      <ObjectId>45867</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>buchung_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="136" parent="32" name="fk73jm2yaa7nqy1ndx44spfj7fy">
+      <ObjectId>46071</ObjectId>
+      <ColNames>buchhaltung_id</ColNames>
+      <RefTableId>45858</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>buchhaltung</RefTableName>
+      <RefKeyName>buchhaltung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="137" parent="32" name="fkj6ikq3d0oq9l8l70qh2tq6cgi">
+      <ObjectId>46076</ObjectId>
+      <ColNames>mehrwertsteuercode_id</ColNames>
+      <RefTableId>45916</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>mehrwertsteuercode</RefTableName>
+      <RefKeyName>mehrwertsteuercode_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="138" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7836</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="139" parent="33" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7836</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="140" parent="33" name="erster">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7836</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="141" parent="33" name="zweiter">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7836</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="142" parent="33" name="editortest_pkey">
+      <ObjectId>45874</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="143" parent="33" name="editortest_pkey">
+      <ObjectId>45875</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>editortest_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="144" parent="34" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7837</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="145" parent="34" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7837</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="146" parent="34" name="bild">
+      <Position>3</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7837</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="147" parent="34" name="titel">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7837</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="148" parent="34" name="imagetest_pkey">
+      <ObjectId>45882</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="149" parent="34" name="imagetest_pkey">
+      <ObjectId>45883</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>imagetest_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="150" parent="35" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7838</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="151" parent="35" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7838</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="152" parent="35" name="anfangsbestand">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>7838</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="153" parent="35" name="bemerkung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7838</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="154" parent="35" name="bezeichnung">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7838</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="155" parent="35" name="kontonummer">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7838</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="156" parent="35" name="kontogruppe_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7838</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="157" parent="35" name="konto_pkey">
+      <ObjectId>45890</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="158" parent="35" name="konto_pkey">
+      <ObjectId>45891</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>konto_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="159" parent="35" name="fkn9jfs1f728q2n2a8hum45ctf5">
+      <ObjectId>46081</ObjectId>
+      <ColNames>kontogruppe_id</ColNames>
+      <RefTableId>45892</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>kontogruppe</RefTableName>
+      <RefKeyName>kontogruppe_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="160" parent="36" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7839</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="161" parent="36" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7839</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="162" parent="36" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7839</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="163" parent="36" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7839</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="164" parent="36" name="kontohauptgruppe_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7839</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="165" parent="36" name="kontogruppe_pkey">
+      <ObjectId>45898</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="166" parent="36" name="kontogruppe_pkey">
+      <ObjectId>45899</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>kontogruppe_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="167" parent="36" name="fk4jkf8ilu45b1lmtbjt7kwd7ix">
+      <ObjectId>46086</ObjectId>
+      <ColNames>kontohauptgruppe_id</ColNames>
+      <RefTableId>45900</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>kontohauptgruppe</RefTableName>
+      <RefKeyName>kontohauptgruppe_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="168" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7840</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="169" parent="37" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7840</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="170" parent="37" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7840</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="171" parent="37" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7840</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="172" parent="37" name="kontoklasse_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7840</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="173" parent="37" name="kontohauptgruppe_pkey">
+      <ObjectId>45906</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="174" parent="37" name="kontohauptgruppe_pkey">
+      <ObjectId>45907</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>kontohauptgruppe_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="175" parent="37" name="fklm0lnp3ye1s2qgvjwyg9nk27b">
+      <ObjectId>46091</ObjectId>
+      <ColNames>kontoklasse_id</ColNames>
+      <RefTableId>45908</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>kontoklasse</RefTableName>
+      <RefKeyName>kontoklasse_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="176" parent="38" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7841</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="177" parent="38" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7841</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="178" parent="38" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7841</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="179" parent="38" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7841</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="180" parent="38" name="buchhaltung_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7841</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="181" parent="38" name="kontoklasse_pkey">
+      <ObjectId>45914</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="182" parent="38" name="kontoklasse_pkey">
+      <ObjectId>45915</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>kontoklasse_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="183" parent="38" name="fk21l7aeg0dyla1mboj5gmrasq6">
+      <ObjectId>46096</ObjectId>
+      <ColNames>buchhaltung_id</ColNames>
+      <RefTableId>45858</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>buchhaltung</RefTableName>
+      <RefKeyName>buchhaltung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="184" parent="39" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7842</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="185" parent="39" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7842</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="186" parent="39" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7842</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="187" parent="39" name="code">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7842</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="188" parent="39" name="prozent">
+      <Position>5</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7842</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="189" parent="39" name="verkauf">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7842</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="190" parent="39" name="buchhaltung_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7842</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="191" parent="39" name="mehrwertsteuerkonto_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7842</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="192" parent="39" name="mehrwertsteuercode_pkey">
+      <ObjectId>45922</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="193" parent="39" name="mehrwertsteuercode_pkey">
+      <ObjectId>45923</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>mehrwertsteuercode_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="194" parent="39" name="fkhru7dqkren2kj7a66g7ksjgaw">
+      <ObjectId>46101</ObjectId>
+      <ColNames>buchhaltung_id</ColNames>
+      <RefTableId>45858</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>buchhaltung</RefTableName>
+      <RefKeyName>buchhaltung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="195" parent="39" name="fkjtv19dfj3de6rke6cy7x2h5ic">
+      <ObjectId>46106</ObjectId>
+      <ColNames>mehrwertsteuerkonto_id</ColNames>
+      <RefTableId>45884</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>konto</RefTableName>
+      <RefKeyName>konto_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="196" parent="40" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7843</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="197" parent="40" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7843</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="198" parent="40" name="bezahlt">
+      <Position>3</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7843</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="199" parent="40" name="bezeichnung">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7843</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="200" parent="40" name="faelligintagen">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7843</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="201" parent="40" name="rechnungsdatum">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7843</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="202" parent="40" name="verschickt">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7843</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="203" parent="40" name="adresse_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7843</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="204" parent="40" name="rechnung_pkey">
+      <ObjectId>45927</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="205" parent="40" name="rechnung_pkey">
+      <ObjectId>45928</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>rechnung_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="206" parent="40" name="fk53fa08mwfmdp5b97uhwxtgyrx">
+      <ObjectId>46111</ObjectId>
+      <ColNames>adresse_id</ColNames>
+      <RefTableId>45821</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>adresse</RefTableName>
+      <RefKeyName>adresse_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="207" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7844</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="208" parent="41" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7844</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="209" parent="41" name="anzahl">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>7844</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="210" parent="41" name="bezeichnung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7844</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="211" parent="41" name="bezeichnunglang">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7844</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="212" parent="41" name="mengeneinheit">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7844</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="213" parent="41" name="stueckpreis">
+      <Position>7</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>7844</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="214" parent="41" name="rechnung_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7844</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="215" parent="41" name="rechnungsposition_pkey">
+      <ObjectId>45935</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="216" parent="41" name="rechnungsposition_pkey">
+      <ObjectId>45936</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>rechnungsposition_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="217" parent="41" name="fke839apfdsrekdvyh155q0ungy">
+      <ObjectId>46116</ObjectId>
+      <ColNames>rechnung_id</ColNames>
+      <RefTableId>45924</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>rechnung</RefTableName>
+      <RefKeyName>rechnung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="218" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="219" parent="42" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="220" parent="42" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="221" parent="42" name="css">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="222" parent="42" name="html">
+      <Position>5</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="223" parent="42" name="javascript">
+      <Position>6</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7845</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="224" parent="42" name="reportcss_pkey">
+      <ObjectId>45943</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="225" parent="42" name="reportcss_pkey">
+      <ObjectId>45944</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportcss_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="226" parent="43" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7846</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="227" parent="43" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7846</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="228" parent="43" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7846</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="229" parent="43" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7846</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="230" parent="43" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7846</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="231" parent="43" name="reportcss_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7846</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="232" parent="43" name="reportcssimage_pkey">
+      <ObjectId>45951</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="233" parent="43" name="reportcssimage_pkey">
+      <ObjectId>45952</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportcssimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="234" parent="43" name="fk9jjvhjjn5pyt87gke22ky8ls1">
+      <ObjectId>46121</ObjectId>
+      <ColNames>reportcss_id</ColNames>
+      <RefTableId>45937</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportcss</RefTableName>
+      <RefKeyName>reportcss_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="235" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7847</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="236" parent="44" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7847</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="237" parent="44" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7847</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="238" parent="44" name="template">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7847</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="239" parent="44" name="reportfop_pkey">
+      <ObjectId>45959</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="240" parent="44" name="reportfop_pkey">
+      <ObjectId>45960</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportfop_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="241" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7848</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="242" parent="45" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7848</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="243" parent="45" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7848</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="244" parent="45" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7848</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="245" parent="45" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7848</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="246" parent="45" name="reportfop_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7848</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="247" parent="45" name="reportfopimage_pkey">
+      <ObjectId>45967</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="248" parent="45" name="reportfopimage_pkey">
+      <ObjectId>45968</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportfopimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="249" parent="45" name="fkae1dg8yy6ivrc9inv8phpmfl6">
+      <ObjectId>46126</ObjectId>
+      <ColNames>reportfop_id</ColNames>
+      <RefTableId>45953</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportfop</RefTableName>
+      <RefKeyName>reportfop_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="250" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7849</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="251" parent="46" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7849</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="252" parent="46" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7849</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="253" parent="46" name="filename">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7849</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="254" parent="46" name="templatecompiled">
+      <Position>5</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7849</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="255" parent="46" name="templatesource">
+      <Position>6</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7849</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="256" parent="46" name="reportjasper_pkey">
+      <ObjectId>45975</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="257" parent="46" name="reportjasper_pkey">
+      <ObjectId>45976</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportjasper_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="258" parent="47" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7850</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="259" parent="47" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7850</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="260" parent="47" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7850</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="261" parent="47" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7850</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="262" parent="47" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7850</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="263" parent="47" name="reportjasper_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7850</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="264" parent="47" name="reportjasperimage_pkey">
+      <ObjectId>45983</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="265" parent="47" name="reportjasperimage_pkey">
+      <ObjectId>45984</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportjasperimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="266" parent="47" name="fk861lh5knxh25q5u3s015ki4xn">
+      <ObjectId>46131</ObjectId>
+      <ColNames>reportjasper_id</ColNames>
+      <RefTableId>45969</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportjasper</RefTableName>
+      <RefKeyName>reportjasper_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="267" parent="48" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7851</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="268" parent="48" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7851</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="269" parent="48" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7851</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="270" parent="48" name="templatebuchhaltung_pkey">
+      <ObjectId>45988</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="271" parent="48" name="templatebuchhaltung_pkey">
+      <ObjectId>45989</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatebuchhaltung_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="272" parent="49" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7852</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="273" parent="49" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7852</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="274" parent="49" name="bemerkung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7852</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="275" parent="49" name="bezeichnung">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7852</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="276" parent="49" name="kontonummer">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7852</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="277" parent="49" name="templatekontogruppe_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7852</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="278" parent="49" name="templatekonto_pkey">
+      <ObjectId>45996</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="279" parent="49" name="templatekonto_pkey">
+      <ObjectId>45997</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatekonto_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="280" parent="49" name="fkcogosaaei6e2kkftcg1cxfmyj">
+      <ObjectId>46136</ObjectId>
+      <ColNames>templatekontogruppe_id</ColNames>
+      <RefTableId>45998</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatekontogruppe</RefTableName>
+      <RefKeyName>templatekontogruppe_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="281" parent="50" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7853</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="282" parent="50" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7853</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="283" parent="50" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7853</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="284" parent="50" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7853</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="285" parent="50" name="templatekontohauptgruppe_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7853</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="286" parent="50" name="templatekontogruppe_pkey">
+      <ObjectId>46004</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="287" parent="50" name="templatekontogruppe_pkey">
+      <ObjectId>46005</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatekontogruppe_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="288" parent="50" name="fkgio93snpgotys6jjy8i6ppjel">
+      <ObjectId>46141</ObjectId>
+      <ColNames>templatekontohauptgruppe_id</ColNames>
+      <RefTableId>46006</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatekontohauptgruppe</RefTableName>
+      <RefKeyName>templatekontohauptgruppe_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="289" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7854</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="290" parent="51" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7854</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="291" parent="51" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7854</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="292" parent="51" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7854</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="293" parent="51" name="templatekontoklasse_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7854</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="294" parent="51" name="templatekontohauptgruppe_pkey">
+      <ObjectId>46012</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="295" parent="51" name="templatekontohauptgruppe_pkey">
+      <ObjectId>46013</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatekontohauptgruppe_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="296" parent="51" name="fkmwhvk3d36e7hq3fom8qtw5193">
+      <ObjectId>46146</ObjectId>
+      <ColNames>templatekontoklasse_id</ColNames>
+      <RefTableId>46014</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatekontoklasse</RefTableName>
+      <RefKeyName>templatekontoklasse_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="297" parent="52" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7855</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="298" parent="52" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7855</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="299" parent="52" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7855</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="300" parent="52" name="kontonummer">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7855</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="301" parent="52" name="templatebuchhaltung_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7855</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="302" parent="52" name="templatekontoklasse_pkey">
+      <ObjectId>46020</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="303" parent="52" name="templatekontoklasse_pkey">
+      <ObjectId>46021</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatekontoklasse_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="304" parent="52" name="fk7qdcx001i8trd9edvlus3jg04">
+      <ObjectId>46151</ObjectId>
+      <ColNames>templatebuchhaltung_id</ColNames>
+      <RefTableId>45985</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatebuchhaltung</RefTableName>
+      <RefKeyName>templatebuchhaltung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="305" parent="53" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7856</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="306" parent="53" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7856</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="307" parent="53" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7856</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="308" parent="53" name="code">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7856</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="309" parent="53" name="prozent">
+      <Position>5</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7856</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="310" parent="53" name="verkauf">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>7856</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="311" parent="53" name="templatebuchhaltung_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7856</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="312" parent="53" name="templatemehrwertsteuerkonto_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7856</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="313" parent="53" name="templatemehrwertsteuercode_pkey">
+      <ObjectId>46028</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="314" parent="53" name="templatemehrwertsteuercode_pkey">
+      <ObjectId>46029</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>templatemehrwertsteuercode_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="315" parent="53" name="fkgf9lobcnrtlx7lnxdq5wpdc8o">
+      <ObjectId>46156</ObjectId>
+      <ColNames>templatebuchhaltung_id</ColNames>
+      <RefTableId>45985</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatebuchhaltung</RefTableName>
+      <RefKeyName>templatebuchhaltung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="316" parent="53" name="fkkhvp2nxdmh2ksgu9t16g19vqk">
+      <ObjectId>46161</ObjectId>
+      <ColNames>templatemehrwertsteuerkonto_id</ColNames>
+      <RefTableId>45990</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>templatekonto</RefTableName>
+      <RefKeyName>templatekonto_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="317" parent="54" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="318" parent="54" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="319" parent="54" name="betrag">
+      <Position>3</Position>
+      <DataType>real|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="320" parent="54" name="buchungsdatum">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>7857</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="321" parent="54" name="buchungstext">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="322" parent="54" name="laufnummer">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>7857</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="323" parent="54" name="buchung_id">
+      <Position>7</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="324" parent="54" name="kontohaben_id">
+      <Position>8</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="325" parent="54" name="kontosoll_id">
+      <Position>9</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7857</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="326" parent="54" name="unterbuchung_pkey">
+      <ObjectId>46033</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="327" parent="54" name="unterbuchung_pkey">
+      <ObjectId>46034</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>unterbuchung_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="328" parent="54" name="fkfyg53m6q4rc3umykae537mkuq">
+      <ObjectId>46166</ObjectId>
+      <ColNames>buchung_id</ColNames>
+      <RefTableId>45863</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>buchung</RefTableName>
+      <RefKeyName>buchung_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="329" parent="54" name="fk8y7sj7rrj4ol2tohx1mn4cfja">
+      <ObjectId>46171</ObjectId>
+      <ColNames>kontohaben_id</ColNames>
+      <RefTableId>45884</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>konto</RefTableName>
+      <RefKeyName>konto_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="330" parent="54" name="fkvf10dt5fd18ab765nwnbvhib">
+      <ObjectId>46176</ObjectId>
+      <ColNames>kontosoll_id</ColNames>
+      <RefTableId>45884</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>konto</RefTableName>
+      <RefKeyName>konto_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="331" parent="55" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7858</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="332" parent="55" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7858</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="333" parent="55" name="description">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7858</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="334" parent="55" name="pazzword">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7858</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="335" parent="55" name="principal">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7858</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="336" parent="55" name="uzer_pkey">
+      <ObjectId>46041</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="337" parent="55" name="uzer_pkey">
+      <ObjectId>46042</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>uzer_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="338" parent="56" name="roleid">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7859</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="339" parent="56" name="uzerid">
+      <Position>2</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7859</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="340" parent="56" name="fk4ys1e6gcvjqu11tsw9v0ow6yr">
+      <ObjectId>46186</ObjectId>
+      <ColNames>roleid</ColNames>
+      <RefTableId>46046</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>uzerrole</RefTableName>
+      <RefKeyName>uzerrole_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="341" parent="56" name="fkm5yac4wayjysbgtop6fc1eru7">
+      <ObjectId>46181</ObjectId>
+      <ColNames>uzerid</ColNames>
+      <RefTableId>46035</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>uzer</RefTableName>
+      <RefKeyName>uzer_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="342" parent="57" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7860</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="343" parent="57" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7860</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="344" parent="57" name="role">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7860</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="345" parent="57" name="rolegroup">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7860</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="346" parent="57" name="uzerrole_pkey">
+      <ObjectId>46052</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="347" parent="57" name="uzerrole_pkey">
+      <ObjectId>46053</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>uzerrole_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="348" parent="59" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7795</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="349" parent="59" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7795</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="350" parent="59" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7795</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="351" parent="59" name="schule_id">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7795</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="352" parent="59" name="klasse_pkey">
+      <ObjectId>45710</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="353" parent="59" name="klasse_pkey">
+      <ObjectId>45711</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>klasse_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="354" parent="59" name="fka8322c77gaovj21sy4j72i089">
+      <ObjectId>45786</ObjectId>
+      <ColNames>schule_id</ColNames>
+      <RefTableId>45776</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>schule</RefTableName>
+      <RefKeyName>schule_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="355" parent="60" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7796</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="356" parent="60" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7796</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="357" parent="60" name="nachname">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7796</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="358" parent="60" name="vorname">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7796</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="359" parent="60" name="schule_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7796</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="360" parent="60" name="lehrer_pkey">
+      <ObjectId>45718</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="361" parent="60" name="lehrer_pkey">
+      <ObjectId>45719</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>lehrer_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="362" parent="60" name="fkpvq1xw8ra36hh9xqrt0vc1w5">
+      <ObjectId>45791</ObjectId>
+      <ColNames>schule_id</ColNames>
+      <RefTableId>45776</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>schule</RefTableName>
+      <RefKeyName>schule_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="363" parent="61" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="364" parent="61" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="365" parent="61" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="366" parent="61" name="css">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="367" parent="61" name="html">
+      <Position>5</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="368" parent="61" name="javascript">
+      <Position>6</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7797</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="369" parent="61" name="reportcss_pkey">
+      <ObjectId>45726</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="370" parent="61" name="reportcss_pkey">
+      <ObjectId>45727</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportcss_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="371" parent="62" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7798</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="372" parent="62" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7798</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="373" parent="62" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7798</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="374" parent="62" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7798</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="375" parent="62" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7798</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="376" parent="62" name="reportcss_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7798</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="377" parent="62" name="reportcssimage_pkey">
+      <ObjectId>45734</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="378" parent="62" name="reportcssimage_pkey">
+      <ObjectId>45735</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportcssimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="379" parent="62" name="fk9jjvhjjn5pyt87gke22ky8ls1">
+      <ObjectId>45796</ObjectId>
+      <ColNames>reportcss_id</ColNames>
+      <RefTableId>45720</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportcss</RefTableName>
+      <RefKeyName>reportcss_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="380" parent="63" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7799</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="381" parent="63" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7799</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="382" parent="63" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7799</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="383" parent="63" name="template">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7799</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="384" parent="63" name="reportfop_pkey">
+      <ObjectId>45742</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="385" parent="63" name="reportfop_pkey">
+      <ObjectId>45743</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportfop_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="386" parent="64" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7800</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="387" parent="64" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7800</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="388" parent="64" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7800</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="389" parent="64" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7800</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="390" parent="64" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7800</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="391" parent="64" name="reportfop_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7800</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="392" parent="64" name="reportfopimage_pkey">
+      <ObjectId>45750</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="393" parent="64" name="reportfopimage_pkey">
+      <ObjectId>45751</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportfopimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="394" parent="64" name="fkae1dg8yy6ivrc9inv8phpmfl6">
+      <ObjectId>45801</ObjectId>
+      <ColNames>reportfop_id</ColNames>
+      <RefTableId>45736</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportfop</RefTableName>
+      <RefKeyName>reportfop_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="395" parent="65" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7801</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="396" parent="65" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7801</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="397" parent="65" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7801</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="398" parent="65" name="filename">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7801</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="399" parent="65" name="templatecompiled">
+      <Position>5</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7801</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="400" parent="65" name="templatesource">
+      <Position>6</Position>
+      <DataType>bytea|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7801</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <index id="401" parent="65" name="reportjasper_pkey">
+      <ObjectId>45758</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="402" parent="65" name="reportjasper_pkey">
+      <ObjectId>45759</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportjasper_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="403" parent="66" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7802</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="404" parent="66" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7802</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="405" parent="66" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7802</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="406" parent="66" name="image">
+      <Position>4</Position>
+      <DataType>bytea|0s</DataType>
+      <StateNumber>7802</StateNumber>
+      <TypeId>17</TypeId>
+    </column>
+    <column id="407" parent="66" name="mimetype">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7802</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="408" parent="66" name="reportjasper_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7802</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="409" parent="66" name="reportjasperimage_pkey">
+      <ObjectId>45766</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="410" parent="66" name="reportjasperimage_pkey">
+      <ObjectId>45767</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reportjasperimage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="411" parent="66" name="fk861lh5knxh25q5u3s015ki4xn">
+      <ObjectId>45806</ObjectId>
+      <ColNames>reportjasper_id</ColNames>
+      <RefTableId>45752</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reportjasper</RefTableName>
+      <RefKeyName>reportjasper_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="412" parent="67" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7803</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="413" parent="67" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7803</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="414" parent="67" name="nachname">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7803</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="415" parent="67" name="vorname">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7803</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="416" parent="67" name="klasse_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>7803</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="417" parent="67" name="schueler_pkey">
+      <ObjectId>45774</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="418" parent="67" name="schueler_pkey">
+      <ObjectId>45775</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>schueler_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="419" parent="67" name="fklfvs4slwb3nd68j1i36ogvk0u">
+      <ObjectId>45811</ObjectId>
+      <ColNames>klasse_id</ColNames>
+      <RefTableId>45707</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>klasse</RefTableName>
+      <RefKeyName>klasse_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="420" parent="68" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7804</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="421" parent="68" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>7804</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="422" parent="68" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7804</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="423" parent="68" name="ort">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>7804</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="424" parent="68" name="schule_pkey">
+      <ObjectId>45782</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="425" parent="68" name="schule_pkey">
+      <ObjectId>45783</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>schule_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="426" parent="69" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8062</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="427" parent="69" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8062</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="428" parent="69" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>8062</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="429" parent="69" name="schueler_id">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>8062</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="430" parent="69" name="schulfach_pkey">
+      <ObjectId>46209</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="431" parent="69" name="schulfach_pkey">
+      <ObjectId>46210</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>schulfach_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="432" parent="69" name="fkf8vqce8yl9x4wtuepc1s9tdcw">
+      <ObjectId>46221</ObjectId>
+      <ColNames>schueler_id</ColNames>
+      <RefTableId>45768</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>schueler</RefTableName>
+      <RefKeyName>schueler_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="433" parent="70" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8063</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="434" parent="70" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8063</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="435" parent="70" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>8063</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="436" parent="70" name="localdatetime">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>8063</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="437" parent="70" name="note">
+      <Position>5</Position>
+      <DataType>real|0s</DataType>
+      <StateNumber>8063</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="438" parent="70" name="schulfach_id">
+      <Position>6</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>8063</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="439" parent="70" name="schulnote_pkey">
+      <ObjectId>46214</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="440" parent="70" name="schulnote_pkey">
+      <ObjectId>46215</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>schulnote_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="441" parent="70" name="fkbwqeoy42irvhu59vda8txk38v">
+      <ObjectId>46226</ObjectId>
+      <ColNames>schulfach_id</ColNames>
+      <RefTableId>46206</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>schulfach</RefTableName>
+      <RefKeyName>schulfach_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="442" parent="71" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8064</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="443" parent="71" name="version">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8064</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="444" parent="71" name="bezeichnung">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>8064</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="445" parent="71" name="schule_id">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>8064</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <index id="446" parent="71" name="schulraum_pkey">
+      <ObjectId>46219</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="447" parent="71" name="schulraum_pkey">
+      <ObjectId>46220</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>schulraum_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="448" parent="71" name="fkb9j8qpwrwakj3m5jeyfpbtrpe">
+      <ObjectId>46231</ObjectId>
+      <ColNames>schule_id</ColNames>
+      <RefTableId>45776</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>schule</RefTableName>
+      <RefKeyName>schule_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
