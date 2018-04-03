@@ -81,6 +81,13 @@ public class Menu extends CustomComponent {
             }
         });
 
+        menuBar.addItem("Stundenplan", VaadinIcons.ENTER, new MenuBar.Command() {
+            @Override
+            public void menuSelected(MenuBar.MenuItem selectedItem) {
+                getUI().getNavigator().navigateTo("StundenplanView");
+            }
+        });
+
         MenuBar.MenuItem reports = menuBar.addItem("Reports", VaadinIcons.OFFICE, null);
 
         reports.addItem("Report Jasper", VaadinIcons.ACCORDION_MENU, new MenuBar.Command() {

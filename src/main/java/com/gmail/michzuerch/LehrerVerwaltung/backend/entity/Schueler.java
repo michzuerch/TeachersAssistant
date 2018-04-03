@@ -18,7 +18,6 @@ public class Schueler extends AbstractEntity {
     @OneToMany(mappedBy = "schueler", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Schulfach> schulfaches = new ArrayList<>();
 
-
     public Schueler() {
     }
 

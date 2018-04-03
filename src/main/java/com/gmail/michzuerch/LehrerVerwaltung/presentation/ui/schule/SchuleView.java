@@ -16,7 +16,7 @@ import org.vaadin.teemusa.flexlayout.*;
 
 import javax.inject.Inject;
 
-@CDIView("SchuleView")
+@CDIView("SchulnoteView")
 public class SchuleView extends HorizontalLayout implements View {
     private static Logger logger = LoggerFactory.getLogger(SchuleView.class.getName());
 

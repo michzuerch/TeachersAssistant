@@ -16,6 +16,8 @@ public class Klasse extends AbstractEntity {
     @OneToMany(mappedBy = "klasse", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Schueler> schuelers = new ArrayList<>();
 
+    @OneToMany(mappedBy = "klasse", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Lektion> lektions = new ArrayList<>();
 
     public String getBezeichnung() {
         return bezeichnung;
@@ -39,5 +41,13 @@ public class Klasse extends AbstractEntity {
 
     public void setSchuelers(List<Schueler> schuelers) {
         this.schuelers = schuelers;
+    }
+
+    public List<Lektion> getLektions() {
+        return lektions;
+    }
+
+    public void setLektions(List<Lektion> lektions) {
+        this.lektions = lektions;
     }
 }

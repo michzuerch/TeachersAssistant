@@ -1,8 +1,8 @@
 package com.gmail.michzuerch.LehrerVerwaltung.backend.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Lehrer extends AbstractEntity {
@@ -14,6 +14,9 @@ public class Lehrer extends AbstractEntity {
 
     @ManyToOne
     private Schule schule;
+
+    @OneToMany(mappedBy = "lehrer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Lektion> lektions = new ArrayList<>();
 
     public Lehrer() {
     }
@@ -45,5 +48,13 @@ public class Lehrer extends AbstractEntity {
 
     public void setSchule(Schule schule) {
         this.schule = schule;
+    }
+
+    public List<Lektion> getLektions() {
+        return lektions;
+    }
+
+    public void setLektions(List<Lektion> lektions) {
+        this.lektions = lektions;
     }
 }

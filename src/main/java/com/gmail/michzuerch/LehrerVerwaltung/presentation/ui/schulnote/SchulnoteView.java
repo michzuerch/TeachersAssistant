@@ -1,7 +1,7 @@
-package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schulraum;
+package com.gmail.michzuerch.LehrerVerwaltung.presentation.ui.schulnote;
 
-import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schulraum;
-import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchulraumDeltaspikeFacade;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule;
+import com.gmail.michzuerch.LehrerVerwaltung.backend.session.deltaspike.jpa.facade.SchuleDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
@@ -16,19 +16,19 @@ import org.vaadin.teemusa.flexlayout.*;
 
 import javax.inject.Inject;
 
-@CDIView("SchulraumView")
-public class SchulraumView extends HorizontalLayout implements View {
-    private static Logger logger = LoggerFactory.getLogger(SchulraumView.class.getName());
+@CDIView("SchulnoteView")
+public class SchulnoteView extends HorizontalLayout implements View {
+    private static Logger logger = LoggerFactory.getLogger(SchulnoteView.class.getName());
 
     TextField filterTextBezeichnung = new TextField();
 
-    Grid<Schulraum> grid = new Grid<>();
+    Grid<Schule> grid = new Grid<>();
 
     @Inject
-    private SchulraumDeltaspikeFacade facade;
+    private SchuleDeltaspikeFacade facade;
 
     @Inject
-    private SchulraumForm form;
+    private SchulnoteForm form;
 
     private Component createContent() {
         FlexLayout layout = new FlexLayout();
@@ -52,8 +52,8 @@ public class SchulraumView extends HorizontalLayout implements View {
         Button addBtn = new Button(VaadinIcons.PLUS);
         addBtn.addClickListener(event -> {
             grid.asSingleSelect().clear();
-            Schulraum schulraum = new Schulraum();
-            form.setEntity(schulraum);
+            Schule schule = new Schule();
+            form.setEntity(schule);
             form.openInModalPopup();
             form.setSavedHandler(val -> {
                 facade.save(val);
@@ -67,31 +67,42 @@ public class SchulraumView extends HorizontalLayout implements View {
         tools.addComponents(filterTextBezeichnung, clearFilterTextBtn, addBtn);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
-        grid.addColumn(Schulraum::getId).setCaption("id");
-        grid.addColumn(Schulraum::getBezeichnung).setCaption("Bezeichnung");
-        grid.addColumn(schulraum -> schulraum.getSchule().getBezeichnung() + " " +
-                        schulraum.getSchule().getOrt() + "  id:" + schulraum.getSchule().getId(),
-                new ButtonRenderer(event -> {
-                    Schulraum schulraum = (Schulraum) event.getItem();
-                    UI.getCurrent().getNavigator().navigateTo("SchulnoteView/id/" + schulraum.getSchule().getId());
-                })
-        ).setCaption("Schule").setStyleGenerator(item -> "v-align-center");
+        grid.addColumn(Schule::getId).setCaption("id");
+        grid.addColumn(Schule::getBezeichnung).setCaption("Bezeichnung");
+        grid.addColumn(Schule::getOrt).setCaption("Ort");
+
+        grid.addColumn(schule -> schule.getKlasses().size(), new ButtonRenderer(event -> {
+            Schule schule = (Schule) event.getItem();
+            if (schule.getKlasses().size() > 0) {
+                UI.getCurrent().getNavigator().navigateTo("KlasseView/schuleId/" + schule.getId().toString());
+            }
+        })).setCaption("Anzahl Klassen").setStyleGenerator(item -> "v-align-center");
+        grid.setSizeFull();
+
+        grid.addColumn(schule -> schule.getLehrers().size(), new ButtonRenderer(event -> {
+            Schule schule = (Schule) event.getItem();
+            if (schule.getLehrers().size() > 0) {
+                UI.getCurrent().getNavigator().navigateTo("LehrerView/schuleId/" + schule.getId().toString());
+            }
+        })).setCaption("Anzahl Lehrer").setStyleGenerator(item -> "v-align-center");
+        grid.setSizeFull();
 
         // Render a button that deletes the data row (item)
         grid.addColumn(schule -> "löschen",
                 new ButtonRenderer(event -> {
-                    Notification.show("Lösche Schulraum id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
-                    facade.delete((Schulraum) event.getItem());
+                    Notification.show("Lösche Schule id:" + event.getItem(), Notification.Type.HUMANIZED_MESSAGE);
+                    facade.delete((Schule) event.getItem());
                     updateList();
                 })
         );
 
         grid.addColumn(schule -> "ändern",
                 new ButtonRenderer(event -> {
-                    form.setEntity((Schulraum) event.getItem());
+                    form.setEntity((Schule) event.getItem());
                     form.openInModalPopup();
                     form.setSavedHandler(val -> {
                         facade.save(val);
+                        System.err.println("Schule:" + val);
                         updateList();
                         grid.select(val);
                         form.closePopup();
@@ -102,8 +113,6 @@ public class SchulraumView extends HorizontalLayout implements View {
                         form.closePopup();
                     });
                 }));
-        grid.setSizeFull();
-
         layout.addComponents(tools, grid);
         layout.setSizeFull();
         return layout;
