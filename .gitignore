@@ -55,5 +55,4 @@ jboss/server/minimal/work/**/*
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
-/src/main/java/com/gmail/michzuerch/LehrerVerwaltung/backend/session/deltaspike/jpa/repository/SchulraumDeltaspikeRepository.java
+!/src/main/java/com/gmail/michzuerch/LehrerVerwaltung/backend/session/deltaspike/jpa/repository/SchulraumDeltaspikeRepository.java

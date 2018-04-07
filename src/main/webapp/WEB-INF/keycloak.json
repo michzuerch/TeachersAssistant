@@ -1,10 +1,8 @@
 {
   "realm": "LehrerVerwaltung",
   "auth-server-url": "http://localhost:8180/auth",
-  "ssl-required": "none",
+  "ssl-required": "external",
   "resource": "LehrerVerwaltung",
-  "credentials": {
-    "secret": "ea08f55b-4126-425b-bf88-b4a2de434e9b"
-  },
-  "use-resource-role-mappings": true
+  "public-client": true,
+  "confidential-port": 0
 }

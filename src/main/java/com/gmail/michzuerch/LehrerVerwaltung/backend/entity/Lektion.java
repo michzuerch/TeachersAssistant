@@ -4,12 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
 public class Lektion extends AbstractEntity {
     @Column
     @NotNull
+    @Size(min = 3, message = "Mindestlänge 3 Zeichen")
     private String bezeichnung;
 
     @Column

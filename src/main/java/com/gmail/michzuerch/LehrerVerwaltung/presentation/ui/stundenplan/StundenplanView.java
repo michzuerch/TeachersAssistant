@@ -25,6 +25,8 @@ public class StundenplanView extends HorizontalLayout implements View {
     ComboBox<Schulraum> filterSchulraum = new ComboBox<Schulraum>();
     StundenplanCalendar stundenplanCalendar = new StundenplanCalendar();
 
+    Button debugbutton = new Button("Debug");
+
     @Inject
     private LektionDeltaspikeFacade lektionDeltaspikeFacade;
 
@@ -43,7 +45,6 @@ public class StundenplanView extends HorizontalLayout implements View {
         layout.setJustifyContent(JustifyContent.SpaceBetween);
         layout.setAlignContent(AlignContent.Stretch);
         layout.setFlexWrap(FlexWrap.Wrap);
-
 
         filterTextBezeichnung.setPlaceholder("Filter für Titel");
         filterTextBezeichnung.addValueChangeListener(e -> updateList());
@@ -75,8 +76,12 @@ public class StundenplanView extends HorizontalLayout implements View {
             });
         });
 
+        debugbutton.addClickListener(event -> {
+            //lektionDeltaspikeFacade.find
+        });
+
         CssLayout tools = new CssLayout();
-        tools.addComponents(filterSchulraum, filterTextBezeichnung, clearFilterTextBtn, addBtn);
+        tools.addComponents(filterSchulraum, filterTextBezeichnung, clearFilterTextBtn, addBtn, debugbutton);
         tools.setWidth(50, Unit.PERCENTAGE);
         tools.setStyleName(ValoTheme.LAYOUT_COMPONENT_GROUP);
 
