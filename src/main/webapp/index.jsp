@@ -14,6 +14,6 @@
     %>
 </head>
 <body>
-<a href="/ui/">LehrerVerwaltung 0.1</a>
+<a href="/ui/">TeachersAssistant 0.1</a>
 </body>
 </html>

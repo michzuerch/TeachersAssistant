@@ -4,19 +4,19 @@
              xsi:schemaLocation="
         http://xmlns.jcp.org/xml/ns/persistence
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="LehrerVerwaltungPU" transaction-type="JTA">
-        <jta-data-source>java:jboss/datasources/LehrerVerwaltungDS</jta-data-source>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schule</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Lehrer</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Schueler</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.Klasse</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.jasper.ReportJasper</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.jasper.ReportJasper</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.jasper.ReportJasperImage</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.css.ReportCSS</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.css.ReportCSSImage</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.fop.ReportFOP</class>
-        <class>com.gmail.michzuerch.LehrerVerwaltung.backend.entity.report.fop.ReportFOPImage</class>
+    <persistence-unit name="TeachersAssistantPU" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasources/TeachersAssistantDS</jta-data-source>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.School</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.Lehrer</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.Student</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.SchoolClass</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.jasper.ReportJasper</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.jasper.ReportJasper</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.jasper.ReportJasperImage</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSS</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSSImage</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.fop.ReportFOP</class>
+        <class>com.gmail.michzuerch.TeachersAssistant.backend.entity.report.fop.ReportFOPImage</class>
         <properties>
             <property name="hibernate.connection.autocommit" value="false"/>
             <property name="hibernate.cache.use_second_level_cache" value="true"/>
@@ -24,7 +24,7 @@
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.transaction.flush_before_completion" value="true"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95DialectDialect"/>
             <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
             <property name="hibernate.jdbc.use_streams_for_binary" value="false"/>
             <property name="hibernate.flushMode" value="COMMIT"/>

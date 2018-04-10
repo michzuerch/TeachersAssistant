@@ -7734,7 +7734,7 @@
                         <p/>
                         If percentage calculation is required, the value class should be one of the built-in supported
                         percentage types or the percentage calculator class should be specified.
-                        The classes with built-in support are <code>java.lang.Float</code>, <code>
+                        The schoolClasses with built-in support are <code>java.lang.Float</code>, <code>
                             java.lang.Double</code>, <code>java.lang.Byte</code>, <code>java.lang.Short</code>, <code>
                             java.lang.Integer</code>, <code>java.lang.Long</code>, <code>java.math.BigDecimal</code> and <code>
                             java.math.BigInteger</code>.

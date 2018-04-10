@@ -1,4 +1,4 @@
-LehrerVerwaltung
+TeachersAssistant
 ==============
 
 Kopie eines bekannten kommerziellen Produkts.
@@ -22,7 +22,7 @@ Technologien
 Installation
 -------------------------
 
-Source ist auf github: https://github.com/michzuerch/LehrerVerwaltung.git
+Source ist auf github: https://github.com/michzuerch/TeachersAssistant.git
 
 Das Buildsystem ist Maven. Zum Installieren mvn "wildfly:deploy" eingeben.
 

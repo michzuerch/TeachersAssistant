@@ -2,9 +2,9 @@ connect 127.0.0.1
  
 batch
 
-/subsystem=security/security-domain=LehrerVerwaltung:add(cache-type=default)
+/subsystem=security/security-domain=TeachersAssistant:add(cache-type=default)
 
-/subsystem=security/security-domain=LehrerVerwaltung/authentication=classic:add(login-modules=[{"code"=>"UsersRoles","flag"=>"required", "module-options"=>[("usersProperties"=>"${jboss.server.config.dir}/usersLehrerVerwaltung.properties"),("rolesProperties"=>"${jboss.server.config.dir}/rolesLehrerVerwaltung.properties")] }]   )
+/subsystem=security/security-domain=TeachersAssistant/authentication=classic:add(login-modules=[{"code"=>"UsersRoles","flag"=>"required", "module-options"=>[("usersProperties"=>"${jboss.server.config.dir}/usersTeachersAssistant.properties"),("rolesProperties"=>"${jboss.server.config.dir}/rolesTeachersAssistant.properties")] }]   )
 
 run-batch
 :reload
