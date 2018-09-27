@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: de.kaesdingeling:hybridmenu:3.0.15.vaadin10">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/kaesdingeling/hybridmenu/3.0.15.vaadin10/hybridmenu-3.0.15.vaadin10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/de/kaesdingeling/hybridmenu/3.0.15.vaadin10/hybridmenu-3.0.15.vaadin10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/kaesdingeling/hybridmenu/3.0.15.vaadin10/hybridmenu-3.0.15.vaadin10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

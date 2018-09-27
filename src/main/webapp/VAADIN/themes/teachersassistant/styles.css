@@ -1077,7 +1077,7 @@
  */
 
 .v-vaadin-version:after {
-    content: "8.4-SNAPSHOT";
+	content: "8.4-SNAPSHOT";
 }
 
 .v-widget {
@@ -1982,11 +1982,11 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px 4px 0 0;
 }
 
-.teachersassistant .v-calendar .v-daterange + .v-daterange {
+.teachersassistant .v-calendar .v-daterange  + .v-daterange {
 	border-color: transparent;
 }
 
-.teachersassistant .v-calendar .v-daterange + .v-daterange:before {
+.teachersassistant .v-calendar .v-daterange  + .v-daterange:before {
 	border-radius: 0;
 }
 
@@ -2647,25 +2647,25 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #c5c5c5;
 }
 
-.teachersassistant .v-verticallayout-well > div > [class*="-caption"], .teachersassistant .v-horizontallayout-well > div > [class*="-caption"] {
+.teachersassistant .v-verticallayout-well  > div > [class*="-caption"], .teachersassistant .v-horizontallayout-well  > div > [class*="-caption"] {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
-.teachersassistant .v-verticallayout-well > .v-margin-top, .teachersassistant .v-horizontallayout-well > .v-margin-top {
+.teachersassistant .v-verticallayout-well  > .v-margin-top, .teachersassistant .v-horizontallayout-well  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-verticallayout-well > .v-margin-right, .teachersassistant .v-horizontallayout-well > .v-margin-right {
+.teachersassistant .v-verticallayout-well  > .v-margin-right, .teachersassistant .v-horizontallayout-well  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-verticallayout-well > .v-margin-bottom, .teachersassistant .v-horizontallayout-well > .v-margin-bottom {
+.teachersassistant .v-verticallayout-well  > .v-margin-bottom, .teachersassistant .v-horizontallayout-well  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-verticallayout-well > .v-margin-left, .teachersassistant .v-horizontallayout-well > .v-margin-left {
+.teachersassistant .v-verticallayout-well  > .v-margin-left, .teachersassistant .v-horizontallayout-well  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -2678,19 +2678,19 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
-.teachersassistant .v-verticallayout-card > .v-margin-top, .teachersassistant .v-horizontallayout-card > .v-margin-top {
+.teachersassistant .v-verticallayout-card  > .v-margin-top, .teachersassistant .v-horizontallayout-card  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-verticallayout-card > .v-margin-right, .teachersassistant .v-horizontallayout-card > .v-margin-right {
+.teachersassistant .v-verticallayout-card  > .v-margin-right, .teachersassistant .v-horizontallayout-card  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-verticallayout-card > .v-margin-bottom, .teachersassistant .v-horizontallayout-card > .v-margin-bottom {
+.teachersassistant .v-verticallayout-card  > .v-margin-bottom, .teachersassistant .v-horizontallayout-card  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-verticallayout-card > .v-margin-left, .teachersassistant .v-horizontallayout-card > .v-margin-left {
+.teachersassistant .v-verticallayout-card  > .v-margin-left, .teachersassistant .v-horizontallayout-card  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -3112,7 +3112,7 @@ div.v-layout.v-horizontal.v-widget {
 	margin-left: 13px;
 }
 
-.teachersassistant .v-button-icon-align-right .v-icon + span:not(:empty) {
+.teachersassistant .v-button-icon-align-right .v-icon  + span:not(:empty) {
 	margin-left: 0;
 }
 
@@ -3132,7 +3132,7 @@ div.v-layout.v-horizontal.v-widget {
 	margin-right: auto;
 }
 
-.teachersassistant .v-button-icon-align-top .v-icon + span:not(:empty) {
+.teachersassistant .v-button-icon-align-top .v-icon  + span:not(:empty) {
 	margin-top: 7px;
 	margin-left: 0;
 }
@@ -3258,13 +3258,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-checkbox.v-disabled > label, .teachersassistant .v-checkbox.v-disabled > .v-icon {
+.teachersassistant .v-checkbox.v-disabled  > label, .teachersassistant .v-checkbox.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-checkbox.v-disabled > label > .v-icon {
+.teachersassistant .v-checkbox.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3272,11 +3272,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-checkbox.v-readonly > label, .teachersassistant .v-checkbox.v-readonly > .v-icon {
+.teachersassistant .v-checkbox.v-readonly  > label, .teachersassistant .v-checkbox.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-checkbox.v-readonly > label > .v-icon {
+.teachersassistant .v-checkbox.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3386,13 +3386,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-checkbox-small.v-disabled > label, .teachersassistant .v-checkbox-small.v-disabled > .v-icon {
+.teachersassistant .v-checkbox-small.v-disabled  > label, .teachersassistant .v-checkbox-small.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-checkbox-small.v-disabled > label > .v-icon {
+.teachersassistant .v-checkbox-small.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3400,11 +3400,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-checkbox-small.v-readonly > label, .teachersassistant .v-checkbox-small.v-readonly > .v-icon {
+.teachersassistant .v-checkbox-small.v-readonly  > label, .teachersassistant .v-checkbox-small.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-checkbox-small.v-readonly > label > .v-icon {
+.teachersassistant .v-checkbox-small.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3514,13 +3514,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-checkbox-large.v-disabled > label, .teachersassistant .v-checkbox-large.v-disabled > .v-icon {
+.teachersassistant .v-checkbox-large.v-disabled  > label, .teachersassistant .v-checkbox-large.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-checkbox-large.v-disabled > label > .v-icon {
+.teachersassistant .v-checkbox-large.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3528,11 +3528,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-checkbox-large.v-readonly > label, .teachersassistant .v-checkbox-large.v-readonly > .v-icon {
+.teachersassistant .v-checkbox-large.v-readonly  > label, .teachersassistant .v-checkbox-large.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-checkbox-large.v-readonly > label > .v-icon {
+.teachersassistant .v-checkbox-large.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -3877,7 +3877,7 @@ div.v-layout.v-horizontal.v-widget {
 	animation: valo-animate-in-slide-down 200ms 80ms backwards;
 }
 
-.teachersassistant .v-filterselect-suggestpopup [class$="status"] > * {
+.teachersassistant .v-filterselect-suggestpopup [class$="status"]  > * {
 	color: #3b3b3b;
 	text-decoration: none;
 }
@@ -4550,25 +4550,25 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #c5c5c5;
 }
 
-.teachersassistant .v-csslayout-well > div > [class*="-caption"] {
+.teachersassistant .v-csslayout-well  > div > [class*="-caption"] {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
-.teachersassistant .v-csslayout-well > .v-margin-top {
+.teachersassistant .v-csslayout-well  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-csslayout-well > .v-margin-right {
+.teachersassistant .v-csslayout-well  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-csslayout-well > .v-margin-bottom {
+.teachersassistant .v-csslayout-well  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-csslayout-well > .v-margin-left {
+.teachersassistant .v-csslayout-well  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -4581,19 +4581,19 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
-.teachersassistant .v-csslayout-card > .v-margin-top {
+.teachersassistant .v-csslayout-card  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-csslayout-card > .v-margin-right {
+.teachersassistant .v-csslayout-card  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-csslayout-card > .v-margin-bottom {
+.teachersassistant .v-csslayout-card  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-csslayout-card > .v-margin-left {
+.teachersassistant .v-csslayout-card  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -4692,7 +4692,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-left: 37px;
 }
 
-.teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h2, .teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	left: 37px;
 }
 
@@ -4700,7 +4700,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-right: 37px;
 }
 
-.teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h2, .teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	right: 37px;
 }
 
@@ -4734,7 +4734,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-weight: 400;
 }
 
-.teachersassistant .v-formlayout-contentcell > .v-label-h2, .teachersassistant .v-formlayout-contentcell > .v-label-h3, .teachersassistant .v-formlayout-contentcell > .v-label-h4 {
+.teachersassistant .v-formlayout-contentcell  > .v-label-h2, .teachersassistant .v-formlayout-contentcell  > .v-label-h3, .teachersassistant .v-formlayout-contentcell  > .v-label-h4 {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -4744,36 +4744,36 @@ div.v-layout.v-horizontal.v-widget {
 	border-bottom: 1px solid #dfdfdf;
 }
 
-.teachersassistant .v-formlayout.light > table {
+.teachersassistant .v-formlayout.light  > table {
 	padding: 0;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > tr > td {
+.teachersassistant .v-formlayout.light  > table > tbody > tr > td {
 	padding-top: 0;
 	height: 37px;
 	border-bottom: 1px solid #eaeaea;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="lastrow"] > td {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="lastrow"] > td {
 	border-bottom: none;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > tr > [class*="captioncell"] {
+.teachersassistant .v-formlayout.light  > table > tbody > tr > [class*="captioncell"] {
 	color: #7d7d7d;
 	text-align: right;
 	padding-left: 13px;
 	line-height: 37px;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"] {
 	padding-right: 0;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect-input, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield-textfield {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect-input, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield-textfield {
 	width: 100%;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect input, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield input, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-richtextarea {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect input, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield input, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
@@ -4802,12 +4802,12 @@ div.v-layout.v-horizontal.v-widget {
 	color: inherit;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield.v-disabled, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea.v-disabled, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect input.v-disabled, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield input.v-disabled, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-richtextarea.v-disabled {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield.v-disabled, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea.v-disabled, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect input.v-disabled, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield input.v-disabled, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea.v-disabled {
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect input:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield input:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-richtextarea:focus {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect input:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield input:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea:focus {
 	outline: none;
 	-webkit-transition: none;
 	-moz-transition: none;
@@ -4819,25 +4819,25 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect input:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield input:focus, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-richtextarea:focus {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect input:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield input:focus, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea:focus {
 	box-shadow: none;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textfield-prompt, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea-prompt, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-filterselect-prompt input, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-datefield-prompt input {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield-prompt, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea-prompt, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect-prompt input, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield-prompt input {
 	color: #a3a3a3;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-textarea, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-richtextarea {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea {
 	height: auto;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h2, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	border-bottom: none;
 	left: 0;
 	right: 0;
 }
 
-.teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant .v-formlayout.light > table > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	margin-top: 0;
 }
 
@@ -4948,7 +4948,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-grid-row > td, .teachersassistant .v-grid-row > th {
+.teachersassistant .v-grid-row  > td, .teachersassistant .v-grid-row  > th {
 	background-color: white;
 }
 
@@ -4977,7 +4977,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: white;
 }
 
-.teachersassistant .v-grid-spacer > td {
+.teachersassistant .v-grid-spacer  > td {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -5014,7 +5014,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 }
 
-.teachersassistant .v-grid .header-drag-table .v-grid-header > .v-grid-cell {
+.teachersassistant .v-grid .header-drag-table .v-grid-header  > .v-grid-cell {
 	border: 1px solid #d4d4d4;
 	margin-top: -10px;
 	opacity: 0.9;
@@ -5022,7 +5022,7 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 30000;
 }
 
-.teachersassistant .v-grid .header-drag-table .v-grid-header > .v-grid-drop-marker {
+.teachersassistant .v-grid .header-drag-table .v-grid-header  > .v-grid-drop-marker {
 	background-color: #197de1;
 	position: absolute;
 	width: 3px;
@@ -5106,12 +5106,12 @@ div.v-layout.v-horizontal.v-widget {
 	text-overflow: ellipsis;
 }
 
-.teachersassistant .v-grid-cell > * {
+.teachersassistant .v-grid-cell  > * {
 	line-height: 1.55;
 	vertical-align: middle;
 }
 
-.teachersassistant .v-grid-cell > div {
+.teachersassistant .v-grid-cell  > div {
 	display: inline-block;
 }
 
@@ -5121,7 +5121,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-right: 1px solid #d4d4d4;
 }
 
-.teachersassistant .v-grid-cell.frozen + th, .teachersassistant .v-grid-cell.frozen + td {
+.teachersassistant .v-grid-cell.frozen  + th, .teachersassistant .v-grid-cell.frozen  + td {
 	border-left: none;
 }
 
@@ -5313,51 +5313,51 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 2;
 }
 
-.teachersassistant .v-grid-editor-cells > div {
+.teachersassistant .v-grid-editor-cells  > div {
 	display: inline-block;
 	box-sizing: border-box;
 	vertical-align: middle;
 	background: white;
 }
 
-.teachersassistant .v-grid-editor-cells > div:first-child {
+.teachersassistant .v-grid-editor-cells  > div:first-child {
 	border-left: none;
 }
 
-.teachersassistant .v-grid-editor-cells > div > * {
+.teachersassistant .v-grid-editor-cells  > div  > * {
 	vertical-align: middle;
 	display: inline-block;
 }
 
-.teachersassistant .v-grid-editor-cells > div .v-filterselect {
+.teachersassistant .v-grid-editor-cells  > div .v-filterselect {
 	padding-left: 0;
 }
 
-.teachersassistant .v-grid-editor-cells > div input[type="text"], .teachersassistant .v-grid-editor-cells > div input[type="text"].v-filterselect-input, .teachersassistant .v-grid-editor-cells > div input[type="password"] {
+.teachersassistant .v-grid-editor-cells  > div input[type="text"], .teachersassistant .v-grid-editor-cells  > div input[type="text"].v-filterselect-input, .teachersassistant .v-grid-editor-cells  > div input[type="password"] {
 	padding-left: 18px;
 }
 
-.teachersassistant .v-grid-editor-cells > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-grid-editor-cells > div input[type="password"] {
+.teachersassistant .v-grid-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-grid-editor-cells  > div input[type="password"] {
 	padding-right: 9px;
 }
 
-.teachersassistant .v-grid-editor-cells > div input[type="checkbox"] {
+.teachersassistant .v-grid-editor-cells  > div input[type="checkbox"] {
 	margin-left: 18px;
 }
 
-.teachersassistant .v-grid-editor-cells > div .v-textfield, .teachersassistant .v-grid-editor-cells > div .v-datefield, .teachersassistant .v-grid-editor-cells > div .v-filterselect {
+.teachersassistant .v-grid-editor-cells  > div .v-textfield, .teachersassistant .v-grid-editor-cells  > div .v-datefield, .teachersassistant .v-grid-editor-cells  > div .v-filterselect {
 	min-width: 100%;
 	max-width: 100%;
 	min-height: 100%;
 	max-height: 100%;
 }
 
-.teachersassistant .v-grid-editor-cells > div .v-select, .teachersassistant .v-grid-editor-cells > div .v-select-select {
+.teachersassistant .v-grid-editor-cells  > div .v-select, .teachersassistant .v-grid-editor-cells  > div .v-select-select {
 	min-width: 100%;
 	max-width: 100%;
 }
 
-.teachersassistant .v-grid-editor-cells > div.not-editable.v-grid-cell {
+.teachersassistant .v-grid-editor-cells  > div.not-editable.v-grid-cell {
 	float: none;
 }
 
@@ -5384,7 +5384,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0 5px;
 }
 
-.teachersassistant .v-grid-editor-footer + .v-grid-editor-cells > div {
+.teachersassistant .v-grid-editor-footer  + .v-grid-editor-cells > div {
 	border-bottom: none;
 	border-top: 1px solid #d4d4d4;
 }
@@ -5407,7 +5407,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 }
 
-.teachersassistant .v-grid-editor-message > div {
+.teachersassistant .v-grid-editor-message  > div {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
@@ -5510,7 +5510,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
 }
 
-.teachersassistant .v-grid-row-selected > .v-grid-cell {
+.teachersassistant .v-grid-row-selected  > .v-grid-cell {
 	background-color: #197de1;
 	background-image: -webkit-linear-gradient(top, #1b87e3 2%, #166ed5 98%);
 	background-image: linear-gradient(to bottom,#1b87e3 2%, #166ed5 98%);
@@ -5519,7 +5519,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: #1d69b4;
 }
 
-.teachersassistant .v-grid-row-selected > .v-grid-cell-focused:before {
+.teachersassistant .v-grid-row-selected  > .v-grid-cell-focused:before {
 	border-color: #71b0ef;
 }
 
@@ -5593,11 +5593,11 @@ div.v-layout.v-horizontal.v-widget {
 	margin: 0 9px 0 18px;
 }
 
-.teachersassistant .v-grid-editor-cells > div .v-checkbox > input[type="checkbox"] {
+.teachersassistant .v-grid-editor-cells > div .v-checkbox  > input[type="checkbox"] {
 	margin-left: 0;
 }
 
-.teachersassistant .v-grid-editor-cells > div .v-checkbox > label {
+.teachersassistant .v-grid-editor-cells > div .v-checkbox  > label {
 	white-space: nowrap;
 }
 
@@ -6003,7 +6003,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 11px;
 }
 
-.teachersassistant .v-textfield-inline-icon {
+.teachersassistant .v-textfield-inline-icon  {
 	padding-left: 37px;
 }
 
@@ -6042,7 +6042,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 6px;
 }
 
-.teachersassistant .v-textfield-inline-icon.v-textfield-tiny {
+.teachersassistant .v-textfield-inline-icon.v-textfield-tiny  {
 	padding-left: 28px;
 }
 
@@ -6081,7 +6081,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 8px;
 }
 
-.teachersassistant .v-textfield-inline-icon.v-textfield-compact {
+.teachersassistant .v-textfield-inline-icon.v-textfield-compact  {
 	padding-left: 31px;
 }
 
@@ -6120,7 +6120,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 8px;
 }
 
-.teachersassistant .v-textfield-inline-icon.v-textfield-small {
+.teachersassistant .v-textfield-inline-icon.v-textfield-small  {
 	padding-left: 31px;
 }
 
@@ -6159,7 +6159,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 14px;
 }
 
-.teachersassistant .v-textfield-inline-icon.v-textfield-large {
+.teachersassistant .v-textfield-inline-icon.v-textfield-large  {
 	padding-left: 44px;
 }
 
@@ -6198,7 +6198,7 @@ div.v-layout.v-horizontal.v-widget {
 	bottom: 22px;
 }
 
-.teachersassistant .v-textfield-inline-icon.v-textfield-huge {
+.teachersassistant .v-textfield-inline-icon.v-textfield-huge  {
 	padding-left: 59px;
 }
 
@@ -7821,11 +7821,11 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-menubar > .v-menubar-menuitem {
+.teachersassistant .v-menubar  > .v-menubar-menuitem {
 	padding: 0 14px;
 }
 
-.teachersassistant .v-menubar > .v-menubar-menuitem[class*="-icon-only"] {
+.teachersassistant .v-menubar  > .v-menubar-menuitem[class*="-icon-only"] {
 	width: 37px;
 }
 
@@ -7966,7 +7966,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: none;
 }
 
-.teachersassistant .v-menubar .v-menubar-submenu-indicator + .v-menubar-menuitem-caption:after {
+.teachersassistant .v-menubar .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:after {
 	font-family: ThemeIcons;
 	content: "\f078";
 	font-size: 0.7em;
@@ -7975,7 +7975,7 @@ div.v-layout.v-horizontal.v-widget {
 	opacity: 0.5;
 }
 
-.teachersassistant .v-menubar .v-menubar-submenu-indicator + .v-menubar-menuitem-caption:empty:after {
+.teachersassistant .v-menubar .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:empty:after {
 	margin-left: -0.2em;
 }
 
@@ -8048,7 +8048,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: none;
 }
 
-.teachersassistant .v-menubar-popup .v-menubar-submenu-indicator + .v-menubar-menuitem-caption:after {
+.teachersassistant .v-menubar-popup .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:after {
 	position: absolute;
 	right: 10px;
 	font-family: ThemeIcons;
@@ -8109,11 +8109,11 @@ div.v-layout.v-horizontal.v-widget {
 	left: -1px;
 }
 
-.teachersassistant .v-menubar-small > .v-menubar-menuitem {
+.teachersassistant .v-menubar-small  > .v-menubar-menuitem {
 	padding: 0 12px;
 }
 
-.teachersassistant .v-menubar-small > .v-menubar-menuitem[class*="-icon-only"] {
+.teachersassistant .v-menubar-small  > .v-menubar-menuitem[class*="-icon-only"] {
 	width: 31px;
 }
 
@@ -8280,13 +8280,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-radiobutton.v-disabled > label, .teachersassistant .v-radiobutton.v-disabled > .v-icon {
+.teachersassistant .v-radiobutton.v-disabled  > label, .teachersassistant .v-radiobutton.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-radiobutton.v-disabled > label > .v-icon {
+.teachersassistant .v-radiobutton.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8294,11 +8294,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-radiobutton.v-readonly > label, .teachersassistant .v-radiobutton.v-readonly > .v-icon {
+.teachersassistant .v-radiobutton.v-readonly  > label, .teachersassistant .v-radiobutton.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-radiobutton.v-readonly > label > .v-icon {
+.teachersassistant .v-radiobutton.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8441,13 +8441,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled > label, .teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled  > label, .teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled > label > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-checkbox.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8455,11 +8455,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly > label, .teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly  > label, .teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly > label > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-checkbox.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8568,13 +8568,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled > label, .teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled  > label, .teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled > label > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8582,11 +8582,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly > label, .teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly  > label, .teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly > label > .v-icon {
+.teachersassistant .v-select-optiongroup-small .v-radiobutton.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8729,13 +8729,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled > label, .teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled  > label, .teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled > label > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-checkbox.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8743,11 +8743,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly > label, .teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly  > label, .teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly > label > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-checkbox.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8856,13 +8856,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled > label, .teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled  > label, .teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled  > .v-icon {
 	cursor: default;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled > label > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-disabled  > label > .v-icon {
 	cursor: default;
 }
 
@@ -8870,11 +8870,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly > label, .teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly  > label, .teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly  > .v-icon {
 	cursor: default;
 }
 
-.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly > label > .v-icon {
+.teachersassistant .v-select-optiongroup-large .v-radiobutton.v-readonly  > label > .v-icon {
 	cursor: default;
 }
 
@@ -9097,11 +9097,11 @@ div.v-layout.v-horizontal.v-widget {
 	color: #7e7e7e;
 }
 
-.teachersassistant .v-window-restorebox-disabled ~ .v-window-closebox ~ .v-window-header, .teachersassistant .v-window-maximizebox-disabled ~ .v-window-closebox ~ .v-window-header {
+.teachersassistant .v-window-restorebox-disabled  ~ .v-window-closebox ~ .v-window-header, .teachersassistant .v-window-maximizebox-disabled  ~ .v-window-closebox ~ .v-window-header {
 	margin-right: 37px;
 }
 
-.teachersassistant .v-window-restorebox-disabled ~ .v-window-closebox-disabled ~ .v-window-header, .teachersassistant .v-window-maximizebox-disabled ~ .v-window-closebox-disabled ~ .v-window-header {
+.teachersassistant .v-window-restorebox-disabled  ~ .v-window-closebox-disabled ~ .v-window-header, .teachersassistant .v-window-maximizebox-disabled  ~ .v-window-closebox-disabled ~ .v-window-header {
 	margin-right: 12px;
 }
 
@@ -9177,7 +9177,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0 0 0 4px;
 }
 
-.teachersassistant .v-window-maximizebox + .v-window-closebox, .teachersassistant .v-window-restorebox + .v-window-closebox {
+.teachersassistant .v-window-maximizebox  + .v-window-closebox, .teachersassistant .v-window-restorebox  + .v-window-closebox {
 	border-bottom-left-radius: 0;
 }
 
@@ -9185,13 +9185,13 @@ div.v-layout.v-horizontal.v-widget {
 	display: none;
 }
 
-.teachersassistant .v-window-closebox-disabled + .v-window-closebox, .teachersassistant .v-window-resizebox-disabled + .v-window-closebox, .teachersassistant .v-window-restorebox-disabled + .v-window-closebox, .teachersassistant .v-window-maximizebox-disabled + .v-window-closebox {
+.teachersassistant .v-window-closebox-disabled  + .v-window-closebox, .teachersassistant .v-window-resizebox-disabled  + .v-window-closebox, .teachersassistant .v-window-restorebox-disabled  + .v-window-closebox, .teachersassistant .v-window-maximizebox-disabled  + .v-window-closebox {
 	width: 37px;
 	padding-right: 0;
 	border-bottom-left-radius: 4px;
 }
 
-.teachersassistant .v-window-closebox-disabled + .v-window-closebox:focus::after, .teachersassistant .v-window-resizebox-disabled + .v-window-closebox:focus::after, .teachersassistant .v-window-restorebox-disabled + .v-window-closebox:focus::after, .teachersassistant .v-window-maximizebox-disabled + .v-window-closebox:focus::after {
+.teachersassistant .v-window-closebox-disabled  + .v-window-closebox:focus::after, .teachersassistant .v-window-resizebox-disabled  + .v-window-closebox:focus::after, .teachersassistant .v-window-restorebox-disabled  + .v-window-closebox:focus::after, .teachersassistant .v-window-maximizebox-disabled  + .v-window-closebox:focus::after {
 	left: 6px;
 }
 
@@ -9213,55 +9213,55 @@ div.v-layout.v-horizontal.v-widget {
 	margin-top: 0 !important;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable {
+.teachersassistant .v-window-contents  > .v-scrollable {
 	position: relative;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-margin-top {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-margin-right {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-margin-bottom {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-margin-left {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-margin-left {
 	padding-left: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-top"] > tbody > [class*="firstrow"] > td {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-top"] > tbody > [class*="firstrow"] > td {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-bottom"] > tbody > [class*="lastrow"] > td {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-bottom"] > tbody > [class*="lastrow"] > td {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="captioncell"] {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="captioncell"] {
 	padding-left: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h2, .teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	left: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h2, .teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h3, .teachersassistant .v-window-contents > .v-scrollable > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] > .v-label-h4 {
+.teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .teachersassistant .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4 {
 	right: 12px;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable:focus {
+.teachersassistant .v-window-contents  > .v-scrollable:focus {
 	outline: none;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable:before {
+.teachersassistant .v-window-contents  > .v-scrollable:before {
 	content: "";
 	position: absolute;
 	z-index: 2;
@@ -9272,11 +9272,11 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable .v-panel-captionwrap:after {
+.teachersassistant .v-window-contents  > .v-scrollable .v-panel-captionwrap:after {
 	border-color: #dfdfdf;
 }
 
-.teachersassistant .v-window-contents > .v-scrollable .v-panel-content:before {
+.teachersassistant .v-window-contents  > .v-scrollable .v-panel-content:before {
 	border-color: white;
 }
 
@@ -9294,13 +9294,13 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: nwse-resize;
 }
 
-.teachersassistant .v-window-modalitycurtain:active ~ .v-window {
+.teachersassistant .v-window-modalitycurtain:active  ~ .v-window {
 	-webkit-animation: none;
 	-moz-animation: none;
 	animation: none;
 }
 
-.teachersassistant .v-window-top-toolbar > .v-widget, .teachersassistant .v-window-bottom-toolbar > .v-widget {
+.teachersassistant .v-window-top-toolbar  > .v-widget, .teachersassistant .v-window-bottom-toolbar  > .v-widget {
 	vertical-align: top;
 }
 
@@ -9594,7 +9594,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-tree8-row > td, .teachersassistant .v-tree8-row > th {
+.teachersassistant .v-tree8-row  > td, .teachersassistant .v-tree8-row  > th {
 	background-color: white;
 }
 
@@ -9623,7 +9623,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: white;
 }
 
-.teachersassistant .v-tree8-spacer > td {
+.teachersassistant .v-tree8-spacer  > td {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -9660,7 +9660,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 }
 
-.teachersassistant .v-tree8 .header-drag-table .v-tree8-header > .v-tree8-cell {
+.teachersassistant .v-tree8 .header-drag-table .v-tree8-header  > .v-tree8-cell {
 	border: 1px solid #d4d4d4;
 	margin-top: -10px;
 	opacity: 0.9;
@@ -9668,7 +9668,7 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 30000;
 }
 
-.teachersassistant .v-tree8 .header-drag-table .v-tree8-header > .v-tree8-drop-marker {
+.teachersassistant .v-tree8 .header-drag-table .v-tree8-header  > .v-tree8-drop-marker {
 	background-color: #197de1;
 	position: absolute;
 	width: 3px;
@@ -9752,12 +9752,12 @@ div.v-layout.v-horizontal.v-widget {
 	text-overflow: ellipsis;
 }
 
-.teachersassistant .v-tree8-cell > * {
+.teachersassistant .v-tree8-cell  > * {
 	line-height: 1.55;
 	vertical-align: middle;
 }
 
-.teachersassistant .v-tree8-cell > div {
+.teachersassistant .v-tree8-cell  > div {
 	display: inline-block;
 }
 
@@ -9767,7 +9767,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-right: 1px solid #d4d4d4;
 }
 
-.teachersassistant .v-tree8-cell.frozen + th, .teachersassistant .v-tree8-cell.frozen + td {
+.teachersassistant .v-tree8-cell.frozen  + th, .teachersassistant .v-tree8-cell.frozen  + td {
 	border-left: none;
 }
 
@@ -9959,51 +9959,51 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 2;
 }
 
-.teachersassistant .v-tree8-editor-cells > div {
+.teachersassistant .v-tree8-editor-cells  > div {
 	display: inline-block;
 	box-sizing: border-box;
 	vertical-align: middle;
 	background: white;
 }
 
-.teachersassistant .v-tree8-editor-cells > div:first-child {
+.teachersassistant .v-tree8-editor-cells  > div:first-child {
 	border-left: none;
 }
 
-.teachersassistant .v-tree8-editor-cells > div > * {
+.teachersassistant .v-tree8-editor-cells  > div  > * {
 	vertical-align: middle;
 	display: inline-block;
 }
 
-.teachersassistant .v-tree8-editor-cells > div .v-filterselect {
+.teachersassistant .v-tree8-editor-cells  > div .v-filterselect {
 	padding-left: 0;
 }
 
-.teachersassistant .v-tree8-editor-cells > div input[type="text"], .teachersassistant .v-tree8-editor-cells > div input[type="text"].v-filterselect-input, .teachersassistant .v-tree8-editor-cells > div input[type="password"] {
+.teachersassistant .v-tree8-editor-cells  > div input[type="text"], .teachersassistant .v-tree8-editor-cells  > div input[type="text"].v-filterselect-input, .teachersassistant .v-tree8-editor-cells  > div input[type="password"] {
 	padding-left: 18px;
 }
 
-.teachersassistant .v-tree8-editor-cells > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-tree8-editor-cells > div input[type="password"] {
+.teachersassistant .v-tree8-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-tree8-editor-cells  > div input[type="password"] {
 	padding-right: 9px;
 }
 
-.teachersassistant .v-tree8-editor-cells > div input[type="checkbox"] {
+.teachersassistant .v-tree8-editor-cells  > div input[type="checkbox"] {
 	margin-left: 18px;
 }
 
-.teachersassistant .v-tree8-editor-cells > div .v-textfield, .teachersassistant .v-tree8-editor-cells > div .v-datefield, .teachersassistant .v-tree8-editor-cells > div .v-filterselect {
+.teachersassistant .v-tree8-editor-cells  > div .v-textfield, .teachersassistant .v-tree8-editor-cells  > div .v-datefield, .teachersassistant .v-tree8-editor-cells  > div .v-filterselect {
 	min-width: 100%;
 	max-width: 100%;
 	min-height: 100%;
 	max-height: 100%;
 }
 
-.teachersassistant .v-tree8-editor-cells > div .v-select, .teachersassistant .v-tree8-editor-cells > div .v-select-select {
+.teachersassistant .v-tree8-editor-cells  > div .v-select, .teachersassistant .v-tree8-editor-cells  > div .v-select-select {
 	min-width: 100%;
 	max-width: 100%;
 }
 
-.teachersassistant .v-tree8-editor-cells > div.not-editable.v-tree8-cell {
+.teachersassistant .v-tree8-editor-cells  > div.not-editable.v-tree8-cell {
 	float: none;
 }
 
@@ -10030,7 +10030,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0 5px;
 }
 
-.teachersassistant .v-tree8-editor-footer + .v-tree8-editor-cells > div {
+.teachersassistant .v-tree8-editor-footer  + .v-tree8-editor-cells > div {
 	border-bottom: none;
 	border-top: 1px solid #d4d4d4;
 }
@@ -10053,7 +10053,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 }
 
-.teachersassistant .v-tree8-editor-message > div {
+.teachersassistant .v-tree8-editor-message  > div {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
@@ -10156,7 +10156,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
 }
 
-.teachersassistant .v-tree8-row-selected > .v-tree8-cell {
+.teachersassistant .v-tree8-row-selected  > .v-tree8-cell {
 	background-color: #197de1;
 	background-image: -webkit-linear-gradient(top, #1b87e3 2%, #166ed5 98%);
 	background-image: linear-gradient(to bottom,#1b87e3 2%, #166ed5 98%);
@@ -10165,7 +10165,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: #1d69b4;
 }
 
-.teachersassistant .v-tree8-row-selected > .v-tree8-cell-focused:before {
+.teachersassistant .v-tree8-row-selected  > .v-tree8-cell-focused:before {
 	border-color: #71b0ef;
 }
 
@@ -10239,11 +10239,11 @@ div.v-layout.v-horizontal.v-widget {
 	margin: 0 9px 0 18px;
 }
 
-.teachersassistant .v-tree8-editor-cells > div .v-checkbox > input[type="checkbox"] {
+.teachersassistant .v-tree8-editor-cells > div .v-checkbox  > input[type="checkbox"] {
 	margin-left: 0;
 }
 
-.teachersassistant .v-tree8-editor-cells > div .v-checkbox > label {
+.teachersassistant .v-tree8-editor-cells > div .v-checkbox  > label {
 	white-space: nowrap;
 }
 
@@ -10528,7 +10528,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 28px;
 }
 
-.teachersassistant .v-tree8-row > td > * {
+.teachersassistant .v-tree8-row > td  > * {
 	vertical-align: baseline;
 }
 
@@ -10555,7 +10555,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 }
 
-.teachersassistant .v-tree8-row-selected > .v-tree8-cell {
+.teachersassistant .v-tree8-row-selected  > .v-tree8-cell {
 	background: transparent;
 }
 
@@ -10670,7 +10670,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-treegrid-row > td, .teachersassistant .v-treegrid-row > th {
+.teachersassistant .v-treegrid-row  > td, .teachersassistant .v-treegrid-row  > th {
 	background-color: white;
 }
 
@@ -10699,7 +10699,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: white;
 }
 
-.teachersassistant .v-treegrid-spacer > td {
+.teachersassistant .v-treegrid-spacer  > td {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
@@ -10736,7 +10736,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 }
 
-.teachersassistant .v-treegrid .header-drag-table .v-treegrid-header > .v-treegrid-cell {
+.teachersassistant .v-treegrid .header-drag-table .v-treegrid-header  > .v-treegrid-cell {
 	border: 1px solid #d4d4d4;
 	margin-top: -10px;
 	opacity: 0.9;
@@ -10744,7 +10744,7 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 30000;
 }
 
-.teachersassistant .v-treegrid .header-drag-table .v-treegrid-header > .v-treegrid-drop-marker {
+.teachersassistant .v-treegrid .header-drag-table .v-treegrid-header  > .v-treegrid-drop-marker {
 	background-color: #197de1;
 	position: absolute;
 	width: 3px;
@@ -10828,12 +10828,12 @@ div.v-layout.v-horizontal.v-widget {
 	text-overflow: ellipsis;
 }
 
-.teachersassistant .v-treegrid-cell > * {
+.teachersassistant .v-treegrid-cell  > * {
 	line-height: 1.55;
 	vertical-align: middle;
 }
 
-.teachersassistant .v-treegrid-cell > div {
+.teachersassistant .v-treegrid-cell  > div {
 	display: inline-block;
 }
 
@@ -10843,7 +10843,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-right: 1px solid #d4d4d4;
 }
 
-.teachersassistant .v-treegrid-cell.frozen + th, .teachersassistant .v-treegrid-cell.frozen + td {
+.teachersassistant .v-treegrid-cell.frozen  + th, .teachersassistant .v-treegrid-cell.frozen  + td {
 	border-left: none;
 }
 
@@ -11035,51 +11035,51 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 2;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div {
+.teachersassistant .v-treegrid-editor-cells  > div {
 	display: inline-block;
 	box-sizing: border-box;
 	vertical-align: middle;
 	background: white;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div:first-child {
+.teachersassistant .v-treegrid-editor-cells  > div:first-child {
 	border-left: none;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div > * {
+.teachersassistant .v-treegrid-editor-cells  > div  > * {
 	vertical-align: middle;
 	display: inline-block;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div .v-filterselect {
+.teachersassistant .v-treegrid-editor-cells  > div .v-filterselect {
 	padding-left: 0;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div input[type="text"], .teachersassistant .v-treegrid-editor-cells > div input[type="text"].v-filterselect-input, .teachersassistant .v-treegrid-editor-cells > div input[type="password"] {
+.teachersassistant .v-treegrid-editor-cells  > div input[type="text"], .teachersassistant .v-treegrid-editor-cells  > div input[type="text"].v-filterselect-input, .teachersassistant .v-treegrid-editor-cells  > div input[type="password"] {
 	padding-left: 18px;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-treegrid-editor-cells > div input[type="password"] {
+.teachersassistant .v-treegrid-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .teachersassistant .v-treegrid-editor-cells  > div input[type="password"] {
 	padding-right: 9px;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div input[type="checkbox"] {
+.teachersassistant .v-treegrid-editor-cells  > div input[type="checkbox"] {
 	margin-left: 18px;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div .v-textfield, .teachersassistant .v-treegrid-editor-cells > div .v-datefield, .teachersassistant .v-treegrid-editor-cells > div .v-filterselect {
+.teachersassistant .v-treegrid-editor-cells  > div .v-textfield, .teachersassistant .v-treegrid-editor-cells  > div .v-datefield, .teachersassistant .v-treegrid-editor-cells  > div .v-filterselect {
 	min-width: 100%;
 	max-width: 100%;
 	min-height: 100%;
 	max-height: 100%;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div .v-select, .teachersassistant .v-treegrid-editor-cells > div .v-select-select {
+.teachersassistant .v-treegrid-editor-cells  > div .v-select, .teachersassistant .v-treegrid-editor-cells  > div .v-select-select {
 	min-width: 100%;
 	max-width: 100%;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div.not-editable.v-treegrid-cell {
+.teachersassistant .v-treegrid-editor-cells  > div.not-editable.v-treegrid-cell {
 	float: none;
 }
 
@@ -11106,7 +11106,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0 5px;
 }
 
-.teachersassistant .v-treegrid-editor-footer + .v-treegrid-editor-cells > div {
+.teachersassistant .v-treegrid-editor-footer  + .v-treegrid-editor-cells > div {
 	border-bottom: none;
 	border-top: 1px solid #d4d4d4;
 }
@@ -11129,7 +11129,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 }
 
-.teachersassistant .v-treegrid-editor-message > div {
+.teachersassistant .v-treegrid-editor-message  > div {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
@@ -11232,7 +11232,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
 }
 
-.teachersassistant .v-treegrid-row-selected > .v-treegrid-cell {
+.teachersassistant .v-treegrid-row-selected  > .v-treegrid-cell {
 	background-color: #197de1;
 	background-image: -webkit-linear-gradient(top, #1b87e3 2%, #166ed5 98%);
 	background-image: linear-gradient(to bottom,#1b87e3 2%, #166ed5 98%);
@@ -11241,7 +11241,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: #1d69b4;
 }
 
-.teachersassistant .v-treegrid-row-selected > .v-treegrid-cell-focused:before {
+.teachersassistant .v-treegrid-row-selected  > .v-treegrid-cell-focused:before {
 	border-color: #71b0ef;
 }
 
@@ -11315,11 +11315,11 @@ div.v-layout.v-horizontal.v-widget {
 	margin: 0 9px 0 18px;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div .v-checkbox > input[type="checkbox"] {
+.teachersassistant .v-treegrid-editor-cells > div .v-checkbox  > input[type="checkbox"] {
 	margin-left: 0;
 }
 
-.teachersassistant .v-treegrid-editor-cells > div .v-checkbox > label {
+.teachersassistant .v-treegrid-editor-cells > div .v-checkbox  > label {
 	white-space: nowrap;
 }
 
@@ -11688,15 +11688,15 @@ div.v-layout.v-horizontal.v-widget {
 	margin-right: 0 !important;
 }
 
-.teachersassistant .v-table-cell-wrapper > .v-widget {
+.teachersassistant .v-table-cell-wrapper  > .v-widget {
 	margin: 3px -6px;
 }
 
-.teachersassistant .v-table-cell-wrapper > .v-widget.v-label, .teachersassistant .v-table-cell-wrapper > .v-widget.v-checkbox, .teachersassistant .v-table-cell-wrapper > .v-widget.v-select-optiongroup {
+.teachersassistant .v-table-cell-wrapper  > .v-widget.v-label, .teachersassistant .v-table-cell-wrapper  > .v-widget.v-checkbox, .teachersassistant .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
 	margin: 0;
 }
 
-.teachersassistant .v-table-cell-wrapper > .v-widget.v-progressbar {
+.teachersassistant .v-table-cell-wrapper  > .v-widget.v-progressbar {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -11745,11 +11745,11 @@ div.v-layout.v-horizontal.v-widget {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
-.teachersassistant .v-table [class*="-row"].v-selected + .v-selected {
+.teachersassistant .v-table [class*="-row"].v-selected  + .v-selected {
 	background: #166ed5;
 }
 
-.teachersassistant .v-table [class*="-row"].v-selected + .v-selected td {
+.teachersassistant .v-table [class*="-row"].v-selected  + .v-selected td {
 	border-top-color: #166ed5;
 }
 
@@ -12074,15 +12074,15 @@ div.v-layout.v-horizontal.v-widget {
 	padding-right: 6px;
 }
 
-.teachersassistant .v-table-compact .v-table-cell-wrapper > .v-widget, .teachersassistant .v-table-small .v-table-cell-wrapper > .v-widget {
+.teachersassistant .v-table-compact .v-table-cell-wrapper  > .v-widget, .teachersassistant .v-table-small .v-table-cell-wrapper  > .v-widget {
 	margin: 2px -3px;
 }
 
-.teachersassistant .v-table-compact .v-table-cell-wrapper > .v-widget.v-label, .teachersassistant .v-table-compact .v-table-cell-wrapper > .v-widget.v-checkbox, .teachersassistant .v-table-compact .v-table-cell-wrapper > .v-widget.v-select-optiongroup, .teachersassistant .v-table-small .v-table-cell-wrapper > .v-widget.v-label, .teachersassistant .v-table-small .v-table-cell-wrapper > .v-widget.v-checkbox, .teachersassistant .v-table-small .v-table-cell-wrapper > .v-widget.v-select-optiongroup {
+.teachersassistant .v-table-compact .v-table-cell-wrapper  > .v-widget.v-label, .teachersassistant .v-table-compact .v-table-cell-wrapper  > .v-widget.v-checkbox, .teachersassistant .v-table-compact .v-table-cell-wrapper  > .v-widget.v-select-optiongroup, .teachersassistant .v-table-small .v-table-cell-wrapper  > .v-widget.v-label, .teachersassistant .v-table-small .v-table-cell-wrapper  > .v-widget.v-checkbox, .teachersassistant .v-table-small .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
 	margin: 0;
 }
 
-.teachersassistant .v-table-compact .v-table-cell-wrapper > .v-widget.v-progressbar, .teachersassistant .v-table-small .v-table-cell-wrapper > .v-widget.v-progressbar {
+.teachersassistant .v-table-compact .v-table-cell-wrapper  > .v-widget.v-progressbar, .teachersassistant .v-table-small .v-table-cell-wrapper  > .v-widget.v-progressbar {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -12182,16 +12182,16 @@ div.v-layout.v-horizontal.v-widget {
 	font-family: ThemeIcons;
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter {
 	width: 1px;
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter:after {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter:after {
 	left: -6px;
 	right: -6px;
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter div:before {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
 	color: #191919;
@@ -12216,7 +12216,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter div:before:after {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:after {
 	border: inherit;
 	top: -1px;
 	right: -1px;
@@ -12224,34 +12224,34 @@ div.v-layout.v-horizontal.v-widget {
 	left: -1px;
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter div:before:hover:after {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:hover:after {
 	background-color: rgba(186, 186, 186, 0.1);
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter div:before:focus:after {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:focus:after {
 	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-hsplitter div:before:active:after {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:active:after {
 	background-color: rgba(125, 125, 125, 0.2);
 }
 
-.teachersassistant .v-splitpanel-horizontal > div > .v-splitpanel-second-container {
+.teachersassistant .v-splitpanel-horizontal  > div > .v-splitpanel-second-container {
 	margin-left: 1px;
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter {
 	height: 1px;
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter:after {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter:after {
 	top: -6px;
 	bottom: -6px;
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter div:before {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
 	color: #191919;
@@ -12273,7 +12273,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0;
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter div:before:after {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:after {
 	border: inherit;
 	top: -1px;
 	right: -1px;
@@ -12281,30 +12281,30 @@ div.v-layout.v-horizontal.v-widget {
 	left: -1px;
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter div:before:hover:after {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:hover:after {
 	background-color: rgba(186, 186, 186, 0.1);
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter div:before:focus:after {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:focus:after {
 	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-splitpanel-vertical > div > .v-splitpanel-vsplitter div:before:active:after {
+.teachersassistant .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:active:after {
 	background-color: rgba(125, 125, 125, 0.2);
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter {
 	width: 12px;
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter:after {
 	left: 0px;
 	right: 0px;
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:before {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
 	color: #191919;
@@ -12329,7 +12329,7 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: linear-gradient(to right,#fafafa 2%, #efefef 98%);
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:before:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:after {
 	border: inherit;
 	top: -1px;
 	right: -1px;
@@ -12337,21 +12337,21 @@ div.v-layout.v-horizontal.v-widget {
 	left: -1px;
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:before:hover:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:hover:after {
 	background-color: rgba(186, 186, 186, 0.1);
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:before:focus:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:focus:after {
 	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:before:active:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:active:after {
 	background-color: rgba(125, 125, 125, 0.2);
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-hsplitter div:after {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:after {
 	content: "";
 	border: 1px solid #dadada;
 	border-top-color: #bababa;
@@ -12365,20 +12365,20 @@ div.v-layout.v-horizontal.v-widget {
 	margin-top: -19px;
 }
 
-.teachersassistant .v-splitpanel-horizontal.large > div > .v-splitpanel-second-container {
+.teachersassistant .v-splitpanel-horizontal.large  > div > .v-splitpanel-second-container {
 	margin-left: 12px;
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter {
 	height: 12px;
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter:after {
 	top: 0px;
 	bottom: 0px;
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:before {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before {
 	height: 37px;
 	padding: 0 16px;
 	color: #191919;
@@ -12400,7 +12400,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0;
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:before:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:after {
 	border: inherit;
 	top: -1px;
 	right: -1px;
@@ -12408,21 +12408,21 @@ div.v-layout.v-horizontal.v-widget {
 	left: -1px;
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:before:hover:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:hover:after {
 	background-color: rgba(186, 186, 186, 0.1);
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:before:focus:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:focus:after {
 	border-color: #197de1;
 	-webkit-box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 	box-shadow: 0 0 0 2px rgba(25, 125, 225, 0.5);
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:before:active:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:active:after {
 	background-color: rgba(125, 125, 125, 0.2);
 }
 
-.teachersassistant .v-splitpanel-vertical.large > div > .v-splitpanel-vsplitter div:after {
+.teachersassistant .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:after {
 	content: "";
 	border: 1px solid #dadada;
 	border-top-color: #bababa;
@@ -12949,25 +12949,25 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer table, .teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer tbody, .teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer tr {
+.teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer table, .teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer tbody, .teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer tr {
 	width: 100%;
 }
 
-.teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer tr {
+.teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer tr {
 	display: table;
 	table-layout: fixed;
 }
 
-.teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer td {
+.teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer td {
 	display: table-cell;
 }
 
-.teachersassistant .v-tabsheet-equal-width-tabs > .v-tabsheet-tabcontainer .v-caption {
+.teachersassistant .v-tabsheet-equal-width-tabs  > .v-tabsheet-tabcontainer .v-caption {
 	margin: 0;
 	display: block;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-caption {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption {
 	margin-left: 4px;
 	padding: 0 12px;
 	background-color: #fafafa;
@@ -12980,104 +12980,104 @@ div.v-layout.v-horizontal.v-widget {
 	transition: background-color 160ms;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-caption:hover {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption:hover {
 	background-color: #f2f2f2;
 	border-bottom-color: #dfdfdf;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-caption.v-disabled:hover {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption.v-disabled:hover {
 	background-color: #fafafa;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-caption-closable {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption-closable {
 	padding-right: 30px;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
 	top: 4px;
 	right: 4px;
 	margin-top: 0;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer td:first-child .v-caption, .teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer [aria-hidden="true"] + td .v-caption {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer td:first-child .v-caption, .teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer [aria-hidden="true"] + td .v-caption {
 	margin-left: 0;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-tabsheet-tabitem .v-caption {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-tabsheet-tabitem .v-caption {
 	border-color: #dfdfdf;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption {
 	background: white;
 	border-color: #dfdfdf;
 	border-bottom: none;
 	padding-bottom: 1px;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-content {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-content {
 	border: 1px solid #dfdfdf;
 	border-top: none;
 }
 
-.teachersassistant .v-tabsheet-framed > .v-tabsheet-content > div {
+.teachersassistant .v-tabsheet-framed  > .v-tabsheet-content  > div {
 	background: white;
 }
 
-.teachersassistant .v-tabsheet-framed.padded-tabbar > .v-tabsheet-tabcontainer {
+.teachersassistant .v-tabsheet-framed.padded-tabbar  > .v-tabsheet-tabcontainer {
 	border: 1px solid #dfdfdf;
 	border-bottom: none;
 	background: #fafafa;
 	padding-top: 6px;
 }
 
-.teachersassistant .v-tabsheet-framed.icons-on-top > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption {
+.teachersassistant .v-tabsheet-framed.icons-on-top  > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption {
 	padding-bottom: 7px;
 }
 
-.teachersassistant .v-tabsheet-centered-tabs > .v-tabsheet-tabcontainer {
+.teachersassistant .v-tabsheet-centered-tabs  > .v-tabsheet-tabcontainer {
 	text-align: center;
 }
 
-.teachersassistant .v-tabsheet-right-aligned-tabs > .v-tabsheet-tabcontainer {
+.teachersassistant .v-tabsheet-right-aligned-tabs  > .v-tabsheet-tabcontainer {
 	text-align: right;
 }
 
-.teachersassistant .v-tabsheet-padded-tabbar > .v-tabsheet-tabcontainer .v-tabsheet-tabs {
+.teachersassistant .v-tabsheet-padded-tabbar  > .v-tabsheet-tabcontainer .v-tabsheet-tabs {
 	padding: 0 9px;
 }
 
-.teachersassistant .v-tabsheet-icons-on-top > .v-tabsheet-tabcontainer .v-caption {
+.teachersassistant .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-caption {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	line-height: 1.2;
 }
 
-.teachersassistant .v-tabsheet-icons-on-top > .v-tabsheet-tabcontainer .v-icon {
+.teachersassistant .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-icon {
 	display: block;
 }
 
-.teachersassistant .v-tabsheet-icons-on-top > .v-tabsheet-tabcontainer .v-icon + .v-captiontext.v-captiontext {
+.teachersassistant .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-icon  + .v-captiontext.v-captiontext {
 	margin-left: 0;
 }
 
-.teachersassistant .v-tabsheet-icons-on-top > .v-tabsheet-tabcontainer .v-caption-closable {
+.teachersassistant .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-caption-closable {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-tabsheet-icons-on-top > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
+.teachersassistant .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
 	top: 4px;
 	margin-top: 0;
 }
 
-.teachersassistant .v-tabsheet-compact-tabbar > .v-tabsheet-tabcontainer-compact-tabbar .v-caption {
+.teachersassistant .v-tabsheet-compact-tabbar  > .v-tabsheet-tabcontainer-compact-tabbar .v-caption {
 	line-height: 1.8;
 }
 
-.teachersassistant .v-tabsheet-only-selected-closable > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
+.teachersassistant .v-tabsheet-only-selected-closable  > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
 	visibility: hidden;
 }
 
-.teachersassistant .v-tabsheet-only-selected-closable > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+.teachersassistant .v-tabsheet-only-selected-closable  > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
 	visibility: visible;
 }
 
@@ -13178,6 +13178,7 @@ div.v-layout.v-horizontal.v-widget {
 	width: 100% !important;
 	height: auto !important;
 	padding: 9px;
+	display: inline-flex;
 }
 
 .teachersassistant .v-colorpicker-preview-textfield {
@@ -13201,7 +13202,7 @@ div.v-layout.v-horizontal.v-widget {
 	max-width: 23px;
 }
 
-.teachersassistant .v-colorpicker-button-color + .v-button-caption:not(:empty) {
+.teachersassistant .v-colorpicker-button-color  + .v-button-caption:not(:empty) {
 	margin-left: 19px;
 }
 
@@ -13238,19 +13239,19 @@ div.v-layout.v-horizontal.v-widget {
 	height: 100%;
 }
 
-.teachersassistant .v-panel-content > .v-margin-top {
+.teachersassistant .v-panel-content  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-panel-content > .v-margin-right {
+.teachersassistant .v-panel-content  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-panel-content > .v-margin-bottom {
+.teachersassistant .v-panel-content  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-panel-content > .v-margin-left {
+.teachersassistant .v-panel-content  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -13263,7 +13264,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: none;
 }
 
-.teachersassistant .v-panel-borderless > div > [class*="-caption"] {
+.teachersassistant .v-panel-borderless  > div > [class*="-caption"] {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -13282,18 +13283,18 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #c5c5c5;
 }
 
-.teachersassistant .v-panel-well > div > [class*="-caption"] {
+.teachersassistant .v-panel-well  > div > [class*="-caption"] {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
-.teachersassistant .v-panel-scroll-divider > [class*="-captionwrap"] {
+.teachersassistant .v-panel-scroll-divider  > [class*="-captionwrap"] {
 	position: relative;
 	z-index: 2;
 }
 
-.teachersassistant .v-panel-scroll-divider > [class*="-captionwrap"]:after {
+.teachersassistant .v-panel-scroll-divider  > [class*="-captionwrap"]:after {
 	content: "";
 	position: absolute;
 	bottom: -1px;
@@ -13304,7 +13305,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: rgba(197, 197, 197, 0.5);
 }
 
-.teachersassistant .v-panel-scroll-divider > [class*="-content"]:before {
+.teachersassistant .v-panel-scroll-divider  > [class*="-content"]:before {
 	content: "";
 	position: absolute;
 	z-index: 2;
@@ -13376,7 +13377,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: inherit;
 }
 
-.teachersassistant .v-accordion-item-caption > .v-caption {
+.teachersassistant .v-accordion-item-caption  > .v-caption {
 	box-sizing: border-box;
 	padding: 0 12px;
 	line-height: 36px;
@@ -13398,7 +13399,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 }
 
-.teachersassistant .v-accordion-item-caption > .v-caption:hover:before, .teachersassistant .v-accordion-item-caption > .v-caption:active:before {
+.teachersassistant .v-accordion-item-caption  > .v-caption:hover:before, .teachersassistant .v-accordion-item-caption  > .v-caption:active:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -13408,12 +13409,12 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: inherit;
 }
 
-.teachersassistant .v-accordion-item-caption > .v-caption:hover:before {
+.teachersassistant .v-accordion-item-caption  > .v-caption:hover:before {
 	background-color: rgba(186, 186, 186, 0.1);
 	border: none;
 }
 
-.teachersassistant .v-accordion-item-caption > .v-caption:active:before {
+.teachersassistant .v-accordion-item-caption  > .v-caption:active:before {
 	background-color: rgba(125, 125, 125, 0.2);
 }
 
@@ -13424,19 +13425,19 @@ div.v-layout.v-horizontal.v-widget {
 	box-sizing: border-box;
 }
 
-.teachersassistant .v-accordion-item-content > .v-margin-top {
+.teachersassistant .v-accordion-item-content  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-accordion-item-content > .v-margin-right {
+.teachersassistant .v-accordion-item-content  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-accordion-item-content > .v-margin-bottom {
+.teachersassistant .v-accordion-item-content  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-accordion-item-content > .v-margin-left {
+.teachersassistant .v-accordion-item-content  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -13447,7 +13448,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: none;
 }
 
-.teachersassistant .v-accordion-borderless > .v-accordion-item, .teachersassistant .v-accordion-borderless > .v-accordion-item > div > .v-caption, .teachersassistant .v-accordion-borderless > .v-accordion-item > .v-accordion-item-content {
+.teachersassistant .v-accordion-borderless  > .v-accordion-item, .teachersassistant .v-accordion-borderless  > .v-accordion-item > div > .v-caption, .teachersassistant .v-accordion-borderless  > .v-accordion-item > .v-accordion-item-content {
 	border-radius: 0;
 }
 
@@ -13591,12 +13592,12 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-select-select + .v-textfield {
+.teachersassistant .v-select-select  + .v-textfield {
 	width: auto !important;
 	margin-top: 9px;
 }
 
-.teachersassistant .v-select-select + .v-textfield + .v-nativebutton {
+.teachersassistant .v-select-select  + .v-textfield  + .v-nativebutton {
 	margin-top: 9px;
 	margin-left: 9px;
 }
@@ -13852,11 +13853,11 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px 4px 0 0;
 }
 
-.teachersassistant .v-calendar .v-daterange + .v-daterange {
+.teachersassistant .v-calendar .v-daterange  + .v-daterange {
 	border-color: transparent;
 }
 
-.teachersassistant .v-calendar .v-daterange + .v-daterange:before {
+.teachersassistant .v-calendar .v-daterange  + .v-daterange:before {
 	border-radius: 0;
 }
 
@@ -14122,7 +14123,7 @@ div.v-layout.v-horizontal.v-widget {
 	margin-bottom: 0.8em;
 }
 
-.teachersassistant .v-csslayout > h1:first-child, .teachersassistant .v-csslayout > h2:first-child, .teachersassistant .v-csslayout > h3:first-child, .teachersassistant .v-csslayout > h4 > .v-label-h1:first-child, .teachersassistant .v-csslayout > .v-label-h2:first-child, .teachersassistant .v-csslayout > .v-label-h3:first-child, .teachersassistant .v-csslayout > .v-label-h4:first-child {
+.teachersassistant .v-csslayout  > h1:first-child, .teachersassistant .v-csslayout  > h2:first-child, .teachersassistant .v-csslayout  > h3:first-child, .teachersassistant .v-csslayout  > h4 > .v-label-h1:first-child, .teachersassistant .v-csslayout  > .v-label-h2:first-child, .teachersassistant .v-csslayout  > .v-label-h3:first-child, .teachersassistant .v-csslayout  > .v-label-h4:first-child {
 	margin-top: 16px;
 }
 
@@ -14341,12 +14342,12 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 }
 
-.teachersassistant .v-select-select + .v-textfield {
+.teachersassistant .v-select-select  + .v-textfield {
 	width: auto !important;
 	margin-top: 9px;
 }
 
-.teachersassistant .v-select-select + .v-textfield + .v-nativebutton {
+.teachersassistant .v-select-select  + .v-textfield  + .v-nativebutton {
 	margin-top: 9px;
 	margin-left: 9px;
 }
@@ -14401,19 +14402,19 @@ div.v-layout.v-horizontal.v-widget {
 	animation: valo-animate-out-fade 120ms;
 }
 
-.teachersassistant .v-popupview-popup .popupContent > .v-margin-top {
+.teachersassistant .v-popupview-popup .popupContent  > .v-margin-top {
 	padding-top: 12px;
 }
 
-.teachersassistant .v-popupview-popup .popupContent > .v-margin-right {
+.teachersassistant .v-popupview-popup .popupContent  > .v-margin-right {
 	padding-right: 12px;
 }
 
-.teachersassistant .v-popupview-popup .popupContent > .v-margin-bottom {
+.teachersassistant .v-popupview-popup .popupContent  > .v-margin-bottom {
 	padding-bottom: 12px;
 }
 
-.teachersassistant .v-popupview-popup .popupContent > .v-margin-left {
+.teachersassistant .v-popupview-popup .popupContent  > .v-margin-left {
 	padding-left: 12px;
 }
 
@@ -15212,14 +15213,14 @@ div.v-layout.v-horizontal.v-widget {
 	color: inherit;
 }
 
-.teachersassistant .v-menubar-user-menu > .v-menubar-menuitem {
+.teachersassistant .v-menubar-user-menu  > .v-menubar-menuitem {
 	color: inherit;
 	white-space: normal;
 	line-height: 1.4;
 	margin: 0;
 }
 
-.teachersassistant .v-menubar-user-menu > .v-menubar-menuitem img.v-icon {
+.teachersassistant .v-menubar-user-menu  > .v-menubar-menuitem img.v-icon {
 	width: 56px;
 	height: 56px;
 	border-radius: 29px;
@@ -15229,7 +15230,7 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #c5c5c5;
 }
 
-.teachersassistant .v-menubar-user-menu > .v-menubar-menuitem:after {
+.teachersassistant .v-menubar-user-menu  > .v-menubar-menuitem:after {
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -15308,7 +15309,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0.75)));
 }
 
-.teachersassistant .valo-menu-item span.v-icon + span {
+.teachersassistant .valo-menu-item span.v-icon  + span {
 	margin-left: 0;
 }
 
@@ -15366,7 +15367,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 9px;
 }
 
-.teachersassistant .valo-menu-part.large-icons [class*="subtitle"] + .valo-menu-item {
+.teachersassistant .valo-menu-part.large-icons [class*="subtitle"]  + .valo-menu-item {
 	border-top: none;
 }
 
@@ -15483,7 +15484,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 9px;
 }
 
-.teachersassistant .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] + .valo-menu-item {
+.teachersassistant .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"]  + .valo-menu-item {
 	border-top: none;
 }
 
@@ -15547,7 +15548,7 @@ div.v-layout.v-horizontal.v-widget {
 	top: 37px;
 }
 
-.teachersassistant .valo-menu-responsive[width-range~="0-800px"] > .v-widget {
+.teachersassistant .valo-menu-responsive[width-range~="0-800px"]  > .v-widget {
 	position: relative !important;
 }
 
