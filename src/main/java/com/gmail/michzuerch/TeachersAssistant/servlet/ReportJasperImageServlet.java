@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.jasper.ReportJasperImage;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.jasper.ReportJasperImage;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportJasperImageDeltaspikeFacade;
 import org.apache.fop.servlet.ServletContextURIResolver;
 

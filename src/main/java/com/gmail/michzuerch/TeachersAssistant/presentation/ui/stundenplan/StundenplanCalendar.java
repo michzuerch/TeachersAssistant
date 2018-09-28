@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.stundenplan;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Lession;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Lession;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Notification.Type;

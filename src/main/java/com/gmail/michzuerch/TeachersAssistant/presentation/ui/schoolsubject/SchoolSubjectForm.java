@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.schoolsubject;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.SchoolSubject;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Student;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.SchoolSubject;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Student;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.StudentDeltaspikeFacade;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;

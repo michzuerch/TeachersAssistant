@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.report.fop;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.fop.ReportFOP;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.fop.ReportFOP;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportFOPDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;

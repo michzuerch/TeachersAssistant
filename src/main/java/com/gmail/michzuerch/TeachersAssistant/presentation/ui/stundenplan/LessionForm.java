@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.stundenplan;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Lession;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Lession;
 import com.vaadin.data.ValidationResult;
 import com.vaadin.data.Validator;
 import com.vaadin.data.ValueContext;

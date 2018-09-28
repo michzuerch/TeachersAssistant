@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.stundenplan;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Classroom;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Lession;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Classroom;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Lession;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ClassroomDeltaspikeFacade;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.LessionDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;

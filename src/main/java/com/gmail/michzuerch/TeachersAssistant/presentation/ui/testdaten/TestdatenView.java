@@ -1,9 +1,9 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.testdaten;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.School;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.SchoolClass;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Student;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.Teacher;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.School;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.SchoolClass;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Student;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.Teacher;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.SchoolClassDeltaspikeFacade;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.SchoolDeltaspikeFacade;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.StudentDeltaspikeFacade;

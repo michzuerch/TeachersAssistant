@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.school;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.School;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.School;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.schoolclass;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.School;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.SchoolClass;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.School;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.SchoolClass;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.SchoolClassDeltaspikeFacade;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.SchoolDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
@@ -133,7 +133,7 @@ public class SchoolClassView extends HorizontalLayout implements View {
         setSizeFull();
         if (viewChangeEvent.getParameters() != null) {
             String[] msgs = viewChangeEvent.getParameters().split("/");
-            String target = new String();
+            String target = "";
             Long id = new Long(0);
             for (String msg : msgs) {
                 if (target.isEmpty()) {

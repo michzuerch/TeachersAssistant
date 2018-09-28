@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.report.css;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSS;
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSSImage;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.css.ReportCSS;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.css.ReportCSSImage;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportCSSDeltaspikeFacade;
 import com.gmail.michzuerch.TeachersAssistant.presentation.ui.util.field.ImageField;
 import com.vaadin.ui.*;

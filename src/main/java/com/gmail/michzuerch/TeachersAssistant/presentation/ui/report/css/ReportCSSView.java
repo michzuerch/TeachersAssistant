@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.report.css;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSS;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.css.ReportCSS;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportCSSDeltaspikeFacade;
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;

@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.presentation.ui.report.jasper;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.jasper.ReportJasper;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.jasper.ReportJasper;
 import com.gmail.michzuerch.TeachersAssistant.presentation.ui.util.field.JasperXmlField;
 import com.vaadin.ui.*;
 import org.slf4j.Logger;

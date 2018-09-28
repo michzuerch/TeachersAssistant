@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.css.ReportCSSImage;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.css.ReportCSSImage;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportCSSImageDeltaspikeFacade;
 import org.apache.fop.servlet.ServletContextURIResolver;
 

@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.entity.report.fop.ReportFOPImage;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.fop.ReportFOPImage;
 import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportFOPImageDeltaspikeFacade;
 import org.apache.fop.servlet.ServletContextURIResolver;
 
