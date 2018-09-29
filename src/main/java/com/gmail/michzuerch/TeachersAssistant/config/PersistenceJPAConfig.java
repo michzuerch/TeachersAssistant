@@ -24,7 +24,7 @@ public class PersistenceJPAConfig {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.gmail.michzuerch.TeachersAssistant.backend.domain");
+        em.setPackagesToScan("com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -37,7 +37,7 @@ public class PersistenceJPAConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql:Anouman");
+        dataSource.setUrl("jdbc:postgresql:TeachersAssistant");
         dataSource.setUsername("michzuerch");
         dataSource.setPassword("lx0lc33a");
         return dataSource;
