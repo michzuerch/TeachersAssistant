@@ -36,6 +36,7 @@
           <factory-entry name="AnoumanPU" />
           <factory-entry name="LehrerVerwaltungPU" />
           <factory-entry name="TeachersAssistantPU" />
+          <factory-entry name="entityManagerFactory" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
@@ -249,5 +250,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.restdocs:spring-restdocs-core:2.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.xmlgraphics:fop:2.2" level="project" />
   </component>
 </module>

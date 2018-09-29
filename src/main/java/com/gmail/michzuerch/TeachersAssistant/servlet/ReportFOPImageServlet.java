@@ -1,10 +1,10 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
 import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.fop.ReportFOPImage;
-import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportFOPImageDeltaspikeFacade;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.service.ReportFOPImageService;
 import org.apache.fop.servlet.ServletContextURIResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ public class ReportFOPImageServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(ReportFOPImageServlet.class.getName());
     protected URIResolver uriResolver;
 
-    @Inject
-    ReportFOPImageDeltaspikeFacade reportFOPImageDeltaspikeFacade;
+    @Autowired
+    ReportFOPImageService service;
 
     @Override
     public void init() throws ServletException {
@@ -35,7 +35,7 @@ public class ReportFOPImageServlet extends HttpServlet {
             throw new IOException("Fehler, Requestparameter id nicht vorhanden");
         }
         Long id = Long.valueOf(parameterValues[0]);
-        ReportFOPImage reportFOPImage = reportFOPImageDeltaspikeFacade.findBy(id);
+        ReportFOPImage reportFOPImage = service.findBy(id).get();
         if (reportFOPImage == null) {
             LOGGER.warning("Artikelbild nicht gefunden, id: " + id);
             throw new IOException("Artikelbild nicht gefunden, id: " + id);

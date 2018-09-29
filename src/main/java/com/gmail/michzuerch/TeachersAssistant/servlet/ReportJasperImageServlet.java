@@ -1,10 +1,10 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
 import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.jasper.ReportJasperImage;
-import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportJasperImageDeltaspikeFacade;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.service.ReportJasperImageService;
 import org.apache.fop.servlet.ServletContextURIResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ public class ReportJasperImageServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(ReportJasperImageServlet.class.getName());
     protected URIResolver uriResolver;
 
-    @Inject
-    ReportJasperImageDeltaspikeFacade reportJasperImageDeltaspikeFacade;
+    @Autowired
+    private ReportJasperImageService service;
 
     @Override
     public void init() throws ServletException {
@@ -35,7 +35,7 @@ public class ReportJasperImageServlet extends HttpServlet {
             throw new IOException("Fehler, Requestparameter id nicht vorhanden");
         }
         Long id = Long.valueOf(parameterValues[0]);
-        ReportJasperImage reportJasperImage = reportJasperImageDeltaspikeFacade.findBy(id);
+        ReportJasperImage reportJasperImage = service.findBy(id).get();
         if (reportJasperImage == null) {
             LOGGER.warning("Artikelbild nicht gefunden, id: " + id);
             throw new IOException("Artikelbild nicht gefunden, id: " + id);

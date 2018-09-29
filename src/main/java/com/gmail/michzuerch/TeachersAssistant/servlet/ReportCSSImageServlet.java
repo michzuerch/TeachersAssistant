@@ -1,10 +1,10 @@
 package com.gmail.michzuerch.TeachersAssistant.servlet;
 
 import com.gmail.michzuerch.TeachersAssistant.backend.jpa.domain.report.css.ReportCSSImage;
-import com.gmail.michzuerch.TeachersAssistant.backend.session.deltaspike.jpa.facade.ReportCSSImageDeltaspikeFacade;
+import com.gmail.michzuerch.TeachersAssistant.backend.jpa.service.ReportCSSImageService;
 import org.apache.fop.servlet.ServletContextURIResolver;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,8 @@ public class ReportCSSImageServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(ReportCSSImageServlet.class.getName());
     protected URIResolver uriResolver;
 
-    @Inject
-    ReportCSSImageDeltaspikeFacade reportCSSImageDeltaspikeFacade;
+    @Autowired
+    ReportCSSImageService service;
 
     @Override
     public void init() throws ServletException {
@@ -35,7 +35,7 @@ public class ReportCSSImageServlet extends HttpServlet {
             throw new IOException("Fehler, Requestparameter id nicht vorhanden");
         }
         Long id = Long.valueOf(parameterValues[0]);
-        ReportCSSImage reportCSSImage = reportCSSImageDeltaspikeFacade.findBy(id);
+        ReportCSSImage reportCSSImage = service.findBy(id).get();
         if (reportCSSImage == null) {
             LOGGER.warning("Artikelbild nicht gefunden, id: " + id);
             throw new IOException("Artikelbild nicht gefunden, id: " + id);
