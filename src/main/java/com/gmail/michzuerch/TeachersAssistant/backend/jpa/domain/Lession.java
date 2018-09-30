@@ -32,7 +32,7 @@ public class Lession extends AbstractEntity {
     private Classroom classroom;
 
     @ManyToOne
-    private SchoolClass aSchoolClass;
+    private SchoolClass schoolClass;
 
     public String getBezeichnung() {
         return bezeichnung;
@@ -82,11 +82,11 @@ public class Lession extends AbstractEntity {
         this.classroom = classroom;
     }
 
-    public SchoolClass getaSchoolClass() {
-        return aSchoolClass;
+    public SchoolClass getSchoolClass() {
+        return schoolClass;
     }
 
-    public void setaSchoolClass(SchoolClass aSchoolClass) {
-        this.aSchoolClass = aSchoolClass;
+    public void setSchoolClass(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
     }
 }

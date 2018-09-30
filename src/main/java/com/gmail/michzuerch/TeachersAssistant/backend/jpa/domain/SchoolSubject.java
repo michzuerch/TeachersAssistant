@@ -13,10 +13,10 @@ public class SchoolSubject extends AbstractEntity {
     @ManyToOne
     private Student student;
 
-    @OneToMany(mappedBy = "schoolsubject", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "schoolSubject", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SchoolGrade> schoolGrades = new ArrayList<>();
 
-    @OneToMany(mappedBy = "schoolsubject", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "schoolSubject", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lession> lessions = new ArrayList<>();
 
     public String getBezeichnung() {

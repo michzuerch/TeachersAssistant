@@ -13,7 +13,7 @@ public class Student extends AbstractEntity {
     private String nachname;
 
     @ManyToOne
-    private SchoolClass aSchoolClass;
+    private SchoolClass schoolClass;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SchoolSubject> schoolSubjects = new ArrayList<>();
@@ -25,6 +25,7 @@ public class Student extends AbstractEntity {
         this.vorname = vorname;
         this.nachname = nachname;
     }
+
 
     public String getVorname() {
         return vorname;
@@ -42,12 +43,12 @@ public class Student extends AbstractEntity {
         this.nachname = nachname;
     }
 
-    public SchoolClass getaSchoolClass() {
-        return aSchoolClass;
+    public SchoolClass getSchoolClass() {
+        return schoolClass;
     }
 
-    public void setaSchoolClass(SchoolClass aSchoolClass) {
-        this.aSchoolClass = aSchoolClass;
+    public void setSchoolClass(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
     }
 
     public List<SchoolSubject> getSchoolSubjects() {

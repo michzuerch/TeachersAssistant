@@ -186,6 +186,7 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-core:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.atteo:evo-inflector:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bowergithub.polymerelements:iron-list:2.0.19" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bowergithub.polymerelements:iron-resizable-behavior:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bowergithub.polymerelements:iron-a11y-keys-behavior:2.1.1" level="project" />
@@ -277,6 +278,5 @@
     <orderEntry type="library" name="Maven: org.apache.avalon.framework:avalon-framework-api:4.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avalon.framework:avalon-framework-impl:4.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:2.0.4" level="project" />
-    <orderEntry type="library" name="Maven: com.vaadin:flow-server-production-mode:1.0.5" level="project" />
   </component>
 </module>
