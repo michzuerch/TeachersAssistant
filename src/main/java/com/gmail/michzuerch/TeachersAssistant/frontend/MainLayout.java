@@ -17,6 +17,7 @@ package com.gmail.michzuerch.TeachersAssistant.frontend;
 
 import com.gmail.michzuerch.TeachersAssistant.frontend.page.HomePage;
 import com.gmail.michzuerch.TeachersAssistant.frontend.page.PushTestPage;
+import com.gmail.michzuerch.TeachersAssistant.frontend.page.school.SchoolPage;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.html.Image;
@@ -74,11 +75,11 @@ public class MainLayout extends HybridMenu {
                 .withCaption("CRUD")
                 .withIcon(VaadinIcon.COMPILE));
 
-//        crud.add(HMButton.get()
-//                .withCaption("Blocks")
-//                .withIcon(VaadinIcon.ENVELOPE)
-//                .withNavigateTo(BlockPage.class));
-//
+        crud.add(HMButton.get()
+                .withCaption("School")
+                .withIcon(VaadinIcon.ENVELOPE)
+                .withNavigateTo(SchoolPage.class));
+
 //        crud.add(HMButton.get()
 //                .withCaption("Locations")
 //                .withIcon(VaadinIcon.LAPTOP)

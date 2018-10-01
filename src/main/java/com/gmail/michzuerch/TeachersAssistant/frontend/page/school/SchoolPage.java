@@ -27,5 +27,7 @@ public class SchoolPage extends VerticalLayout {
     private void init() {
 
         grid.setItems(service.findAll());
+
+        add(btnAdd, grid);
     }
 }
