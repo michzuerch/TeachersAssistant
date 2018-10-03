@@ -5,6 +5,7 @@ import com.gmail.michzuerch.TeachersAssistant.backend.jpa.repository.SchoolRepos
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -19,5 +20,17 @@ public class SchoolService {
 
     public List<School> findAll() {
         return repository.findAll();
+    }
+
+    public Collection<School> findByBezeichnungIgnoreCase(String value) {
+        return repository.findByBeichnungIgnoreCase(value);
+    }
+
+    public void delete(School school) {
+        repository.delete(school);
+    }
+
+    public School save(School school) {
+        return repository.save(school);
     }
 }
