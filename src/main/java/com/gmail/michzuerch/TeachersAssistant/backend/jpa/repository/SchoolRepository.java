@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Collection;
 
 public interface SchoolRepository extends JpaRepository<School, Long> {
-    Collection<School> findByBeichnungIgnoreCase(String value);
+    Collection<School> findByBezeichnungIgnoreCase(String value);
 }

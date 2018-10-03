@@ -23,7 +23,7 @@ public class SchoolService {
     }
 
     public Collection<School> findByBezeichnungIgnoreCase(String value) {
-        return repository.findByBeichnungIgnoreCase(value);
+        return repository.findByBezeichnungIgnoreCase(value);
     }
 
     public void delete(School school) {
