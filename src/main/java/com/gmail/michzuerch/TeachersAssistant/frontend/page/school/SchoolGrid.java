@@ -23,9 +23,6 @@ public class SchoolGrid extends VerticalLayout {
 
     private SchoolService service;
     private Grid<School> grid = new Grid<>();
-    private SchoolForm form = new SchoolForm(this);
-
-    private Button addBtn = new Button("Add");
 
     private TextField filterText = new TextField();
     private Button clearFilterTextBtn = new Button(new Icon(VaadinIcon.CLOSE_CIRCLE));
@@ -46,19 +43,19 @@ public class SchoolGrid extends VerticalLayout {
         grid.addColumn(School::getOrt).setHeader("Ort");
 
         HorizontalLayout filtering = new HorizontalLayout(filterText, clearFilterTextBtn);
-        HorizontalLayout toolbar = new HorizontalLayout(filtering, addBtn);
+        HorizontalLayout toolbar = new HorizontalLayout(filtering);
 
-        HorizontalLayout main = new HorizontalLayout(grid, form);
+        HorizontalLayout main = new HorizontalLayout(grid);
         main.setAlignItems(Alignment.START);
         main.setSizeFull();
 
-        addBtn.addClickListener(e -> {
-            grid.asSingleSelect().clear();
-            form.setSchool(new School());
-        });
-        grid.asSingleSelect().addValueChangeListener(event -> {
-            form.setSchool(event.getValue());
-        });
+//        addBtn.addClickListener(e -> {
+//            grid.asSingleSelect().clear();
+//            form.setSchool(new School());
+//        });
+//        grid.asSingleSelect().addValueChangeListener(event -> {
+//            form.setSchool(event.getValue());
+//        });
 
         add(toolbar, main);
         setHeight("100vh");

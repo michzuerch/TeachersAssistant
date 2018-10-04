@@ -20,10 +20,18 @@ public class SchoolPage extends VerticalLayout {
 
     @Autowired
     SchoolGrid grid;
+
+    @Autowired
+    SchoolDialog dialog;
+
     Button btnAdd = new Button("Neu");
 
     @PostConstruct
     private void init() {
+        btnAdd.addClickListener(event -> {
+            dialog.open();
+        });
+
         add(btnAdd, grid);
     }
 }
