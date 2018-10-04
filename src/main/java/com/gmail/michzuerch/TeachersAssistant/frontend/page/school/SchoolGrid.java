@@ -10,16 +10,16 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Route("school")
+@Component
 @UIScope
-public class SchoolView extends VerticalLayout {
-    private static final Logger logger = LoggerFactory.getLogger(SchoolView.class);
+public class SchoolGrid extends VerticalLayout {
+    private static final Logger logger = LoggerFactory.getLogger(SchoolGrid.class);
 
     private SchoolService service;
     private Grid<School> grid = new Grid<>();
@@ -30,10 +30,9 @@ public class SchoolView extends VerticalLayout {
     private TextField filterText = new TextField();
     private Button clearFilterTextBtn = new Button(new Icon(VaadinIcon.CLOSE_CIRCLE));
 
-    public SchoolView(@Autowired SchoolService val) {
-        this.service = val;
-
-        filterText.setPlaceholder("Filter by Postalcode...");
+    public SchoolGrid(@Autowired SchoolService schoolService) {
+        this.service = schoolService;
+        filterText.setPlaceholder("Filter by Bezeichnung...");
         filterText.setValueChangeMode(ValueChangeMode.EAGER);
         filterText.addValueChangeListener(e -> updateList());
         clearFilterTextBtn.addClickListener(e -> {

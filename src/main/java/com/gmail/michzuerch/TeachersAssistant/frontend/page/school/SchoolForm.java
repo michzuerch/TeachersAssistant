@@ -21,11 +21,11 @@ public class SchoolForm extends FormLayout {
     @Autowired
     private SchoolService service;
 
-    private SchoolView view;
+    private SchoolGrid view;
     private School school;
     private Binder<School> binder = new Binder<>(School.class);
 
-    public SchoolForm(SchoolView view) {
+    public SchoolForm(SchoolGrid view) {
         this.view = view;
         binder.bindInstanceFields(this);
         save.getElement().setAttribute("theme", "primary");
