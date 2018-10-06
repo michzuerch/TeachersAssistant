@@ -45,4 +45,7 @@ public class SchoolDialog extends Dialog {
         setCloseOnOutsideClick(false);
     }
 
+    public void setBean(School bean) {
+        this.bean = bean;
+    }
 }

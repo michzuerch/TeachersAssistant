@@ -1,8 +1,6 @@
 package com.gmail.michzuerch.TeachersAssistant.frontend.page.school;
 
-import com.gmail.michzuerch.TeachersAssistant.backend.jpa.service.SchoolService;
 import com.gmail.michzuerch.TeachersAssistant.frontend.MainLayout;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import org.slf4j.Logger;
@@ -16,22 +14,11 @@ public class SchoolPage extends VerticalLayout {
     private static final Logger logger = LoggerFactory.getLogger(SchoolPage.class);
 
     @Autowired
-    SchoolService service;
+    SchoolView view;
 
-    @Autowired
-    SchoolGrid grid;
-
-    @Autowired
-    SchoolDialog dialog;
-
-    Button btnAdd = new Button("Neu");
 
     @PostConstruct
     private void init() {
-        btnAdd.addClickListener(event -> {
-            dialog.open();
-        });
-
-        add(btnAdd, grid);
+        add(view);
     }
 }
