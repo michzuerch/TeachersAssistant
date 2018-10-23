@@ -7,7 +7,7 @@ vaadin:
     heartbeatInterfall: 10
     closeIdleSession: true
     productionMode: false
-  urlMapping: /*
+    urlMapping: /*
 spring:
   data:
     mongodb:
