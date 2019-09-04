@@ -1,12 +1,12 @@
 TeachersAssistant
 ==============
 
-Kopie eines bekannten kommerziellen Produkts.
+Verwalten von Schulungsräumen, Lehrern, Schülern, Stundenplänen.
 
 Funktionsumfang
 ========
 
-Wie das Original aber gestrafft...
+Prototyp mit provisorischem Datenmodell.
 
 
 Technologien
