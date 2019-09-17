@@ -8,18 +8,17 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
-        <maven.compiler.source>10</maven.compiler.source>
-        <maven.compiler.target>10</maven.compiler.target>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <vaadin.version>11.0.1</vaadin.version>
+        <vaadin.version>14.0.4</vaadin.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.6.RELEASE</version>
+        <version>2.1.8.RELEASE</version>
     </parent>
-
     <repositories>
         <repository>
             <id>vaadin-addons</id>
@@ -31,7 +30,6 @@
             <url>https://repo.spring.io/libs-release</url>
         </repository>
     </repositories>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -131,16 +129,6 @@
             <version>3.0.15.vaadin10</version>
         </dependency>
         <dependency>
-            <groupId>com.github.rozidan</groupId>
-            <artifactId>logger-spring-boot</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>au.com.bytecode</groupId>
-            <artifactId>opencsv</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
             <version>3.6</version>
@@ -158,12 +146,27 @@
         <dependency>
             <groupId>org.apache.xmlgraphics</groupId>
             <artifactId>fop</artifactId>
-            <version>2.2</version>
+            <version>2.3</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -171,6 +174,7 @@
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.6</version>
             </plugin>
         </plugins>
     </build>
@@ -196,7 +200,7 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>11.0.1</version>
+                        <version>${vaadin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
