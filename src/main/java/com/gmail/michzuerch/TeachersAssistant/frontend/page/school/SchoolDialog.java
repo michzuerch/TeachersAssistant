@@ -16,7 +16,12 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 public class SchoolDialog extends Dialog {
-    private static final Logger logger = LoggerFactory.getLogger(SchoolDialog.class);
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 8976889366722921945L;
+
+	private static final Logger logger = LoggerFactory.getLogger(SchoolDialog.class);
 
     @Autowired
     SchoolRepository repository;

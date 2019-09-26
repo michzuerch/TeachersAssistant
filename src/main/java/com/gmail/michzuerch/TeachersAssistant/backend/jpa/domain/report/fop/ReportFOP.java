@@ -9,7 +9,12 @@ import java.util.List;
 
 @Entity
 public class ReportFOP extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -7921968839715827974L;
+
+	@Column
     @NotNull
     private String bezeichnung;
 

@@ -7,7 +7,12 @@ import javax.persistence.*;
 @Entity
 public class ReportCSSImage extends AbstractEntity {
 
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 130905319287395299L;
+
+	@Column
     private String bezeichnung;
 
     @ManyToOne

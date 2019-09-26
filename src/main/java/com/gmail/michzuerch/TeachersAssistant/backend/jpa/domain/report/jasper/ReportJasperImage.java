@@ -8,7 +8,12 @@ import javax.persistence.*;
 @Entity
 public class ReportJasperImage extends AbstractEntity {
 
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -5800903424732442409L;
+
+	@Column
     private String bezeichnung;
 
     @ManyToOne

@@ -9,7 +9,12 @@ import java.util.List;
 
 @Entity
 public class ReportCSS extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -2714004846877440442L;
+
+	@Column
     @NotNull
     private String bezeichnung;
 

@@ -42,7 +42,12 @@ import de.kaesdingeling.hybridmenu.design.DesignItem;
 @BodySize(height = "100vh", width = "100vw")
 @HtmlImport("shared-styles.html")
 public class MainLayout extends HybridMenu {
-    @Override
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -6374446557697440449L;
+
+	@Override
     public boolean init(VaadinSession vaadinSession, UI ui) {
         withConfig(MenuConfig.get().withDesignItem(DesignItem.getWhiteDesign()));
 

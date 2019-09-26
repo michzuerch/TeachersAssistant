@@ -7,7 +7,12 @@ import javax.persistence.*;
 @Entity
 public class ReportFOPImage extends AbstractEntity {
 
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -2391126232291137386L;
+
+	@Column
     private String bezeichnung;
 
     @ManyToOne

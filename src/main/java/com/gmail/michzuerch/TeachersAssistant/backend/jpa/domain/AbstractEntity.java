@@ -13,7 +13,9 @@ import java.util.Objects;
 @MappedSuperclass
 public abstract class AbstractEntity implements Serializable, Cloneable {
 
-    @Version
+    private static final long serialVersionUID = -3321757542577081226L;
+
+	@Version
     public int version;
 
     @Id

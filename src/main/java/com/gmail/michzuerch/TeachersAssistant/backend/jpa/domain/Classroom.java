@@ -7,7 +7,9 @@ import java.util.List;
 @Entity
 public class Classroom extends AbstractEntity {
 
-    @Column
+	private static final long serialVersionUID = 2037822589378475064L;
+
+	@Column
     private String bezeichnung;
 
     @ManyToOne

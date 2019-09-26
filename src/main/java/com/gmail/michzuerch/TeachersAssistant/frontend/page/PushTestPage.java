@@ -7,15 +7,16 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @Route(value = "PushTest", layout = MainLayout.class)
 public class PushTestPage extends VerticalLayout {
-    private static final Logger logger = LoggerFactory.getLogger(PushTestPage.class);
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 7673048339108834238L;
     private FeederThread thread;
     private Label timeLbl = new Label("Uhr");
 
@@ -53,7 +54,7 @@ public class PushTestPage extends VerticalLayout {
                 while (count < 60) {
                     // Sleep to emulate background work
                     Thread.sleep(500);
-                    String message = "This is update " + count++;
+                    //String message = "This is update " + count++;
                     //log.debug(LocalTime.now().format(dateTimeFormatter));
                     ui.access(() -> view.timeLbl.setText(LocalTime.now().format(dateTimeFormatter)));
                 }

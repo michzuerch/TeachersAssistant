@@ -9,7 +9,12 @@ import java.util.List;
 
 @Entity
 public class School extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -340090606662463184L;
+
+	@Column
     private String bezeichnung;
 
     @Column

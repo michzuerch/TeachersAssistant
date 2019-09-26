@@ -13,7 +13,12 @@ import java.util.List;
  */
 @Entity
 public class ReportJasper extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 3404216166340190036L;
+
+	@Column
     @NotNull
     @Size(min = 1, max = 50)
     private String bezeichnung;

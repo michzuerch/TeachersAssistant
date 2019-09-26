@@ -6,8 +6,6 @@ import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +13,10 @@ import java.util.*;
 
 @Route(value = "GitVersion", layout = MainLayout.class)
 public class GitVersionPage extends VerticalLayout {
-    private static final Logger logger = LoggerFactory.getLogger(com.gmail.michzuerch.TeachersAssistant.frontend.page.GitVersionPage.class);
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -1975050120723482674L;
 
     private Grid<GitProperty> gitPropertyGrid = new Grid<>(GitProperty.class);
     private H3 gitBranch = new H3();

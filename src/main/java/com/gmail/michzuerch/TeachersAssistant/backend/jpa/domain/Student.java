@@ -6,7 +6,12 @@ import java.util.List;
 
 @Entity
 public class Student extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 6716834688846342345L;
+
+	@Column
     private String vorname;
 
     @Column

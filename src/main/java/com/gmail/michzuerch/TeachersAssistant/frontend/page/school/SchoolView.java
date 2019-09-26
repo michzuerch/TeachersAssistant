@@ -19,7 +19,12 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 public class SchoolView extends VerticalLayout {
-    private static final Logger logger = LoggerFactory.getLogger(SchoolView.class);
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 4362643503537258188L;
+
+	private static final Logger logger = LoggerFactory.getLogger(SchoolView.class);
 
     private SchoolService service;
 

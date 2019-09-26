@@ -9,7 +9,12 @@ import java.time.LocalDateTime;
 
 @Entity
 public class Lession extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 2045433716846822768L;
+
+	@Column
     @NotNull
     @Size(min = 3, message = "Mindestlänge 3 Zeichen")
     private String bezeichnung;

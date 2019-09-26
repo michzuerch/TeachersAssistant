@@ -30,7 +30,12 @@ import org.jsoup.nodes.Element;
 public class AddMetaServiceInitListener
         implements VaadinServiceInitListener, BootstrapListener {
 
-    @Override
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -6161955078164319214L;
+
+	@Override
     public void serviceInit(ServiceInitEvent event) {
         event.addBootstrapListener(this);
     }

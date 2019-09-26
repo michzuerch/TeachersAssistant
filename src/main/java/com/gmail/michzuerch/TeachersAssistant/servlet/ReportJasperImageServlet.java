@@ -16,7 +16,11 @@ import java.util.logging.Logger;
 
 @WebServlet(name = "ReportJasperImageServlet", urlPatterns = "/reportjasperimage/*")
 public class ReportJasperImageServlet extends HttpServlet {
-    private static final Logger LOGGER = Logger.getLogger(ReportJasperImageServlet.class.getName());
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 888338747366809917L;
+	private static final Logger LOGGER = Logger.getLogger(ReportJasperImageServlet.class.getName());
     protected URIResolver uriResolver;
 
     @Autowired

@@ -6,7 +6,12 @@ import java.util.List;
 
 @Entity
 public class Teacher extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -643657297779717967L;
+
+	@Column
     private String nachname;
 
     @Column

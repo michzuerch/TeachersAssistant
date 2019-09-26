@@ -7,7 +7,12 @@ import java.time.LocalDateTime;
 
 @Entity
 public class SchoolGrade extends AbstractEntity {
-    @Column
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -6788488170825961649L;
+
+	@Column
     private String bezeichnung;
 
     @ManyToOne

@@ -17,12 +17,14 @@ import javax.xml.transform.stream.StreamSource;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 @WebServlet(name = "FopReportServlet", urlPatterns = "/fop/*")
 public class FopReportServlet extends HttpServlet {
-    private static final Logger LOGGER = Logger.getLogger(FopReportServlet.class.getName());
-    protected URIResolver uriResolver;
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = -6922939690161204798L;
+	protected URIResolver uriResolver;
     private TransformerFactory tFactory = TransformerFactory.newInstance();
     private FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
     private ByteArrayOutputStream out = new ByteArrayOutputStream();

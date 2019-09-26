@@ -16,7 +16,11 @@ import java.util.logging.Logger;
 
 @WebServlet(name = "ReportCSSImageServlet", urlPatterns = "/reportcssimage/*")
 public class ReportCSSImageServlet extends HttpServlet {
-    private static final Logger LOGGER = Logger.getLogger(ReportCSSImageServlet.class.getName());
+    /**
+	 *
+	 */
+	private static final long serialVersionUID = 6701757839719509569L;
+	private static final Logger LOGGER = Logger.getLogger(ReportCSSImageServlet.class.getName());
     protected URIResolver uriResolver;
 
     @Autowired
