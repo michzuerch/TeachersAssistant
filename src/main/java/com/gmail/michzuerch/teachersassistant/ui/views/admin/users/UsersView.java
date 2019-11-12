@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.admin.users;
 
-import static com.gmail.michzuerch.teachersassistant.ui.utils.BakeryConst.PAGE_USERS;
+import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.PAGE_USERS;
 
 import com.gmail.michzuerch.teachersassistant.app.security.CurrentUser;
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
@@ -24,10 +24,10 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.gmail.michzuerch.teachersassistant.ui.MainView;
 import com.gmail.michzuerch.teachersassistant.ui.crud.AbstractBakeryCrudView;
-import com.gmail.michzuerch.teachersassistant.ui.utils.BakeryConst;
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 
 @Route(value = PAGE_USERS, layout = MainView.class)
-@PageTitle(BakeryConst.TITLE_USERS)
+@PageTitle(I18nConst.TITLE_USERS)
 @Secured(Role.ADMIN)
 public class UsersView extends AbstractBakeryCrudView<User> {
 

@@ -41,15 +41,15 @@ import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.OrderSummary;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
 import com.gmail.michzuerch.teachersassistant.ui.MainView;
-import com.gmail.michzuerch.teachersassistant.ui.utils.BakeryConst;
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
 import com.gmail.michzuerch.teachersassistant.ui.views.storefront.OrderCard;
 import com.gmail.michzuerch.teachersassistant.ui.views.storefront.beans.OrdersCountDataWithChart;
 
 @Tag("dashboard-view")
 @JsModule("./src/views/dashboard/dashboard-view.js")
-@Route(value = BakeryConst.PAGE_DASHBOARD, layout = MainView.class)
-@PageTitle(BakeryConst.TITLE_DASHBOARD)
+@Route(value = I18nConst.PAGE_DASHBOARD, layout = MainView.class)
+@PageTitle(I18nConst.TITLE_DASHBOARD)
 public class DashboardView extends PolymerTemplate<TemplateModel> {
 
 	private static final long serialVersionUID = 1L;
@@ -97,7 +97,7 @@ public class DashboardView extends PolymerTemplate<TemplateModel> {
 				.withProperty("orderCard", OrderCard::create)
 				.withProperty("header", order -> null)
 				.withEventHandler("cardClick",
-						order -> UI.getCurrent().navigate(BakeryConst.PAGE_STOREFRONT + "/" + order.getId())));
+						order -> UI.getCurrent().navigate(I18nConst.PAGE_STOREFRONT + "/" + order.getId())));
 
 		grid.setSelectionMode(Grid.SelectionMode.NONE);
 		grid.setDataProvider(orderDataProvider);

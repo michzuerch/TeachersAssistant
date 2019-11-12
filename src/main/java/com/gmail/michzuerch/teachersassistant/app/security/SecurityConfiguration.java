@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
-import com.gmail.michzuerch.teachersassistant.ui.utils.BakeryConst;
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 
 /**
  * Configures spring security, doing the following:
@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private static final String LOGIN_PROCESSING_URL = "/login";
 	private static final String LOGIN_FAILURE_URL = "/login?error";
 	private static final String LOGIN_URL = "/login";
-	private static final String LOGOUT_SUCCESS_URL = "/" + BakeryConst.PAGE_STOREFRONT;
+	private static final String LOGOUT_SUCCESS_URL = "/" + I18nConst.PAGE_STOREFRONT;
 
 	private final UserDetailsService userDetailsService;
 
