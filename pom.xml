@@ -20,7 +20,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <!-- Dependencies -->
-        <vaadin.version>14.0.12</vaadin.version>
+        <vaadin.version>14.0.14</vaadin.version>
 
         <!-- Overrides the old version specified by the Spring Boot parent -->
         <selenium.version>3.141.59</selenium.version>
@@ -228,12 +228,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-            <scope>runtime</scope>
         </dependency>
         <!-- End Spring -->
         <!-- Add JAXB explicitly as the java.xml.bind module is not included
