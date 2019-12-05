@@ -17,7 +17,6 @@ public class Student extends AbstractEntity {
     @ManyToOne
     private SchoolClass schoolClass;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<School> schoolSubjects = new ArrayList<>();
-
+    @ManyToOne
+    private School school;
 }
