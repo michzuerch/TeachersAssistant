@@ -5,8 +5,10 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import lombok.Data;
 
 @Entity
+@Data
 public class Lession extends AbstractEntity {
     @NotNull
     @Size(min = 3, message = "Mindestlänge 3 Zeichen")

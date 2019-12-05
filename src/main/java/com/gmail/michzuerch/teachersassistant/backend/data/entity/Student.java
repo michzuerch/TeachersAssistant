@@ -6,8 +6,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
 @Entity
+@Data
 public class Student extends AbstractEntity {
 
     private String vorname;

@@ -6,8 +6,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
 @Entity
+@Data
 public class Classroom extends AbstractEntity {
     private String bezeichnung;
 
