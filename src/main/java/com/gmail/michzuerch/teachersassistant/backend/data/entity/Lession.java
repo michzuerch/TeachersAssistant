@@ -1,6 +1,5 @@
 package com.gmail.michzuerch.teachersassistant.backend.data.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
@@ -18,9 +17,6 @@ public class Lession extends AbstractEntity {
 
     @NotNull
     private LocalDateTime ende;
-
-    @ManyToOne
-    private SchoolSubject schoolSubject;
 
     @ManyToOne
     private Teacher teacher;

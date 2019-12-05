@@ -1,11 +1,11 @@
 package com.gmail.michzuerch.teachersassistant.backend.data.entity;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Student extends AbstractEntity {
@@ -18,6 +18,6 @@ public class Student extends AbstractEntity {
     private SchoolClass schoolClass;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SchoolSubject> schoolSubjects = new ArrayList<>();
+    private List<School> schoolSubjects = new ArrayList<>();
 
 }
