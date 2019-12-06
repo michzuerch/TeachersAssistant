@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.backend.service;
 
-import java.util.Optional;
-
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -10,8 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import java.util.Optional;
 
 @Service
 public class ProductService implements FilterableCrudService<Product> {

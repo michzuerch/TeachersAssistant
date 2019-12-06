@@ -1,39 +1,37 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.storefront;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.gmail.michzuerch.teachersassistant.app.security.CurrentUser;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
 import com.gmail.michzuerch.teachersassistant.backend.service.OrderService;
+import com.gmail.michzuerch.teachersassistant.ui.crud.EntityPresenter;
 import com.gmail.michzuerch.teachersassistant.ui.dataproviders.OrdersGridDataProvider;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.beans.OrderCardHeader;
 import com.vaadin.flow.component.Focusable;
 import com.vaadin.flow.component.HasValue;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.spring.annotation.SpringComponent;
-import com.gmail.michzuerch.teachersassistant.ui.crud.EntityPresenter;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.beans.OrderCardHeader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringComponent
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class OrderPresenter {
 
-	private OrderCardHeaderGenerator headersGenerator;
-	private StorefrontView view;
-
 	private final EntityPresenter<Order, StorefrontView> entityPresenter;
 	private final OrdersGridDataProvider dataProvider;
 	private final CurrentUser currentUser;
 	private final OrderService orderService;
+	private OrderCardHeaderGenerator headersGenerator;
+	private StorefrontView view;
 
 	@Autowired
 	OrderPresenter(OrderService orderService, OrdersGridDataProvider dataProvider,
-			EntityPresenter<Order, StorefrontView> entityPresenter, CurrentUser currentUser) {
+				   EntityPresenter<Order, StorefrontView> entityPresenter, CurrentUser currentUser) {
 		this.orderService = orderService;
 		this.entityPresenter = entityPresenter;
 		this.dataProvider = dataProvider;

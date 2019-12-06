@@ -1,9 +1,9 @@
 package com.gmail.michzuerch.teachersassistant.backend.data;
 
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
+
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
 
 public class DashboardData {
 

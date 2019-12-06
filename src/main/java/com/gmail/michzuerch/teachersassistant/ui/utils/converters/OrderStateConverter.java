@@ -1,15 +1,13 @@
 package com.gmail.michzuerch.teachersassistant.ui.utils.converters;
 
-import static com.gmail.michzuerch.teachersassistant.ui.dataproviders.DataProviderUtil.convertIfNotNull;
+import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
+import com.gmail.michzuerch.teachersassistant.ui.dataproviders.DataProviderUtil;
+import com.vaadin.flow.templatemodel.ModelEncoder;
 
 import java.util.Arrays;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
-import com.gmail.michzuerch.teachersassistant.ui.dataproviders.DataProviderUtil;
-import com.vaadin.flow.templatemodel.ModelEncoder;
 
 public class OrderStateConverter implements ModelEncoder<OrderState, String> {
 

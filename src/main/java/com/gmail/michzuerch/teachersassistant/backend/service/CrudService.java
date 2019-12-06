@@ -1,11 +1,10 @@
 package com.gmail.michzuerch.teachersassistant.backend.service;
 
-import javax.persistence.EntityNotFoundException;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.AbstractEntity;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import javax.persistence.EntityNotFoundException;
 
 public interface CrudService<T extends AbstractEntity> {
 

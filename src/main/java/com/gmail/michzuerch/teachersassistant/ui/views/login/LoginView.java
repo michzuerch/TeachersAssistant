@@ -1,25 +1,20 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.login;
 
 import com.gmail.michzuerch.teachersassistant.app.security.SecurityUtils;
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.StorefrontView;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
 import com.vaadin.flow.component.page.Viewport;
-import com.vaadin.flow.router.AfterNavigationEvent;
-import com.vaadin.flow.router.AfterNavigationObserver;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.StorefrontView;
+import com.vaadin.flow.router.*;
 
 @Route
 @PageTitle("teachersassistant-app")
 @JsModule("./styles/shared-styles.js")
 @Viewport(I18nConst.VIEWPORT)
 public class LoginView extends LoginOverlay
-	implements AfterNavigationObserver, BeforeEnterObserver {
+		implements AfterNavigationObserver, BeforeEnterObserver {
 
 	private static final long serialVersionUID = 1L;
 
@@ -28,7 +23,7 @@ public class LoginView extends LoginOverlay
 		i18n.setHeader(new LoginI18n.Header());
 		i18n.getHeader().setTitle("teachersassistant-app");
 		i18n.getHeader().setDescription(
-			"admin@vaadin.com + admin\n" + "barista@vaadin.com + barista");
+				"admin@vaadin.com + admin\n" + "barista@vaadin.com + barista");
 		i18n.setAdditionalInformation(null);
 		i18n.setForm(new LoginI18n.Form());
 		i18n.getForm().setSubmit("Sign in");
@@ -52,8 +47,8 @@ public class LoginView extends LoginOverlay
 	@Override
 	public void afterNavigation(AfterNavigationEvent event) {
 		setError(
-			event.getLocation().getQueryParameters().getParameters().containsKey(
-				"error"));
+				event.getLocation().getQueryParameters().getParameters().containsKey(
+						"error"));
 	}
 
 }

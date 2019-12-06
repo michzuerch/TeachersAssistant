@@ -1,50 +1,16 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.storefront;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
 import com.gmail.michzuerch.teachersassistant.ui.views.storefront.beans.OrderCardHeader;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.function.Predicate;
+
 public class OrderCardHeaderGenerator {
 
-	private class HeaderWrapper {
-		private Predicate<LocalDate> matcher;
-
-		private OrderCardHeader header;
-
-		private Long selected;
-
-		public HeaderWrapper(Predicate<LocalDate> matcher, OrderCardHeader header) {
-			this.matcher = matcher;
-			this.header = header;
-		}
-
-		public boolean matches(LocalDate date) {
-			return matcher.test(date);
-		}
-
-		public Long getSelected() {
-			return selected;
-		}
-
-		public void setSelected(Long selected) {
-			this.selected = selected;
-		}
-
-		public OrderCardHeader getHeader() {
-			return header;
-		}
-	}
-
 	private final DateTimeFormatter HEADER_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("EEE, MMM d");
-
 	private final Map<Long, OrderCardHeader> ordersWithHeaders = new HashMap<>();
 	private List<HeaderWrapper> headerChain = new ArrayList<>();
 
@@ -141,5 +107,34 @@ public class OrderCardHeaderGenerator {
 				getThisWeekStartingTomorrow(showPrevious)));
 		headerChain.add(new HeaderWrapper(d -> !d.isBefore(firstDayOfTheNextWeek), getUpcomingHeader()));
 		return headerChain;
+	}
+
+	private class HeaderWrapper {
+		private Predicate<LocalDate> matcher;
+
+		private OrderCardHeader header;
+
+		private Long selected;
+
+		public HeaderWrapper(Predicate<LocalDate> matcher, OrderCardHeader header) {
+			this.matcher = matcher;
+			this.header = header;
+		}
+
+		public boolean matches(LocalDate date) {
+			return matcher.test(date);
+		}
+
+		public Long getSelected() {
+			return selected;
+		}
+
+		public void setSelected(Long selected) {
+			this.selected = selected;
+		}
+
+		public OrderCardHeader getHeader() {
+			return header;
+		}
 	}
 }

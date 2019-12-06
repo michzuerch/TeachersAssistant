@@ -1,8 +1,8 @@
 package com.gmail.michzuerch.teachersassistant.ui.utils.converters;
 
 import com.gmail.michzuerch.teachersassistant.ui.dataproviders.DataProviderUtil;
-import com.vaadin.flow.templatemodel.ModelEncoder;
 import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
+import com.vaadin.flow.templatemodel.ModelEncoder;
 
 public class CurrencyFormatter implements ModelEncoder<Integer, String> {
 

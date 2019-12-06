@@ -1,7 +1,6 @@
 package com.gmail.michzuerch.teachersassistant.backend.service;
 
-import java.util.Optional;
-
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import java.util.Optional;
 
 @Service
 public class UserService implements FilterableCrudService<User> {

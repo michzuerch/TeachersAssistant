@@ -1,10 +1,13 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.orderedit;
 
-import java.util.Objects;
-import java.util.stream.Stream;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.OrderItem;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
 import com.gmail.michzuerch.teachersassistant.ui.components.AmountField;
+import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.CommentChangeEvent;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.DeleteEvent;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.PriceChangeEvent;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ProductChangeEvent;
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.HasValue;
@@ -23,42 +26,33 @@ import com.vaadin.flow.data.binder.BindingValidationStatus;
 import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.templatemodel.TemplateModel;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
-import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.CommentChangeEvent;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.DeleteEvent;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.PriceChangeEvent;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ProductChangeEvent;
+
+import java.util.Objects;
+import java.util.stream.Stream;
 
 @Tag("order-item-editor")
 @JsModule("./src/views/orderedit/order-item-editor.js")
 public class OrderItemEditor extends PolymerTemplate<TemplateModel> implements HasValueAndElement<ComponentValueChangeEvent<OrderItemEditor, OrderItem>, OrderItem> {
 
 	private static final long serialVersionUID = 1L;
-
+	private final AbstractFieldSupport<OrderItemEditor, OrderItem> fieldSupport;
 	@Id("products")
 	private ComboBox<Product> products;
-
 	@Id("delete")
 	private Button delete;
-
 	@Id("amount")
 	private AmountField amount;
-
 	@Id("price")
 	private Div price;
-
 	@Id("comment")
 	private TextField comment;
-
 	private int totalPrice;
-	
-    private final AbstractFieldSupport<OrderItemEditor,OrderItem> fieldSupport;
-
 	private BeanValidationBinder<OrderItem> binder = new BeanValidationBinder<>(OrderItem.class);
+
 	public OrderItemEditor(DataProvider<Product, String> productDataProvider) {
-		this.fieldSupport =  new AbstractFieldSupport<>(this, null,
-				Objects::equals, c ->  {});
+		this.fieldSupport = new AbstractFieldSupport<>(this, null,
+				Objects::equals, c -> {
+		});
 		products.setDataProvider(productDataProvider);
 		products.addValueChangeListener(e -> {
 			setPrice();
@@ -76,7 +70,7 @@ public class OrderItemEditor extends PolymerTemplate<TemplateModel> implements H
 		delete.addClickListener(e -> fireEvent(new DeleteEvent(this)));
 		setPrice();
 	}
-	
+
 	private void setPrice() {
 		int oldValue = totalPrice;
 		Integer selectedAmount = amount.getValue();
@@ -92,6 +86,11 @@ public class OrderItemEditor extends PolymerTemplate<TemplateModel> implements H
 	}
 
 	@Override
+	public OrderItem getValue() {
+		return fieldSupport.getValue();
+	}
+
+	@Override
 	public void setValue(OrderItem value) {
 		fieldSupport.setValue(value);
 		binder.setBean(value);
@@ -100,11 +99,6 @@ public class OrderItemEditor extends PolymerTemplate<TemplateModel> implements H
 		delete.setEnabled(!noProductSelected);
 		comment.setEnabled(!noProductSelected);
 		setPrice();
-	}
-
-	@Override
-	public OrderItem getValue() {
-		return fieldSupport.getValue();
 	}
 
 	public Stream<HasValue<?, ?>> validate() {

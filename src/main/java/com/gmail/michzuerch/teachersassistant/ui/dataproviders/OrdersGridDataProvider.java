@@ -1,25 +1,24 @@
 package com.gmail.michzuerch.teachersassistant.ui.dataproviders;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Consumer;
-
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
+import com.gmail.michzuerch.teachersassistant.backend.service.OrderService;
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.vaadin.flow.data.provider.Query;
+import com.vaadin.flow.data.provider.QuerySortOrder;
+import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.vaadin.artur.spring.dataprovider.FilterablePageableDataProvider;
 
-import com.vaadin.flow.data.provider.Query;
-import com.vaadin.flow.data.provider.QuerySortOrder;
-import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
-import com.vaadin.flow.spring.annotation.SpringComponent;
-import com.vaadin.flow.spring.annotation.UIScope;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
-import com.gmail.michzuerch.teachersassistant.backend.service.OrderService;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
 
 /**
  * A pageable order data provider.
@@ -29,34 +28,10 @@ import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 public class OrdersGridDataProvider extends FilterablePageableDataProvider<Order, OrdersGridDataProvider.OrderFilter> {
 
 	private static final long serialVersionUID = 1L;
-
-	public static class OrderFilter implements Serializable {
-		private static final long serialVersionUID = 1L;
-		private String filter;
-		private boolean showPrevious;
-
-		public String getFilter() {
-			return filter;
-		}
-
-		public boolean isShowPrevious() {
-			return showPrevious;
-		}
-
-		public OrderFilter(String filter, boolean showPrevious) {
-			this.filter = filter;
-			this.showPrevious = showPrevious;
-		}
-
-		public static OrderFilter getEmptyFilter() {
-			return new OrderFilter("", false);
-		}
-	}
-
 	private final OrderService orderService;
 	private List<QuerySortOrder> defaultSortOrders;
 	private Consumer<Page<Order>> pageObserver;
-	
+
 	@Autowired
 	public OrdersGridDataProvider(OrderService orderService) {
 		this.orderService = orderService;
@@ -113,5 +88,28 @@ public class OrdersGridDataProvider extends FilterablePageableDataProvider<Order
 	@Override
 	public Object getId(Order item) {
 		return item.getId();
+	}
+
+	public static class OrderFilter implements Serializable {
+		private static final long serialVersionUID = 1L;
+		private String filter;
+		private boolean showPrevious;
+
+		public OrderFilter(String filter, boolean showPrevious) {
+			this.filter = filter;
+			this.showPrevious = showPrevious;
+		}
+
+		public static OrderFilter getEmptyFilter() {
+			return new OrderFilter("", false);
+		}
+
+		public String getFilter() {
+			return filter;
+		}
+
+		public boolean isShowPrevious() {
+			return showPrevious;
+		}
 	}
 }

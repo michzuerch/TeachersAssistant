@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.app.security;
 
-import java.util.Collections;
-
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,12 +10,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
-import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
+import java.util.Collections;
 
 /**
  * Implements the {@link UserDetailsService}.
- * 
+ * <p>
  * This implementation searches for {@link User} entities by the e-mail address
  * supplied in the login screen.
  */
@@ -31,13 +30,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	}
 
 	/**
-	 *
 	 * Recovers the {@link User} from the database using the e-mail address supplied
 	 * in the login screen. If the user is found, returns a
 	 * {@link org.springframework.security.core.userdetails.User}.
 	 *
 	 * @param username User's e-mail address
-	 * 
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -3,6 +3,13 @@
  */
 package com.gmail.michzuerch.teachersassistant.ui.views.orderedit;
 
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
+import com.gmail.michzuerch.teachersassistant.ui.events.CancelEvent;
+import com.gmail.michzuerch.teachersassistant.ui.events.SaveEvent;
+import com.gmail.michzuerch.teachersassistant.ui.utils.converters.*;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.converters.StorefrontLocalDateConverter;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.CommentEvent;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.EditEvent;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Tag;
@@ -16,17 +23,6 @@ import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.templatemodel.Encode;
 import com.vaadin.flow.templatemodel.Include;
 import com.vaadin.flow.templatemodel.TemplateModel;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
-import com.gmail.michzuerch.teachersassistant.ui.events.CancelEvent;
-import com.gmail.michzuerch.teachersassistant.ui.events.SaveEvent;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.CurrencyFormatter;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.LocalDateTimeConverter;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.LocalTimeConverter;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.LongToStringConverter;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.OrderStateConverter;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.converters.StorefrontLocalDateConverter;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.CommentEvent;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.EditEvent;
 
 /**
  * The component displaying a full (read-only) summary of an order, and a comment
@@ -98,24 +94,6 @@ public class OrderDetails extends PolymerTemplate<OrderDetails.Model> {
 		this.isDirty = isDirty;
 	}
 
-	public interface Model extends TemplateModel {
-		@Include({ "id", "dueDate.day", "dueDate.weekday", "dueDate.date", "dueTime", "state", "pickupLocation.name",
-			"customer.fullName", "customer.phoneNumber", "customer.details", "items.product.name", "items.comment",
-			"items.quantity", "items.product.price", "history.message", "history.createdBy.firstName",
-			"history.timestamp", "history.newState", "totalPrice" })
-		@Encode(value = LongToStringConverter.class, path = "id")
-		@Encode(value = StorefrontLocalDateConverter.class, path = "dueDate")
-		@Encode(value = LocalTimeConverter.class, path = "dueTime")
-		@Encode(value = OrderStateConverter.class, path = "state")
-		@Encode(value = CurrencyFormatter.class, path = "items.product.price")
-		@Encode(value = LocalDateTimeConverter.class, path = "history.timestamp")
-		@Encode(value = OrderStateConverter.class, path = "history.newState")
-		@Encode(value = CurrencyFormatter.class, path = "totalPrice")
-		void setItem(Order order);
-
-		void setReview(boolean review);
-	}
-
 	public Registration addSaveListenter(ComponentEventListener<SaveEvent> listener) {
 		return addListener(SaveEvent.class, listener);
 	}
@@ -134,5 +112,23 @@ public class OrderDetails extends PolymerTemplate<OrderDetails.Model> {
 
 	public Registration addCancelListener(ComponentEventListener<CancelEvent> listener) {
 		return addListener(CancelEvent.class, listener);
+	}
+
+	public interface Model extends TemplateModel {
+		@Include({"id", "dueDate.day", "dueDate.weekday", "dueDate.date", "dueTime", "state", "pickupLocation.name",
+				"customer.fullName", "customer.phoneNumber", "customer.details", "items.product.name", "items.comment",
+				"items.quantity", "items.product.price", "history.message", "history.createdBy.firstName",
+				"history.timestamp", "history.newState", "totalPrice"})
+		@Encode(value = LongToStringConverter.class, path = "id")
+		@Encode(value = StorefrontLocalDateConverter.class, path = "dueDate")
+		@Encode(value = LocalTimeConverter.class, path = "dueTime")
+		@Encode(value = OrderStateConverter.class, path = "state")
+		@Encode(value = CurrencyFormatter.class, path = "items.product.price")
+		@Encode(value = LocalDateTimeConverter.class, path = "history.timestamp")
+		@Encode(value = OrderStateConverter.class, path = "history.newState")
+		@Encode(value = CurrencyFormatter.class, path = "totalPrice")
+		void setItem(Order order);
+
+		void setReview(boolean review);
 	}
 }

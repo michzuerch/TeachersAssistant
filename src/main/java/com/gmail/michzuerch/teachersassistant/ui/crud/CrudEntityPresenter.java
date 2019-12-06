@@ -1,11 +1,11 @@
 package com.gmail.michzuerch.teachersassistant.ui.crud;
 
+import com.gmail.michzuerch.teachersassistant.app.HasLogger;
 import com.gmail.michzuerch.teachersassistant.app.security.CurrentUser;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.AbstractEntity;
 import com.gmail.michzuerch.teachersassistant.backend.service.CrudService;
 import com.gmail.michzuerch.teachersassistant.backend.service.UserFriendlyDataException;
 import com.gmail.michzuerch.teachersassistant.ui.utils.messages.CrudErrorMessage;
-import com.gmail.michzuerch.teachersassistant.app.HasLogger;
 import com.gmail.michzuerch.teachersassistant.ui.views.HasNotifications;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.OptimisticLockingFailureException;
@@ -14,7 +14,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.ConstraintViolationException;
 import java.util.function.Consumer;
 
-public class CrudEntityPresenter<E extends AbstractEntity>	implements HasLogger {
+public class CrudEntityPresenter<E extends AbstractEntity> implements HasLogger {
 
 	private final CrudService<E> crudService;
 

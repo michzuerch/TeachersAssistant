@@ -18,7 +18,7 @@ public interface EntityView<T> extends HasConfirmation, HasNotifications {
 	/**
 	 * Shows an error notification with a given text.
 	 *
-	 * @param message a user-friendly error message
+	 * @param message      a user-friendly error message
 	 * @param isPersistent if <code>true</code> the message requires a user
 	 *                     action to disappear (if <code>false</code> it
 	 *                     disappears automatically after some time)
@@ -44,11 +44,9 @@ public interface EntityView<T> extends HasConfirmation, HasNotifications {
 	 * Writes the changes from the entity dialog into the given entity instance
 	 * (see {@link com.vaadin.flow.data.binder.Binder#writeBean(Object)})
 	 *
-	 * @param entity
-	 *            the entity instance to save the changes into
-	 * @throws ValidationException
-	 *             if the values entered into the entity dialog cannot be
-	 *             converted into entity properties
+	 * @param entity the entity instance to save the changes into
+	 * @throws ValidationException if the values entered into the entity dialog cannot be
+	 *                             converted into entity properties
 	 */
 	void write(T entity) throws ValidationException;
 

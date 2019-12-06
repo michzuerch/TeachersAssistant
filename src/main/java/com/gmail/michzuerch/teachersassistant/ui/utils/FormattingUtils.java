@@ -1,5 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.ui.utils;
 
+import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -9,8 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
-
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 
 public class FormattingUtils {
 
@@ -52,7 +52,8 @@ public class FormattingUtils {
 			.ofPattern("h:mm a", I18nConst.APP_LOCALE);
 
 	/**
-	 * Returns the month name of the date, according to the application locale. 
+	 * Returns the month name of the date, according to the application locale.
+	 *
 	 * @param date {@link LocalDate}
 	 * @return The full month name. E.g: November
 	 */

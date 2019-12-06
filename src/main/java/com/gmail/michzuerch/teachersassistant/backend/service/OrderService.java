@@ -1,22 +1,12 @@
 package com.gmail.michzuerch.teachersassistant.backend.service;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.YearMonth;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.function.BiConsumer;
-
-import javax.transaction.Transactional;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.DashboardData;
 import com.gmail.michzuerch.teachersassistant.backend.data.DeliveryStats;
 import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.OrderSummary;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,14 +14,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.OrderSummary;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.YearMonth;
+import java.util.*;
+import java.util.function.BiConsumer;
 
 @Service
 public class OrderService implements CrudService<Order> {
 
+	private static final Set<OrderState> notAvailableStates = Collections.unmodifiableSet(
+			EnumSet.complementOf(EnumSet.of(OrderState.DELIVERED, OrderState.READY, OrderState.CANCELLED)));
 	private final OrderRepository orderRepository;
 
 	@Autowired
@@ -39,9 +33,6 @@ public class OrderService implements CrudService<Order> {
 		super();
 		this.orderRepository = orderRepository;
 	}
-
-	private static final Set<OrderState> notAvailableStates = Collections.unmodifiableSet(
-			EnumSet.complementOf(EnumSet.of(OrderState.DELIVERED, OrderState.READY, OrderState.CANCELLED)));
 
 	@Transactional(rollbackOn = Exception.class)
 	public Order saveOrder(User currentUser, Long id, BiConsumer<User, Order> orderFiller) {
@@ -67,7 +58,7 @@ public class OrderService implements CrudService<Order> {
 	}
 
 	public Page<Order> findAnyMatchingAfterDueDate(Optional<String> optionalFilter,
-			Optional<LocalDate> optionalFilterDate, Pageable pageable) {
+												   Optional<LocalDate> optionalFilterDate, Pageable pageable) {
 		if (optionalFilter.isPresent() && !optionalFilter.get().isEmpty()) {
 			if (optionalFilterDate.isPresent()) {
 				return orderRepository.findByCustomerFullNameContainingIgnoreCaseAndDueDateAfter(
@@ -83,7 +74,7 @@ public class OrderService implements CrudService<Order> {
 			}
 		}
 	}
-	
+
 	@Transactional
 	public List<OrderSummary> findAnyMatchingStartingToday() {
 		return orderRepository.findByDueDateGreaterThanEqual(LocalDate.now());

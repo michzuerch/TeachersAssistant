@@ -1,7 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.backend.service;
 
-import java.util.Optional;
-
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.PickupLocation;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.PickupLocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,11 +10,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.PickupLocation;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import java.util.Optional;
 
 @Service
-public class PickupLocationService implements FilterableCrudService<PickupLocation>{
+public class PickupLocationService implements FilterableCrudService<PickupLocation> {
 
 	private final PickupLocationRepository pickupLocationRepository;
 

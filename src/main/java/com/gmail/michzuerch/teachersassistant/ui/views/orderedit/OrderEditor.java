@@ -1,20 +1,19 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.orderedit;
 
-import java.time.LocalTime;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.PickupLocation;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.service.PickupLocationService;
 import com.gmail.michzuerch.teachersassistant.backend.service.ProductService;
+import com.gmail.michzuerch.teachersassistant.ui.crud.CrudEntityDataProvider;
 import com.gmail.michzuerch.teachersassistant.ui.dataproviders.DataProviderUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
-
+import com.gmail.michzuerch.teachersassistant.ui.events.CancelEvent;
+import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
+import com.gmail.michzuerch.teachersassistant.ui.utils.converters.LocalTimeConverter;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ReviewEvent;
+import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ValueChangeEvent;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.HasValue;
@@ -37,16 +36,16 @@ import com.vaadin.flow.data.validator.BeanValidator;
 import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import com.vaadin.flow.templatemodel.TemplateModel;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.PickupLocation;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Product;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
-import com.gmail.michzuerch.teachersassistant.ui.crud.CrudEntityDataProvider;
-import com.gmail.michzuerch.teachersassistant.ui.events.CancelEvent;
-import com.gmail.michzuerch.teachersassistant.ui.utils.FormattingUtils;
-import com.gmail.michzuerch.teachersassistant.ui.utils.converters.LocalTimeConverter;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ReviewEvent;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ValueChangeEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+
+import java.time.LocalTime;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 @Tag("order-editor")
 @JsModule("./src/views/orderedit/order-editor.js")
@@ -55,13 +54,7 @@ import com.gmail.michzuerch.teachersassistant.ui.views.storefront.events.ValueCh
 public class OrderEditor extends PolymerTemplate<OrderEditor.Model> {
 
 	private static final long serialVersionUID = 1L;
-
-	public interface Model extends TemplateModel {
-		void setTotalPrice(String totalPrice);
-
-		void setStatus(String status);
-	}
-
+	private final LocalTimeConverter localTimeConverter = new LocalTimeConverter();
 	@Id("title")
 	private H2 title;
 
@@ -106,8 +99,6 @@ public class OrderEditor extends PolymerTemplate<OrderEditor.Model> {
 	private User currentUser;
 
 	private BeanValidationBinder<Order> binder = new BeanValidationBinder<>(Order.class);
-
-	private final LocalTimeConverter localTimeConverter = new LocalTimeConverter();
 
 	@Autowired
 	public OrderEditor(PickupLocationService locationService, ProductService productService) {
@@ -217,5 +208,11 @@ public class OrderEditor extends PolymerTemplate<OrderEditor.Model> {
 
 	public void setCurrentUser(User currentUser) {
 		this.currentUser = currentUser;
+	}
+
+	public interface Model extends TemplateModel {
+		void setTotalPrice(String totalPrice);
+
+		void setStatus(String status);
 	}
 }

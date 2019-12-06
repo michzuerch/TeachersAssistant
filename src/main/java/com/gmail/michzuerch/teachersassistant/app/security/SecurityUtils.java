@@ -1,11 +1,10 @@
 package com.gmail.michzuerch.teachersassistant.app.security;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.gmail.michzuerch.teachersassistant.ui.views.errors.AccessDeniedView;
+import com.gmail.michzuerch.teachersassistant.ui.views.errors.CustomRouteNotFoundError;
+import com.gmail.michzuerch.teachersassistant.ui.views.login.LoginView;
+import com.vaadin.flow.server.ServletHelper.RequestType;
+import com.vaadin.flow.shared.ApplicationConstants;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -15,16 +14,14 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.vaadin.flow.server.ServletHelper.RequestType;
-import com.vaadin.flow.shared.ApplicationConstants;
-import com.gmail.michzuerch.teachersassistant.ui.views.errors.AccessDeniedView;
-import com.gmail.michzuerch.teachersassistant.ui.views.errors.CustomRouteNotFoundError;
-import com.gmail.michzuerch.teachersassistant.ui.views.login.LoginView;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * SecurityUtils takes care of all such static operations that have to do with
  * security and querying rights from different beans of the UI.
- *
  */
 public final class SecurityUtils {
 
@@ -36,12 +33,12 @@ public final class SecurityUtils {
 	 * Gets the user name of the currently signed in user.
 	 *
 	 * @return the user name of the current user or <code>null</code> if the user
-	 *         has not signed in
+	 * has not signed in
 	 */
 	public static String getUsername() {
 		SecurityContext context = SecurityContextHolder.getContext();
 		Object principal = context.getAuthentication().getPrincipal();
-		if(principal instanceof UserDetails) {
+		if (principal instanceof UserDetails) {
 			UserDetails userDetails = (UserDetails) context.getAuthentication().getPrincipal();
 			return userDetails.getUsername();
 		}
@@ -58,8 +55,8 @@ public final class SecurityUtils {
 	 */
 	public static boolean isAccessGranted(Class<?> securedClass) {
 		final boolean publicView = LoginView.class.equals(securedClass)
-			|| AccessDeniedView.class.equals(securedClass)
-			|| CustomRouteNotFoundError.class.equals(securedClass);
+				|| AccessDeniedView.class.equals(securedClass)
+				|| CustomRouteNotFoundError.class.equals(securedClass);
 
 		// Always allow access to public views
 		if (publicView) {
@@ -95,7 +92,7 @@ public final class SecurityUtils {
 
 	private static boolean isUserLoggedIn(Authentication authentication) {
 		return authentication != null
-			&& !(authentication instanceof AnonymousAuthenticationToken);
+				&& !(authentication instanceof AnonymousAuthenticationToken);
 	}
 
 	/**
@@ -103,8 +100,7 @@ public final class SecurityUtils {
 	 * checking if the request parameter is present and if its value is consistent
 	 * with any of the request types know.
 	 *
-	 * @param request
-	 *            {@link HttpServletRequest}
+	 * @param request {@link HttpServletRequest}
 	 * @return true if is an internal framework request. False otherwise.
 	 */
 	static boolean isFrameworkInternalRequest(HttpServletRequest request) {

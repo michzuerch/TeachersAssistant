@@ -1,8 +1,8 @@
 package com.gmail.michzuerch.teachersassistant.ui.i18n;
 
-import java.util.Locale;
-
 import org.springframework.data.domain.Sort;
+
+import java.util.Locale;
 
 public class I18nConst {
 

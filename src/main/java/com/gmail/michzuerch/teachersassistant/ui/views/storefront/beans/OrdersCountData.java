@@ -6,6 +6,16 @@ public class OrdersCountData {
 	private String subtitle;
 	private Integer count;
 
+	public OrdersCountData() {
+
+	}
+
+	public OrdersCountData(String title, String subtitle, Integer count) {
+		this.title = title;
+		this.subtitle = subtitle;
+		this.count = count;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -27,16 +37,6 @@ public class OrdersCountData {
 	}
 
 	public void setCount(Integer count) {
-		this.count = count;
-	}
-
-	public OrdersCountData() {
-
-	}
-
-	public OrdersCountData(String title, String subtitle, Integer count) {
-		this.title = title;
-		this.subtitle = subtitle;
 		this.count = count;
 	}
 

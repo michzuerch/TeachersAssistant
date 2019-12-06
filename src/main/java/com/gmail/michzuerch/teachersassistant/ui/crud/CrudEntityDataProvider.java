@@ -1,16 +1,15 @@
 package com.gmail.michzuerch.teachersassistant.ui.crud;
 
-import java.util.List;
-
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.AbstractEntity;
 import com.gmail.michzuerch.teachersassistant.backend.service.FilterableCrudService;
+import com.vaadin.flow.data.provider.Query;
+import com.vaadin.flow.data.provider.QuerySortOrder;
+import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.vaadin.artur.spring.dataprovider.FilterablePageableDataProvider;
 
-import com.vaadin.flow.data.provider.Query;
-import com.vaadin.flow.data.provider.QuerySortOrder;
-import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
+import java.util.List;
 
 public class CrudEntityDataProvider<T extends AbstractEntity> extends FilterablePageableDataProvider<T, String> {
 

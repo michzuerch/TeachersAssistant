@@ -16,10 +16,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 /**
  * Spring boot web application initializer.
  */
-@SpringBootApplication(scanBasePackageClasses = { SecurityConfiguration.class, MainView.class, Application.class,
-		UserService.class }, exclude = ErrorMvcAutoConfiguration.class)
-@EnableJpaRepositories(basePackageClasses = { UserRepository.class })
-@EntityScan(basePackageClasses = { User.class })
+@SpringBootApplication(scanBasePackageClasses = {SecurityConfiguration.class, MainView.class, Application.class,
+		UserService.class}, exclude = ErrorMvcAutoConfiguration.class)
+@EnableJpaRepositories(basePackageClasses = {UserRepository.class})
+@EntityScan(basePackageClasses = {User.class})
 public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
