@@ -10,6 +10,6 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 @NpmPackage(value = "@polymer/iron-ajax", version = "3.0.1")
 public class OfflineBanner extends Component {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
 }

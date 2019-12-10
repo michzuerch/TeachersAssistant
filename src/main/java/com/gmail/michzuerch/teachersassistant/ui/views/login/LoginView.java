@@ -14,41 +14,41 @@ import com.vaadin.flow.router.*;
 @JsModule("./styles/shared-styles.js")
 @Viewport(I18nConst.VIEWPORT)
 public class LoginView extends LoginOverlay
-		implements AfterNavigationObserver, BeforeEnterObserver {
+        implements AfterNavigationObserver, BeforeEnterObserver {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public LoginView() {
-		LoginI18n i18n = LoginI18n.createDefault();
-		i18n.setHeader(new LoginI18n.Header());
-		i18n.getHeader().setTitle("teachersassistant-app");
-		i18n.getHeader().setDescription(
-				"admin@vaadin.com + admin\n" + "barista@vaadin.com + barista");
-		i18n.setAdditionalInformation(null);
-		i18n.setForm(new LoginI18n.Form());
-		i18n.getForm().setSubmit("Sign in");
-		i18n.getForm().setTitle("Sign in");
-		i18n.getForm().setUsername("Email");
-		i18n.getForm().setPassword("Password");
-		setI18n(i18n);
-		setForgotPasswordButtonVisible(false);
-		setAction("login");
-	}
+    public LoginView() {
+        LoginI18n i18n = LoginI18n.createDefault();
+        i18n.setHeader(new LoginI18n.Header());
+        i18n.getHeader().setTitle("teachersassistant-app");
+        i18n.getHeader().setDescription(
+                "admin@vaadin.com + admin\n" + "barista@vaadin.com + barista");
+        i18n.setAdditionalInformation(null);
+        i18n.setForm(new LoginI18n.Form());
+        i18n.getForm().setSubmit("Sign in");
+        i18n.getForm().setTitle("Sign in");
+        i18n.getForm().setUsername("Email");
+        i18n.getForm().setPassword("Password");
+        setI18n(i18n);
+        setForgotPasswordButtonVisible(false);
+        setAction("login");
+    }
 
-	@Override
-	public void beforeEnter(BeforeEnterEvent event) {
-		if (SecurityUtils.isUserLoggedIn()) {
-			event.forwardTo(StorefrontView.class);
-		} else {
-			setOpened(true);
-		}
-	}
+    @Override
+    public void beforeEnter(BeforeEnterEvent event) {
+        if (SecurityUtils.isUserLoggedIn()) {
+            event.forwardTo(StorefrontView.class);
+        } else {
+            setOpened(true);
+        }
+    }
 
-	@Override
-	public void afterNavigation(AfterNavigationEvent event) {
-		setError(
-				event.getLocation().getQueryParameters().getParameters().containsKey(
-						"error"));
-	}
+    @Override
+    public void afterNavigation(AfterNavigationEvent event) {
+        setError(
+                event.getLocation().getQueryParameters().getParameters().containsKey(
+                        "error"));
+    }
 
 }

@@ -12,20 +12,20 @@ import java.text.ParseException;
 
 class PriceConverter implements Converter<String, Integer> {
 
-	private static final long serialVersionUID = 1L;
-	private final DecimalFormat df = FormattingUtils.getUiPriceFormatter();
+    private static final long serialVersionUID = 1L;
+    private final DecimalFormat df = FormattingUtils.getUiPriceFormatter();
 
-	@Override
-	public Result<Integer> convertToModel(String presentationValue, ValueContext valueContext) {
-		try {
-			return Result.ok((int) Math.round(df.parse(presentationValue).doubleValue() * 100));
-		} catch (ParseException e) {
-			return Result.error("Invalid value");
-		}
-	}
+    @Override
+    public Result<Integer> convertToModel(String presentationValue, ValueContext valueContext) {
+        try {
+            return Result.ok((int) Math.round(df.parse(presentationValue).doubleValue() * 100));
+        } catch (ParseException e) {
+            return Result.error("Invalid value");
+        }
+    }
 
-	@Override
-	public String convertToPresentation(Integer modelValue, ValueContext valueContext) {
-		return DataProviderUtil.convertIfNotNull(modelValue, i -> df.format(BigDecimal.valueOf(i, 2)), () -> "");
-	}
+    @Override
+    public String convertToPresentation(Integer modelValue, ValueContext valueContext) {
+        return DataProviderUtil.convertIfNotNull(modelValue, i -> df.format(BigDecimal.valueOf(i, 2)), () -> "");
+    }
 }

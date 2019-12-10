@@ -1,0 +1,7 @@
+package com.gmail.michzuerch.teachersassistant.backend.repositories;
+
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Lession;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LessionRepository extends JpaRepository<Lession, Long> {
+}

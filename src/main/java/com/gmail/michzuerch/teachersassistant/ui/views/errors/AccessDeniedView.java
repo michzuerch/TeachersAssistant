@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 @Route
 public class AccessDeniedView extends PolymerTemplate<TemplateModel> implements HasErrorParameter<AccessDeniedException> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	public int setErrorParameter(BeforeEnterEvent beforeEnterEvent, ErrorParameter<AccessDeniedException> errorParameter) {
-		return HttpServletResponse.SC_FORBIDDEN;
-	}
+    @Override
+    public int setErrorParameter(BeforeEnterEvent beforeEnterEvent, ErrorParameter<AccessDeniedException> errorParameter) {
+        return HttpServletResponse.SC_FORBIDDEN;
+    }
 }
