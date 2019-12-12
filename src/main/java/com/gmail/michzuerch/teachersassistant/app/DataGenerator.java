@@ -3,13 +3,11 @@ package com.gmail.michzuerch.teachersassistant.app;
 import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.*;
-import com.gmail.michzuerch.teachersassistant.backend.repositories.OrderRepository;
-import com.gmail.michzuerch.teachersassistant.backend.repositories.PickupLocationRepository;
-import com.gmail.michzuerch.teachersassistant.backend.repositories.ProductRepository;
-import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
+import com.gmail.michzuerch.teachersassistant.backend.repositories.*;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.util.StopWatch;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDate;
@@ -43,6 +41,7 @@ public class DataGenerator implements HasLogger {
     private UserRepository userRepository;
     private ProductRepository productRepository;
     private PickupLocationRepository pickupLocationRepository;
+    private SchoolRepository schoolRepository;
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -58,6 +57,10 @@ public class DataGenerator implements HasLogger {
 
     @PostConstruct
     public void loadData() {
+        StopWatch stopWatch = new StopWatch("TeachersAssistant DataGenerator.loadData()");
+
+        stopWatch.start();
+
         if (userRepository.count() != 0L) {
             getLogger().info("Using existing database");
             return;
@@ -84,7 +87,11 @@ public class DataGenerator implements HasLogger {
         getLogger().info("... generating orders");
         createOrders(orderRepository, productSupplier, pickupLocationSupplier, barista, baker);
 
-        getLogger().info("Generated demo data");
+        getLogger().info("... generating schools");
+        createSchools(schoolRepository);
+
+        stopWatch.stop();
+        getLogger().info("Generated demo data. Time:" + stopWatch.getTotalTimeMillis() + "ms.");
     }
 
     private void fillCustomer(Customer customer) {
@@ -205,6 +212,15 @@ public class DataGenerator implements HasLogger {
         }
 
         return history;
+    }
+
+    private School createSchools(SchoolRepository schoolRepository) {
+        School school = new School.Builder().bezeichnung("Testschool")
+                .ort("Budapesti")
+                .build();
+
+        schoolRepository.save(school);
+        return school;
     }
 
     private boolean containsProduct(List<OrderItem> items, Product product) {
