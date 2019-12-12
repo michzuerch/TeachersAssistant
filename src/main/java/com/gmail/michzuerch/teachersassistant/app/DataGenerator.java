@@ -4,6 +4,7 @@ import com.gmail.michzuerch.teachersassistant.backend.data.OrderState;
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.*;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.*;
+import com.gmail.michzuerch.teachersassistant.backend.repositories.report.*;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,17 +42,59 @@ public class DataGenerator implements HasLogger {
     private UserRepository userRepository;
     private ProductRepository productRepository;
     private PickupLocationRepository pickupLocationRepository;
+
+    private ClassroomRepository classroomRepository;
+    private LessionRepository lessionRepository;
+    private SchoolClassRepository schoolClassRepository;
+    private SchoolGradeRepository schoolGradeRepository;
     private SchoolRepository schoolRepository;
+    private StudentRepository studentRepository;
+    private TeacherRepository teacherRepository;
+
+    private ReportCSSRepository reportCSSRepository;
+    private ReportCSSImageRepository reportCSSImageRepository;
+    private ReportFOPRepository reportFOPRepository;
+    private ReportFOPImageRepository reportFOPImageRepository;
+    private ReportJasperRepository reportJasperRepository;
+    private ReportJasperImageRepository reportJasperImageRepository;
+
     private PasswordEncoder passwordEncoder;
 
     @Autowired
     public DataGenerator(OrderRepository orderRepository, UserRepository userRepository,
                          ProductRepository productRepository, PickupLocationRepository pickupLocationRepository,
+                         ClassroomRepository classroomRepository,
+                         LessionRepository lessionRepository,
+                         SchoolClassRepository schoolClassRepository,
+                         SchoolGradeRepository schoolGradeRepository,
+                         SchoolRepository schoolRepository,
+                         StudentRepository studentRepository,
+                         TeacherRepository teacherRepository,
+                         ReportCSSRepository reportCSSRepository,
+                         ReportCSSImageRepository reportCSSImageRepository,
+                         ReportFOPRepository reportFOPRepository,
+                         ReportFOPImageRepository reportFOPImageRepository,
+                         ReportJasperRepository reportJasperRepository,
+                         ReportJasperImageRepository reportJasperImageRepository,
+
                          PasswordEncoder passwordEncoder) {
         this.orderRepository = orderRepository;
         this.userRepository = userRepository;
         this.productRepository = productRepository;
         this.pickupLocationRepository = pickupLocationRepository;
+        this.classroomRepository = classroomRepository;
+        this.lessionRepository = lessionRepository;
+        this.schoolClassRepository = schoolClassRepository;
+        this.schoolGradeRepository = schoolGradeRepository;
+        this.schoolRepository = schoolRepository;
+        this.studentRepository = studentRepository;
+        this.teacherRepository = teacherRepository;
+        this.reportCSSRepository = reportCSSRepository;
+        this.reportCSSImageRepository = reportCSSImageRepository;
+        this.reportFOPRepository = reportFOPRepository;
+        this.reportFOPImageRepository = reportFOPImageRepository;
+        this.reportJasperRepository = reportJasperRepository;
+        this.reportJasperImageRepository = reportJasperImageRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
