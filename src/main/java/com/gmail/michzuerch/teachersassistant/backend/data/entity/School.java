@@ -6,11 +6,14 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "School")
 public class School extends AbstractEntity {
     private String bezeichnung;
 
     private String ort;
+
+    @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<SchoolSubject> schoolSubjects = new ArrayList<>();
 
     @OneToMany(mappedBy = "school", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SchoolClass> schoolClasses = new ArrayList<>();

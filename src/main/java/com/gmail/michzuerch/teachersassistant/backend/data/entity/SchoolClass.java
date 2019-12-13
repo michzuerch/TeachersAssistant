@@ -7,9 +7,9 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "SchoolClass")
 public class SchoolClass extends AbstractEntity {
-    private String bezeichnung;
+    private String description;
 
     @ManyToOne
     private School school;
@@ -21,7 +21,7 @@ public class SchoolClass extends AbstractEntity {
     private List<Lession> lessions = new ArrayList<>();
 
     private SchoolClass(Builder builder) {
-        setBezeichnung(builder.bezeichnung);
+        setDescription(builder.bezeichnung);
         setSchool(builder.school);
         setStudents(builder.students);
         setLessions(builder.lessions);
@@ -30,12 +30,12 @@ public class SchoolClass extends AbstractEntity {
     public SchoolClass() {
     }
 
-    public String getBezeichnung() {
-        return bezeichnung;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public School getSchool() {

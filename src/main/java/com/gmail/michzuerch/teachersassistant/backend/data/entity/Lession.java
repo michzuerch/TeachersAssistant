@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name = "Lession")
 public class Lession extends AbstractEntity {
     @NotNull
     @Size(min = 3, message = "Mindestlänge 3 Zeichen")

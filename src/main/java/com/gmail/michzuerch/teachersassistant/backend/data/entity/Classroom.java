@@ -7,7 +7,7 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "Classroom")
 public class Classroom extends AbstractEntity {
     private String bezeichnung;
 

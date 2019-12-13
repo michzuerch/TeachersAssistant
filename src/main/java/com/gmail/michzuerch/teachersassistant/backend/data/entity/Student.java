@@ -3,7 +3,7 @@ package com.gmail.michzuerch.teachersassistant.backend.data.entity;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-@Entity
+@Entity(name = "Student")
 public class Student extends AbstractEntity {
 
     private String vorname;
