@@ -127,6 +127,20 @@ public class DataGenerator implements HasLogger {
                 .build();
         lession = lessionRepository.save(lession);
 
+        SchoolClass schoolClass = new SchoolClass.Builder()
+                .bezeichnung("Testclass")
+                .school(school)
+                .build();
+        schoolClass = schoolClassRepository.save(schoolClass);
+
+        Student student = new Student.Builder()
+                .nachname("Student")
+                .vorname("Dummer")
+                .schoolClass(schoolClass)
+                .build();
+        student = studentRepository.save(student);
+
+
     }
 
 

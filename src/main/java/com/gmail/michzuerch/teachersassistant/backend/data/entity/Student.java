@@ -13,17 +13,10 @@ public class Student extends AbstractEntity {
     @ManyToOne
     private SchoolClass schoolClass;
 
-    @ManyToOne
-    private School school;
-
     private Student(Builder builder) {
         setVorname(builder.vorname);
         setNachname(builder.nachname);
         setSchoolClass(builder.schoolClass);
-        setSchool(builder.school);
-    }
-
-    public Student() {
     }
 
     public String getVorname() {
@@ -50,19 +43,10 @@ public class Student extends AbstractEntity {
         this.schoolClass = schoolClass;
     }
 
-    public School getSchool() {
-        return school;
-    }
-
-    public void setSchool(School school) {
-        this.school = school;
-    }
-
     public static final class Builder {
         private String vorname;
         private String nachname;
         private SchoolClass schoolClass;
-        private School school;
 
         public Builder() {
         }
@@ -79,11 +63,6 @@ public class Student extends AbstractEntity {
 
         public Builder schoolClass(SchoolClass val) {
             schoolClass = val;
-            return this;
-        }
-
-        public Builder school(School val) {
-            school = val;
             return this;
         }
 
