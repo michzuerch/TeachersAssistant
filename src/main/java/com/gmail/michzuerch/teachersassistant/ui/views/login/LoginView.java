@@ -10,7 +10,7 @@ import com.vaadin.flow.component.page.Viewport;
 import com.vaadin.flow.router.*;
 
 @Route
-@PageTitle("teachersassistant-app")
+@PageTitle("TeachersAssistant")
 @JsModule("./styles/shared-styles.js")
 @Viewport(I18nConst.VIEWPORT)
 public class LoginView extends LoginOverlay
@@ -21,9 +21,9 @@ public class LoginView extends LoginOverlay
     public LoginView() {
         LoginI18n i18n = LoginI18n.createDefault();
         i18n.setHeader(new LoginI18n.Header());
-        i18n.getHeader().setTitle("teachersassistant-app");
+        i18n.getHeader().setTitle("TeachersAssistant");
         i18n.getHeader().setDescription(
-                "admin@vaadin.com + admin\n" + "barista@vaadin.com + barista");
+                "admin@michzuerch.gmail.com + admin\n");
         i18n.setAdditionalInformation(null);
         i18n.setForm(new LoginI18n.Form());
         i18n.getForm().setSubmit("Sign in");

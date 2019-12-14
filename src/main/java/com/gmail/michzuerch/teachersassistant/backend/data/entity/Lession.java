@@ -27,6 +27,7 @@ public class Lession extends AbstractEntity {
     @ManyToOne
     private SchoolClass schoolClass;
 
+    // Schulfach in german
     @ManyToOne
     private SchoolSubject schoolSubject;
 

@@ -145,6 +145,7 @@ public class DataGenerator implements HasLogger {
                 .build();
         student = studentRepository.save(student);
 
+        // Schulnote in german
         SchoolGrade schoolGrade = new SchoolGrade.Builder()
                 .description("Prüfung von 1 Januar 2020")
                 .note(BigDecimal.TEN)
@@ -153,11 +154,15 @@ public class DataGenerator implements HasLogger {
                 .build();
         schoolGrade = schoolGradeRepository.save(schoolGrade);
 
+        // Schulfach in german
         SchoolSubject schoolSubject = new SchoolSubject.Builder()
                 .description("Biologie")
                 .school(school)
                 .build();
         schoolSubject = schoolSubjectRepository.save(schoolSubject);
+
+        schoolGrade.setSchoolSubject(schoolSubject);
+        schoolGrade = schoolGradeRepository.save(schoolGrade);
 
 
     }
