@@ -68,6 +68,7 @@ public class SchoolGrade extends AbstractEntity {
         this.note = note;
     }
 
+
     public static final class Builder {
         private String description;
         private Student student;
