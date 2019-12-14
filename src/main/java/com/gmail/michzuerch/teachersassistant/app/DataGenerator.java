@@ -98,6 +98,7 @@ public class DataGenerator implements HasLogger {
         createSchools(schoolRepository);
 
         stopWatch.stop();
+        
         getLogger().info("Generated demo data. Time:" + stopWatch.getTotalTimeMillis() + "ms.");
     }
 
