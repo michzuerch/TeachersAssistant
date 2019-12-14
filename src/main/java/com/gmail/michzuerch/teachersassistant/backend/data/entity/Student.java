@@ -1,7 +1,11 @@
 package com.gmail.michzuerch.teachersassistant.backend.data.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "Student")
 public class Student extends AbstractEntity {
@@ -13,10 +17,14 @@ public class Student extends AbstractEntity {
     @ManyToOne
     private SchoolClass schoolClass;
 
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<SchoolGrade> schoolGrades = new ArrayList<>();
+
     private Student(Builder builder) {
         setVorname(builder.vorname);
         setNachname(builder.nachname);
         setSchoolClass(builder.schoolClass);
+        setSchoolGrades(builder.schoolGrades);
     }
 
     public String getVorname() {
@@ -43,10 +51,20 @@ public class Student extends AbstractEntity {
         this.schoolClass = schoolClass;
     }
 
+    public List<SchoolGrade> getSchoolGrades() {
+        return schoolGrades;
+    }
+
+    public void setSchoolGrades(List<SchoolGrade> schoolGrades) {
+        this.schoolGrades = schoolGrades;
+    }
+
+
     public static final class Builder {
         private String vorname;
         private String nachname;
         private SchoolClass schoolClass;
+        private List<SchoolGrade> schoolGrades;
 
         public Builder() {
         }
@@ -63,6 +81,11 @@ public class Student extends AbstractEntity {
 
         public Builder schoolClass(SchoolClass val) {
             schoolClass = val;
+            return this;
+        }
+
+        public Builder schoolGrades(List<SchoolGrade> val) {
+            schoolGrades = val;
             return this;
         }
 
