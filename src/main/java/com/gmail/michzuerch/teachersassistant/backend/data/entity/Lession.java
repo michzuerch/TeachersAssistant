@@ -27,6 +27,9 @@ public class Lession extends AbstractEntity {
     @ManyToOne
     private SchoolClass schoolClass;
 
+    @ManyToOne
+    private SchoolSubject schoolSubject;
+
     private Lession(Builder builder) {
         setBezeichnung(builder.bezeichnung);
         setStart(builder.start);
@@ -34,9 +37,7 @@ public class Lession extends AbstractEntity {
         setTeacher(builder.teacher);
         setClassroom(builder.classroom);
         setSchoolClass(builder.schoolClass);
-    }
-
-    public Lession() {
+        setSchoolSubject(builder.schoolSubject);
     }
 
     public String getBezeichnung() {
@@ -87,6 +88,15 @@ public class Lession extends AbstractEntity {
         this.schoolClass = schoolClass;
     }
 
+    public SchoolSubject getSchoolSubject() {
+        return schoolSubject;
+    }
+
+    public void setSchoolSubject(SchoolSubject schoolSubject) {
+        this.schoolSubject = schoolSubject;
+    }
+
+
     public static final class Builder {
         private @NotNull @Size(min = 3, message = "Mindestlänge 3 Zeichen") String bezeichnung;
         private @NotNull LocalDateTime start;
@@ -94,6 +104,7 @@ public class Lession extends AbstractEntity {
         private Teacher teacher;
         private Classroom classroom;
         private SchoolClass schoolClass;
+        private SchoolSubject schoolSubject;
 
         public Builder() {
         }
@@ -125,6 +136,11 @@ public class Lession extends AbstractEntity {
 
         public Builder schoolClass(SchoolClass val) {
             schoolClass = val;
+            return this;
+        }
+
+        public Builder schoolSubject(SchoolSubject val) {
+            schoolSubject = val;
             return this;
         }
 
