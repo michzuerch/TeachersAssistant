@@ -20,10 +20,14 @@ public class SchoolSubject extends AbstractEntity {
     @OneToMany(mappedBy = "schoolSubject", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lession> lessions = new ArrayList<>();
 
+    @OneToMany(mappedBy = "schoolSubject", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<SchoolGrade> schoolGrades = new ArrayList<>();
+
     private SchoolSubject(Builder builder) {
         setDescription(builder.description);
         setSchool(builder.school);
         setLessions(builder.lessions);
+        setSchoolGrades(builder.schoolGrades);
     }
 
     public String getDescription() {
@@ -50,11 +54,19 @@ public class SchoolSubject extends AbstractEntity {
         this.lessions = lessions;
     }
 
+    public List<SchoolGrade> getSchoolGrades() {
+        return schoolGrades;
+    }
+
+    public void setSchoolGrades(List<SchoolGrade> schoolGrades) {
+        this.schoolGrades = schoolGrades;
+    }
 
     public static final class Builder {
         private @NotNull String description;
         private School school;
         private List<Lession> lessions;
+        private List<SchoolGrade> schoolGrades;
 
         public Builder() {
         }
@@ -71,6 +83,11 @@ public class SchoolSubject extends AbstractEntity {
 
         public Builder lessions(List<Lession> val) {
             lessions = val;
+            return this;
+        }
+
+        public Builder schoolGrades(List<SchoolGrade> val) {
+            schoolGrades = val;
             return this;
         }
 

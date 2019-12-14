@@ -13,6 +13,9 @@ public class SchoolGrade extends AbstractEntity {
     @ManyToOne
     private Student student;
 
+    @ManyToOne
+    private SchoolSubject schoolSubject;
+
     private LocalDateTime localDateTime;
 
     private BigDecimal note;
@@ -20,6 +23,7 @@ public class SchoolGrade extends AbstractEntity {
     private SchoolGrade(Builder builder) {
         setDescription(builder.description);
         setStudent(builder.student);
+        setSchoolSubject(builder.schoolSubject);
         setLocalDateTime(builder.localDateTime);
         setNote(builder.note);
     }
@@ -38,6 +42,14 @@ public class SchoolGrade extends AbstractEntity {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public SchoolSubject getSchoolSubject() {
+        return schoolSubject;
+    }
+
+    public void setSchoolSubject(SchoolSubject schoolSubject) {
+        this.schoolSubject = schoolSubject;
     }
 
     public LocalDateTime getLocalDateTime() {
@@ -59,6 +71,7 @@ public class SchoolGrade extends AbstractEntity {
     public static final class Builder {
         private String description;
         private Student student;
+        private SchoolSubject schoolSubject;
         private LocalDateTime localDateTime;
         private BigDecimal note;
 
@@ -72,6 +85,11 @@ public class SchoolGrade extends AbstractEntity {
 
         public Builder student(Student val) {
             student = val;
+            return this;
+        }
+
+        public Builder schoolSubject(SchoolSubject val) {
+            schoolSubject = val;
             return this;
         }
 

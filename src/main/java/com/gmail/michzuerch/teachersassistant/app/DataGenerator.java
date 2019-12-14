@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StopWatch;
 
 import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Random;
 
@@ -24,6 +25,7 @@ public class DataGenerator implements HasLogger {
     private SchoolClassRepository schoolClassRepository;
     private SchoolGradeRepository schoolGradeRepository;
     private SchoolRepository schoolRepository;
+    private SchoolSubjectRepository schoolSubjectRepository;
     private StudentRepository studentRepository;
     private TeacherRepository teacherRepository;
 
@@ -43,6 +45,7 @@ public class DataGenerator implements HasLogger {
                          SchoolClassRepository schoolClassRepository,
                          SchoolGradeRepository schoolGradeRepository,
                          SchoolRepository schoolRepository,
+                         SchoolSubjectRepository schoolSubjectRepository,
                          StudentRepository studentRepository,
                          TeacherRepository teacherRepository,
                          ReportCSSRepository reportCSSRepository,
@@ -59,6 +62,7 @@ public class DataGenerator implements HasLogger {
         this.schoolClassRepository = schoolClassRepository;
         this.schoolGradeRepository = schoolGradeRepository;
         this.schoolRepository = schoolRepository;
+        this.schoolSubjectRepository = schoolSubjectRepository;
         this.studentRepository = studentRepository;
         this.teacherRepository = teacherRepository;
         this.reportCSSRepository = reportCSSRepository;
@@ -134,12 +138,27 @@ public class DataGenerator implements HasLogger {
                 .build();
         schoolClass = schoolClassRepository.save(schoolClass);
 
+
         Student student = new Student.Builder()
                 .nachname("Student")
                 .vorname("Dummer")
                 .schoolClass(schoolClass)
                 .build();
         student = studentRepository.save(student);
+
+        SchoolGrade schoolGrade = new SchoolGrade.Builder()
+                .description("Prüfung von 1 Januar 2020")
+                .note(BigDecimal.TEN)
+                .localDateTime(LocalDateTime.now())
+                .student(student)
+                .build();
+        schoolGrade = schoolGradeRepository.save(schoolGrade);
+
+        SchoolSubject schoolSubject = new SchoolSubject.Builder()
+                .description("Biologie")
+                .school(school)
+                .build();
+        schoolSubject = schoolSubjectRepository.save(schoolSubject);
 
 
     }
