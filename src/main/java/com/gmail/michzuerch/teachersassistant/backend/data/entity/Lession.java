@@ -23,5 +23,8 @@ public class Lession extends AbstractEntity {
     private SchoolSubject schoolSubject;
 
     @ManyToOne
+    private Teacher teacher;
+
+    @ManyToOne
     private Classroom classroom;
 }
