@@ -95,14 +95,14 @@ public class DataGenerator implements HasLogger {
         createDeletableUsers(userRepository, passwordEncoder);
 
         getLogger().info("... generating schools");
-        createSchools(schoolRepository);
+        //createSchools(schoolRepository);
 
         stopWatch.stop();
         
         getLogger().info("Generated demo data. Time:" + stopWatch.getTotalTimeMillis() + "ms.");
     }
 
-
+/*
     private void createSchools(SchoolRepository schoolRepository) {
         School school = new School.Builder()
                 .bezeichnung("Testschool")
@@ -167,7 +167,7 @@ public class DataGenerator implements HasLogger {
 
 
     }
-
+*/
 
     private User createBaker(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return userRepository.save(
