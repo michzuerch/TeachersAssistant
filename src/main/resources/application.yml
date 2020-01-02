@@ -27,3 +27,17 @@ spring.datasource:
 spring.jpa:
   database-platform: org.hibernate.dialect.H2Dialect
   hibernate.ddl-auto: update
+
+management.endpoint:
+  health:
+    show-details: always
+  sessions:
+    enabled: true
+  
+info.app:
+  name: TeachersAssistant
+  description: Sample project for github
+  version: development
+  java.version: 12
+  
+  
