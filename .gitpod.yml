@@ -4,3 +4,8 @@ image:
 ports:
 - port: 8080
   onOpen: open-preview
+
+vscode:
+  extensions:
+    - Pivotal.vscode-spring-boot@1.14.0:ZPqd7ysDHfq8h05jD/me8g==
+    - vscjava.vscode-spring-initializr@0.4.6:WOgtgIwX3Ngy4pM9ArXjCQ==

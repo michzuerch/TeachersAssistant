@@ -6,8 +6,6 @@ security.basic.enabled: false
 
 server.tomcat.uri-encoding: UTF-8
 
-spring.jackson.serialization.write_dates_as_timestamps: false
-
 logging.logging.level.org:
   athmosphere : warn
   hibernate.SQL : warn

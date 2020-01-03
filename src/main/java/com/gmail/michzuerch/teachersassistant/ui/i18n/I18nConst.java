@@ -14,11 +14,17 @@ public class I18nConst {
     public static final String PAGE_DASHBOARD = "dashboard";
     public static final String PAGE_USERS = "users";
     public static final String PAGE_PRODUCTS = "products";
+    public static final String PAGE_STUDENTS = "students";
+    public static final String PAGE_LOCATIONS = "locations";
+    public static final String PAGE_BLOCKS = "blocks";
 
     public static final String TITLE_STOREFRONT = "Storefront";
     public static final String TITLE_DASHBOARD = "Dashboard";
     public static final String TITLE_USERS = "Users";
     public static final String TITLE_PRODUCTS = "Products";
+    public static final String TITLE_STUDENTS = "Students";
+    public static final String TITLE_LOCATIONS = "Locations";
+    public static final String TITLE_BLOCKS = "Blocks";
     public static final String TITLE_LOGOUT = "Logout";
     public static final String TITLE_NOT_FOUND = "Page was not found";
     public static final String TITLE_ACCESS_DENIED = "Access denied";

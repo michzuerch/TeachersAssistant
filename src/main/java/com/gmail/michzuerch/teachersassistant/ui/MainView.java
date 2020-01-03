@@ -7,6 +7,7 @@ import com.gmail.michzuerch.teachersassistant.ui.views.admin.products.ProductsVi
 import com.gmail.michzuerch.teachersassistant.ui.views.admin.users.UsersView;
 import com.gmail.michzuerch.teachersassistant.ui.views.dashboard.DashboardView;
 import com.gmail.michzuerch.teachersassistant.ui.views.storefront.StorefrontView;
+import com.gmail.michzuerch.teachersassistant.ui.views.student.StudentsView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -30,11 +31,11 @@ import java.util.Optional;
 import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.*;
 
 @Viewport(VIEWPORT)
-@PWA(name = "TeachersAssistant Starter", shortName = "teachersassistant-app",
+@PWA(name = "TeachersAssistant Starter", shortName = "TeachersAssistant-app",
         startPath = "login",
         backgroundColor = "#227aef", themeColor = "#227aef",
         offlinePath = "offline-page.html",
-        offlineResources = {"images/offline-login-banner.jpg"})
+        offlineResources = {"images/offline.jpg"})
 public class MainView extends AppLayout {
 
     private static final long serialVersionUID = 1L;
@@ -50,7 +51,7 @@ public class MainView extends AppLayout {
         confirmDialog.setCancelButtonTheme("raised tertiary");
 
         this.setDrawerOpened(false);
-        Span appName = new Span("teachersassistant-app");
+        Span appName = new Span("TeachersAssistant");
         appName.addClassName("hide-on-mobile");
 
         menu = createMenuTabs();
@@ -77,17 +78,20 @@ public class MainView extends AppLayout {
 
     private static Tab[] getAvailableTabs() {
         final List<Tab> tabs = new ArrayList<>(4);
-        tabs.add(createTab(VaadinIcon.EDIT, TITLE_STOREFRONT,
-                StorefrontView.class));
-        tabs.add(createTab(VaadinIcon.CLOCK, TITLE_DASHBOARD, DashboardView.class));
-        if (SecurityUtils.isAccessGranted(UsersView.class)) {
-            tabs.add(createTab(VaadinIcon.USER, TITLE_USERS, UsersView.class));
-        }
-        if (SecurityUtils.isAccessGranted(ProductsView.class)) {
-            tabs.add(createTab(VaadinIcon.CALENDAR, TITLE_PRODUCTS, ProductsView.class));
-        }
+        //tabs.add(createTab(VaadinIcon.EDIT, TITLE_STOREFRONT,StorefrontView.class));
+        //tabs.add(createTab(VaadinIcon.CLOCK, TITLE_DASHBOARD, DashboardView.class));
+        // if (SecurityUtils.isAccessGranted(UsersView.class)) {
+        //     tabs.add(createTab(VaadinIcon.USER, TITLE_USERS, UsersView.class));
+        // }
+        // if (SecurityUtils.isAccessGranted(ProductsView.class)) {
+        //     tabs.add(createTab(VaadinIcon.CALENDAR, TITLE_PRODUCTS, ProductsView.class));
+        // }
         final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
         final Tab logoutTab = createTab(createLogoutLink(contextPath));
+
+        tabs.add(createTab(VaadinIcon.BULLSEYE, TITLE_STUDENTS, StudentsView.class));
+        //tabs.add(createTab(VaadinIcon.LAPTOP, TITLE_BLOCKS, BlocksView.class));
+
         tabs.add(logoutTab);
         return tabs.toArray(new Tab[tabs.size()]);
     }
