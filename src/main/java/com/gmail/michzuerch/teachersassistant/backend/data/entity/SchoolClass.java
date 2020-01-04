@@ -18,4 +18,42 @@ public class SchoolClass extends AbstractEntity {
 
     @OneToMany(mappedBy = "schoolClass", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Student> students = new ArrayList<>();
+
+    public SchoolClass() {
+    }
+
+    private SchoolClass(Builder builder) {
+        description = builder.description;
+        school = builder.school;
+        students = builder.students;
+    }
+
+
+    public static final class Builder {
+        private @NotNull String description;
+        private School school;
+        private List<Student> students;
+
+        public Builder() {
+        }
+
+        public Builder description(@NotNull String val) {
+            description = val;
+            return this;
+        }
+
+        public Builder school(School val) {
+            school = val;
+            return this;
+        }
+
+        public Builder students(List<Student> val) {
+            students = val;
+            return this;
+        }
+
+        public SchoolClass build() {
+            return new SchoolClass(this);
+        }
+    }
 }

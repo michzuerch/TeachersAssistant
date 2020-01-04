@@ -21,4 +21,56 @@ public class SchoolGrade extends AbstractEntity {
     private LocalDateTime timestamp;
 
     private BigDecimal note;
+
+    public SchoolGrade() {
+    }
+
+    private SchoolGrade(Builder builder) {
+        description = builder.description;
+        student = builder.student;
+        schoolSubject = builder.schoolSubject;
+        timestamp = builder.timestamp;
+        note = builder.note;
+    }
+
+
+    public static final class Builder {
+        private @NotNull String description;
+        private Student student;
+        private SchoolSubject schoolSubject;
+        private LocalDateTime timestamp;
+        private BigDecimal note;
+
+        public Builder() {
+        }
+
+        public Builder description(@NotNull String val) {
+            description = val;
+            return this;
+        }
+
+        public Builder student(Student val) {
+            student = val;
+            return this;
+        }
+
+        public Builder schoolSubject(SchoolSubject val) {
+            schoolSubject = val;
+            return this;
+        }
+
+        public Builder timestamp(LocalDateTime val) {
+            timestamp = val;
+            return this;
+        }
+
+        public Builder note(BigDecimal val) {
+            note = val;
+            return this;
+        }
+
+        public SchoolGrade build() {
+            return new SchoolGrade(this);
+        }
+    }
 }

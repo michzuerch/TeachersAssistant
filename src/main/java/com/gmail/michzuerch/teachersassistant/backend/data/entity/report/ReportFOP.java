@@ -19,34 +19,13 @@ public class ReportFOP extends AbstractEntity {
         @OneToMany(mappedBy = "reportFOP", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<ReportFOPImage> reportFOPImages = new ArrayList<>();
 
+        public ReportFOP() {
+        }
+
         private ReportFOP(Builder builder) {
-                setBezeichnung(builder.bezeichnung);
-                setTemplate(builder.template);
-                setReportFOPImages(builder.reportFOPImages);
-        }
-
-        public String getBezeichnung() {
-                return bezeichnung;
-        }
-
-        public void setBezeichnung(String bezeichnung) {
-                this.bezeichnung = bezeichnung;
-        }
-
-        public byte[] getTemplate() {
-                return template;
-        }
-
-        public void setTemplate(byte[] template) {
-                this.template = template;
-        }
-
-        public List<ReportFOPImage> getReportFOPImages() {
-                return reportFOPImages;
-        }
-
-        public void setReportFOPImages(List<ReportFOPImage> reportFOPImages) {
-                this.reportFOPImages = reportFOPImages;
+                bezeichnung = builder.bezeichnung;
+                template = builder.template;
+                reportFOPImages = builder.reportFOPImages;
         }
 
 

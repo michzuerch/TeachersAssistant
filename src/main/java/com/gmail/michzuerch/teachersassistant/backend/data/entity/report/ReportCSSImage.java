@@ -20,44 +20,16 @@ public class ReportCSSImage extends AbstractEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
+    public ReportCSSImage() {
+    }
+
     private ReportCSSImage(Builder builder) {
-        setBezeichnung(builder.bezeichnung);
-        setReportCSS(builder.reportCSS);
-        setMimeType(builder.mimeType);
-        setImage(builder.image);
+        bezeichnung = builder.bezeichnung;
+        reportCSS = builder.reportCSS;
+        mimeType = builder.mimeType;
+        image = builder.image;
     }
 
-    public String getBezeichnung() {
-        return bezeichnung;
-    }
-
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
-    }
-
-    public ReportCSS getReportCSS() {
-        return reportCSS;
-    }
-
-    public void setReportCSS(ReportCSS reportCSS) {
-        this.reportCSS = reportCSS;
-    }
-
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
 
     public static final class Builder {
         private String bezeichnung;

@@ -20,43 +20,14 @@ public class ReportJasperImage extends AbstractEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
+    public ReportJasperImage() {
+    }
+
     private ReportJasperImage(Builder builder) {
-        setBezeichnung(builder.bezeichnung);
-        setReportJasper(builder.reportJasper);
-        setMimeType(builder.mimeType);
-        setImage(builder.image);
-    }
-
-    public String getBezeichnung() {
-        return bezeichnung;
-    }
-
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
-    }
-
-    public ReportJasper getReportJasper() {
-        return reportJasper;
-    }
-
-    public void setReportJasper(ReportJasper reportJasper) {
-        this.reportJasper = reportJasper;
-    }
-
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
+        bezeichnung = builder.bezeichnung;
+        reportJasper = builder.reportJasper;
+        mimeType = builder.mimeType;
+        image = builder.image;
     }
 
     public static final class Builder {
