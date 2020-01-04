@@ -22,14 +22,14 @@ public class ClassroomService implements CrudService<Classroom> {
     }
 
     @Transactional(rollbackOn = Exception.class)
-    public Classroom saveClassroom(User currentUser, Long id, BiConsumer<User, Classroom> studentFiller) {
+    public Classroom saveClassroom(User currentUser, Long id, BiConsumer<User, Classroom> classroomFiller) {
         Classroom classroom;
         if (id == null) {
             classroom = new Classroom();
         } else {
             classroom = load(id);
         }
-        studentFiller.accept(currentUser, classroom);
+        classroomFiller.accept(currentUser, classroom);
         return classroomRepository.save(classroom);
     }
 
