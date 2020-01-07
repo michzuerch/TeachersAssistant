@@ -2,7 +2,12 @@ package com.gmail.michzuerch.teachersassistant.app;
 
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Classroom;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Lession;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.School;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolClass;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolGrade;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolSubject;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.Student;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Teacher;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.*;
@@ -13,6 +18,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StopWatch;
 
 import javax.annotation.PostConstruct;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 @SpringComponent
@@ -124,9 +132,8 @@ public class DataGenerator implements HasLogger {
                 .build();
         teacher = teacherRepository.save(teacher);
 
-        /*
         Lession lession = new Lession.Builder()
-                .bezeichnung("Sample Lession Testdata")
+                .description("Sample Lession Testdata")
                 .start(LocalDateTime.now())
                 .ende(LocalDateTime.now())
                 .classroom(classroom)
@@ -135,15 +142,15 @@ public class DataGenerator implements HasLogger {
         lession = lessionRepository.save(lession);
 
         SchoolClass schoolClass = new SchoolClass.Builder()
-                .bezeichnung("Testclass")
+                .description("Testclass")
                 .school(school)
                 .build();
         schoolClass = schoolClassRepository.save(schoolClass);
 
 
         Student student = new Student.Builder()
-                .nachname("Student")
-                .vorname("Dummer")
+                .lastname("Student")
+                .firstname("Dummer")
                 .schoolClass(schoolClass)
                 .build();
         student = studentRepository.save(student);
@@ -152,7 +159,7 @@ public class DataGenerator implements HasLogger {
         SchoolGrade schoolGrade = new SchoolGrade.Builder()
                 .description("Prüfung von 1 Januar 2020")
                 .note(BigDecimal.TEN)
-                .localDateTime(LocalDateTime.now())
+                .timestamp(LocalDateTime.now())
                 .student(student)
                 .build();
         schoolGrade = schoolGradeRepository.save(schoolGrade);
@@ -166,7 +173,7 @@ public class DataGenerator implements HasLogger {
 
         schoolGrade.setSchoolSubject(schoolSubject);
         schoolGrade = schoolGradeRepository.save(schoolGrade);
-*/
+
 
 
     }
