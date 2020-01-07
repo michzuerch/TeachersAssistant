@@ -2,6 +2,7 @@ package com.gmail.michzuerch.teachersassistant.app;
 
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.*;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.report.ReportCSS;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.*;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.report.*;
 import com.vaadin.flow.spring.annotation.SpringComponent;
@@ -167,6 +168,15 @@ public class DataGenerator implements HasLogger {
 
         schoolGrade.setSchoolSubject(schoolSubject);
         schoolGrade = schoolGradeRepository.save(schoolGrade);
+
+        ReportCSS reportCSS = new ReportCSS.Builder()
+                .description("Sample Report")
+                .css("Sample".getBytes())
+                .html("<h1>Sample</h1>".getBytes())
+                .javascript("void()".getBytes())
+                .build();
+
+        reportCSS = reportCSSRepository.save(reportCSS);
     }
 
     private User createBaker(UserRepository userRepository, PasswordEncoder passwordEncoder) {
