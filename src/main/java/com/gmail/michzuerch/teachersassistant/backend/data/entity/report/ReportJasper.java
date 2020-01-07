@@ -26,6 +26,46 @@ public class ReportJasper extends AbstractEntity {
     @OneToMany(mappedBy = "reportJasper", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReportJasperImage> reportJasperImages = new ArrayList<>();
 
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public byte[] getTemplateSource() {
+        return templateSource;
+    }
+
+    public void setTemplateSource(byte[] templateSource) {
+        this.templateSource = templateSource;
+    }
+
+    public byte[] getTemplateCompiled() {
+        return templateCompiled;
+    }
+
+    public void setTemplateCompiled(byte[] templateCompiled) {
+        this.templateCompiled = templateCompiled;
+    }
+
+    public List<ReportJasperImage> getReportJasperImages() {
+        return reportJasperImages;
+    }
+
+    public void setReportJasperImages(List<ReportJasperImage> reportJasperImages) {
+        this.reportJasperImages = reportJasperImages;
+    }
+
     public ReportJasper() {
     }
 

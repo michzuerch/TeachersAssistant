@@ -21,6 +21,38 @@ public class Teacher extends AbstractEntity {
     @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Lession> lessions = new ArrayList<>();
 
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public List<Lession> getLessions() {
+        return lessions;
+    }
+
+    public void setLessions(List<Lession> lessions) {
+        this.lessions = lessions;
+    }
+
     public Teacher() {
     }
 

@@ -1,15 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.app;
 
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Classroom;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Lession;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.School;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolClass;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolGrade;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.SchoolSubject;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Student;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.Teacher;
-import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
+import com.gmail.michzuerch.teachersassistant.backend.data.entity.*;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.*;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.report.*;
 import com.vaadin.flow.spring.annotation.SpringComponent;
@@ -18,7 +10,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.StopWatch;
 
 import javax.annotation.PostConstruct;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -173,9 +164,6 @@ public class DataGenerator implements HasLogger {
 
         schoolGrade.setSchoolSubject(schoolSubject);
         schoolGrade = schoolGradeRepository.save(schoolGrade);
-
-
-
     }
 
     private User createBaker(UserRepository userRepository, PasswordEncoder passwordEncoder) {

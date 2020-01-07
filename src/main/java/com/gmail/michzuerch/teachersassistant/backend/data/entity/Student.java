@@ -24,6 +24,46 @@ public class Student extends AbstractEntity {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SchoolGrade> schoolGrades = new ArrayList<>();
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public SchoolClass getSchoolClass() {
+        return schoolClass;
+    }
+
+    public void setSchoolClass(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
+    }
+
+    public List<SchoolGrade> getSchoolGrades() {
+        return schoolGrades;
+    }
+
+    public void setSchoolGrades(List<SchoolGrade> schoolGrades) {
+        this.schoolGrades = schoolGrades;
+    }
+
     public Student() {
     }
 

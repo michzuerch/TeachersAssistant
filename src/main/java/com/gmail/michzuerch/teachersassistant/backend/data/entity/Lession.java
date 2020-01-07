@@ -28,6 +28,54 @@ public class Lession extends AbstractEntity {
     @ManyToOne
     private Classroom classroom;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public LocalDateTime getEnde() {
+        return ende;
+    }
+
+    public void setEnde(LocalDateTime ende) {
+        this.ende = ende;
+    }
+
+    public SchoolSubject getSchoolSubject() {
+        return schoolSubject;
+    }
+
+    public void setSchoolSubject(SchoolSubject schoolSubject) {
+        this.schoolSubject = schoolSubject;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Classroom getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
+    }
+
     public Lession() {
     }
 
@@ -48,6 +96,7 @@ public class Lession extends AbstractEntity {
         private SchoolSubject schoolSubject;
         private Teacher teacher;
         private Classroom classroom;
+
 
         public Builder() {
         }

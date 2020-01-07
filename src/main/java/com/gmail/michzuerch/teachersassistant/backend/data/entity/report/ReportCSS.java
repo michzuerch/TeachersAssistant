@@ -28,6 +28,47 @@ public class ReportCSS extends AbstractEntity {
     @OneToMany(mappedBy = "reportCSS", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReportCSSImage> reportCSSImages = new ArrayList<>();
 
+
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
+    }
+
+    public byte[] getCss() {
+        return css;
+    }
+
+    public void setCss(byte[] css) {
+        this.css = css;
+    }
+
+    public byte[] getHtml() {
+        return html;
+    }
+
+    public void setHtml(byte[] html) {
+        this.html = html;
+    }
+
+    public byte[] getJavascript() {
+        return javascript;
+    }
+
+    public void setJavascript(byte[] javascript) {
+        this.javascript = javascript;
+    }
+
+    public List<ReportCSSImage> getReportCSSImages() {
+        return reportCSSImages;
+    }
+
+    public void setReportCSSImages(List<ReportCSSImage> reportCSSImages) {
+        this.reportCSSImages = reportCSSImages;
+    }
+
     public ReportCSS() {
     }
 

@@ -22,6 +22,30 @@ public class Classroom extends AbstractEntity {
     public Classroom() {
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public School getSchool() {
+        return school;
+    }
+
+    public void setSchool(School school) {
+        this.school = school;
+    }
+
+    public List<Lession> getLessions() {
+        return lessions;
+    }
+
+    public void setLessions(List<Lession> lessions) {
+        this.lessions = lessions;
+    }
+
     private Classroom(Builder builder) {
         description = builder.description;
         school = builder.school;

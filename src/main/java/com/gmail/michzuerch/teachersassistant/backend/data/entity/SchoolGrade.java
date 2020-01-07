@@ -25,6 +25,47 @@ public class SchoolGrade extends AbstractEntity {
     public SchoolGrade() {
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public SchoolSubject getSchoolSubject() {
+        return schoolSubject;
+    }
+
+    public void setSchoolSubject(SchoolSubject schoolSubject) {
+        this.schoolSubject = schoolSubject;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public BigDecimal getNote() {
+        return note;
+    }
+
+    public void setNote(BigDecimal note) {
+        this.note = note;
+    }
+
+
     private SchoolGrade(Builder builder) {
         description = builder.description;
         student = builder.student;
@@ -32,7 +73,6 @@ public class SchoolGrade extends AbstractEntity {
         timestamp = builder.timestamp;
         note = builder.note;
     }
-
 
     public static final class Builder {
         private @NotNull String description;
