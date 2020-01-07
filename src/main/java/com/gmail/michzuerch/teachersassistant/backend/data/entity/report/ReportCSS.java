@@ -11,7 +11,7 @@ import java.util.List;
 @Entity(name = "ReportCSS")
 public class ReportCSS extends AbstractEntity {
     @NotNull
-    private String bezeichnung;
+    private String description;
 
     @NotNull
     @Basic(fetch = FetchType.LAZY)
@@ -28,13 +28,21 @@ public class ReportCSS extends AbstractEntity {
     @OneToMany(mappedBy = "reportCSS", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReportCSSImage> reportCSSImages = new ArrayList<>();
 
-
-    public String getBezeichnung() {
-        return bezeichnung;
+    private ReportCSS(Builder builder) {
+        setDescription(builder.description);
+        setCss(builder.css);
+        setHtml(builder.html);
+        setJavascript(builder.javascript);
+        setReportCSSImages(builder.reportCSSImages);
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public byte[] getCss() {
@@ -72,16 +80,9 @@ public class ReportCSS extends AbstractEntity {
     public ReportCSS() {
     }
 
-    private ReportCSS(Builder builder) {
-        bezeichnung = builder.bezeichnung;
-        css = builder.css;
-        html = builder.html;
-        javascript = builder.javascript;
-        reportCSSImages = builder.reportCSSImages;
-    }
 
     public static final class Builder {
-        private @NotNull String bezeichnung;
+        private @NotNull String description;
         private @NotNull byte[] css;
         private @NotNull byte[] html;
         private @NotNull byte[] javascript;
@@ -90,8 +91,8 @@ public class ReportCSS extends AbstractEntity {
         public Builder() {
         }
 
-        public Builder bezeichnung(@NotNull String val) {
-            bezeichnung = val;
+        public Builder description(@NotNull String val) {
+            description = val;
             return this;
         }
 

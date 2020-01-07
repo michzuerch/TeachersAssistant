@@ -11,7 +11,7 @@ import java.util.List;
 @Entity(name = "ReportFOP")
 public class ReportFOP extends AbstractEntity {
         @NotNull
-        private String bezeichnung;
+        private String description;
 
         @Basic(fetch = FetchType.LAZY)
         private byte[] template;
@@ -19,12 +19,18 @@ public class ReportFOP extends AbstractEntity {
         @OneToMany(mappedBy = "reportFOP", cascade = CascadeType.ALL, orphanRemoval = true)
         private List<ReportFOPImage> reportFOPImages = new ArrayList<>();
 
+        private ReportFOP(Builder builder) {
+                description = builder.description;
+                setTemplate(builder.template);
+                setReportFOPImages(builder.reportFOPImages);
+        }
+
         public String getBezeichnung() {
-                return bezeichnung;
+                return description;
         }
 
         public void setBezeichnung(String bezeichnung) {
-                this.bezeichnung = bezeichnung;
+                this.description = bezeichnung;
         }
 
         public byte[] getTemplate() {
@@ -46,23 +52,17 @@ public class ReportFOP extends AbstractEntity {
         public ReportFOP() {
         }
 
-        private ReportFOP(Builder builder) {
-                bezeichnung = builder.bezeichnung;
-                template = builder.template;
-                reportFOPImages = builder.reportFOPImages;
-        }
-
 
         public static final class Builder {
-                private @NotNull String bezeichnung;
+                private @NotNull String description;
                 private byte[] template;
                 private List<ReportFOPImage> reportFOPImages;
 
                 public Builder() {
                 }
 
-                public Builder bezeichnung(@NotNull String val) {
-                        bezeichnung = val;
+                public Builder description(@NotNull String val) {
+                        description = val;
                         return this;
                 }
 

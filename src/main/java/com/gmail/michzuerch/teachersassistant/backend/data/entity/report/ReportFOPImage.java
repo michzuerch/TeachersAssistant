@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 
 @Entity(name = "ReportFOPImage")
 public class ReportFOPImage extends AbstractEntity {
-    private String bezeichnung;
+    private String description;
 
     @ManyToOne
     private ReportFOP reportFOP;
@@ -19,12 +19,19 @@ public class ReportFOPImage extends AbstractEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
-    public String getBezeichnung() {
-        return bezeichnung;
+    private ReportFOPImage(Builder builder) {
+        setDescription(builder.description);
+        setReportFOP(builder.reportFOP);
+        setMimeType(builder.mimeType);
+        setImage(builder.image);
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ReportFOP getReportFOP() {
@@ -54,15 +61,8 @@ public class ReportFOPImage extends AbstractEntity {
     public ReportFOPImage() {
     }
 
-    private ReportFOPImage(Builder builder) {
-        bezeichnung = builder.bezeichnung;
-        reportFOP = builder.reportFOP;
-        mimeType = builder.mimeType;
-        image = builder.image;
-    }
-
     public static final class Builder {
-        private String bezeichnung;
+        private String description;
         private ReportFOP reportFOP;
         private String mimeType;
         private byte[] image;
@@ -70,8 +70,8 @@ public class ReportFOPImage extends AbstractEntity {
         public Builder() {
         }
 
-        public Builder bezeichnung(String val) {
-            bezeichnung = val;
+        public Builder description(String val) {
+            description = val;
             return this;
         }
 

@@ -13,7 +13,7 @@ import java.util.List;
 public class ReportJasper extends AbstractEntity {
     @NotNull
     @Size(min = 1, max = 50)
-    private String bezeichnung;
+    private String description;
 
     private String filename;
 
@@ -26,12 +26,20 @@ public class ReportJasper extends AbstractEntity {
     @OneToMany(mappedBy = "reportJasper", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReportJasperImage> reportJasperImages = new ArrayList<>();
 
-    public String getBezeichnung() {
-        return bezeichnung;
+    private ReportJasper(Builder builder) {
+        setDescription(builder.description);
+        setFilename(builder.filename);
+        setTemplateSource(builder.templateSource);
+        setTemplateCompiled(builder.templateCompiled);
+        setReportJasperImages(builder.reportJasperImages);
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getFilename() {
@@ -69,16 +77,8 @@ public class ReportJasper extends AbstractEntity {
     public ReportJasper() {
     }
 
-    private ReportJasper(Builder builder) {
-        bezeichnung = builder.bezeichnung;
-        filename = builder.filename;
-        templateSource = builder.templateSource;
-        templateCompiled = builder.templateCompiled;
-        reportJasperImages = builder.reportJasperImages;
-    }
-
     public static final class Builder {
-        private @NotNull @Size(min = 1, max = 50) String bezeichnung;
+        private @NotNull @Size(min = 1, max = 50) String description;
         private String filename;
         private byte[] templateSource;
         private byte[] templateCompiled;
@@ -87,8 +87,8 @@ public class ReportJasper extends AbstractEntity {
         public Builder() {
         }
 
-        public Builder bezeichnung(@NotNull @Size(min = 1, max = 50) String val) {
-            bezeichnung = val;
+        public Builder description(@NotNull @Size(min = 1, max = 50) String val) {
+            description = val;
             return this;
         }
 

@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Entity(name = "ReportCSSImage")
 public class ReportCSSImage extends AbstractEntity {
-    private String bezeichnung;
+    private String description;
 
     @ManyToOne
     private ReportCSS reportCSS;
@@ -20,12 +20,19 @@ public class ReportCSSImage extends AbstractEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
-    public String getBezeichnung() {
-        return bezeichnung;
+    private ReportCSSImage(Builder builder) {
+        setDescription(builder.description);
+        setReportCSS(builder.reportCSS);
+        setMimeType(builder.mimeType);
+        setImage(builder.image);
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ReportCSS getReportCSS() {
@@ -55,16 +62,8 @@ public class ReportCSSImage extends AbstractEntity {
     public ReportCSSImage() {
     }
 
-    private ReportCSSImage(Builder builder) {
-        bezeichnung = builder.bezeichnung;
-        reportCSS = builder.reportCSS;
-        mimeType = builder.mimeType;
-        image = builder.image;
-    }
-
-
     public static final class Builder {
-        private String bezeichnung;
+        private String description;
         private ReportCSS reportCSS;
         private String mimeType;
         private byte[] image;
@@ -72,8 +71,8 @@ public class ReportCSSImage extends AbstractEntity {
         public Builder() {
         }
 
-        public Builder bezeichnung(String val) {
-            bezeichnung = val;
+        public Builder description(String val) {
+            description = val;
             return this;
         }
 

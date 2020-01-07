@@ -162,6 +162,9 @@ public class DataGenerator implements HasLogger {
                 .build();
         schoolSubject = schoolSubjectRepository.save(schoolSubject);
 
+        lession.setSchoolSubject(schoolSubject);
+        lession = lessionRepository.save(lession);
+
         schoolGrade.setSchoolSubject(schoolSubject);
         schoolGrade = schoolGradeRepository.save(schoolGrade);
     }

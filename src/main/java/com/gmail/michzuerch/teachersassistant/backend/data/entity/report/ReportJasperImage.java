@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Entity(name = "ReportJasperImage")
 public class ReportJasperImage extends AbstractEntity {
-    private String bezeichnung;
+    private String description;
 
     @ManyToOne
     private ReportJasper reportJasper;
@@ -20,12 +20,19 @@ public class ReportJasperImage extends AbstractEntity {
     @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
-    public String getBezeichnung() {
-        return bezeichnung;
+    private ReportJasperImage(Builder builder) {
+        setDescription(builder.description);
+        setReportJasper(builder.reportJasper);
+        setMimeType(builder.mimeType);
+        setImage(builder.image);
     }
 
-    public void setBezeichnung(String bezeichnung) {
-        this.bezeichnung = bezeichnung;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public ReportJasper getReportJasper() {
@@ -55,15 +62,8 @@ public class ReportJasperImage extends AbstractEntity {
     public ReportJasperImage() {
     }
 
-    private ReportJasperImage(Builder builder) {
-        bezeichnung = builder.bezeichnung;
-        reportJasper = builder.reportJasper;
-        mimeType = builder.mimeType;
-        image = builder.image;
-    }
-
     public static final class Builder {
-        private String bezeichnung;
+        private String description;
         private ReportJasper reportJasper;
         private String mimeType;
         private byte[] image;
@@ -71,8 +71,8 @@ public class ReportJasperImage extends AbstractEntity {
         public Builder() {
         }
 
-        public Builder bezeichnung(String val) {
-            bezeichnung = val;
+        public Builder description(String val) {
+            description = val;
             return this;
         }
 
