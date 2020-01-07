@@ -13,7 +13,7 @@ public class Teacher extends AbstractEntity {
     @NotNull
     private String lastname;
 
-    private String vorname;
+    private String firstname;
 
     @ManyToOne
     private School school;
@@ -26,15 +26,14 @@ public class Teacher extends AbstractEntity {
 
     private Teacher(Builder builder) {
         lastname = builder.lastname;
-        vorname = builder.vorname;
+        firstname = builder.firstname;
         school = builder.school;
         lessions = builder.lessions;
     }
 
-
     public static final class Builder {
         private @NotNull String lastname;
-        private String vorname;
+        private String firstname;
         private School school;
         private List<Lession> lessions;
 
@@ -46,8 +45,8 @@ public class Teacher extends AbstractEntity {
             return this;
         }
 
-        public Builder vorname(String val) {
-            vorname = val;
+        public Builder firstname(String val) {
+            firstname = val;
             return this;
         }
 

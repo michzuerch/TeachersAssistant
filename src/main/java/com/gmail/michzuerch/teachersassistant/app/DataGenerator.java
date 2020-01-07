@@ -106,20 +106,20 @@ public class DataGenerator implements HasLogger {
 
     private void createSchools(SchoolRepository schoolRepository) {
         School school = new School.Builder()
-                .bezeichnung("Testschool")
-                .ort("Budapesti")
+                .description("Testschool")
+                .city("Budapesti")
                 .build();
         school = schoolRepository.save(school);
 
         Classroom classroom = new Classroom.Builder()
-                .bezeichnung("Test Classroom")
+                .description("Test Classroom")
                 .school(school)
                 .build();
         classroom = classroomRepository.save(classroom);
 
         Teacher teacher = new Teacher.Builder()
-                .vorname("Michael")
-                .nachname("Zürcher")
+                .firstname("Michael")
+                .lastname("Zürcher")
                 .school(school)
                 .build();
         teacher = teacherRepository.save(teacher);
