@@ -13,10 +13,10 @@ import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 
-import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.PAGE_BLOCKS;
+import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.PAGE_STUDENTS;
 
-@Route(value = PAGE_BLOCKS, layout = MainView.class)
-@PageTitle(I18nConst.TITLE_BLOCKS)
+@Route(value = PAGE_STUDENTS, layout = MainView.class)
+@PageTitle(I18nConst.TITLE_STUDENTS)
 @Secured(Role.ADMIN)
 public class StudentsView extends Div {
     private static final long serialVersionUID = 1L;

@@ -3,10 +3,7 @@ package com.gmail.michzuerch.teachersassistant.ui;
 import com.gmail.michzuerch.teachersassistant.app.security.SecurityUtils;
 import com.gmail.michzuerch.teachersassistant.ui.components.OfflineBanner;
 import com.gmail.michzuerch.teachersassistant.ui.views.HasConfirmation;
-import com.gmail.michzuerch.teachersassistant.ui.views.admin.products.ProductsView;
 import com.gmail.michzuerch.teachersassistant.ui.views.admin.users.UsersView;
-import com.gmail.michzuerch.teachersassistant.ui.views.dashboard.DashboardView;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.StorefrontView;
 import com.gmail.michzuerch.teachersassistant.ui.views.student.StudentsView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasComponents;
@@ -78,11 +75,9 @@ public class MainView extends AppLayout {
 
     private static Tab[] getAvailableTabs() {
         final List<Tab> tabs = new ArrayList<>(4);
-        //tabs.add(createTab(VaadinIcon.EDIT, TITLE_STOREFRONT,StorefrontView.class));
-        //tabs.add(createTab(VaadinIcon.CLOCK, TITLE_DASHBOARD, DashboardView.class));
-        // if (SecurityUtils.isAccessGranted(UsersView.class)) {
-        //     tabs.add(createTab(VaadinIcon.USER, TITLE_USERS, UsersView.class));
-        // }
+        if (SecurityUtils.isAccessGranted(UsersView.class)) {
+            tabs.add(createTab(VaadinIcon.USER, TITLE_USERS, UsersView.class));
+        }
         // if (SecurityUtils.isAccessGranted(ProductsView.class)) {
         //     tabs.add(createTab(VaadinIcon.CALENDAR, TITLE_PRODUCTS, ProductsView.class));
         // }
@@ -90,7 +85,6 @@ public class MainView extends AppLayout {
         final Tab logoutTab = createTab(createLogoutLink(contextPath));
 
         tabs.add(createTab(VaadinIcon.BULLSEYE, TITLE_STUDENTS, StudentsView.class));
-        //tabs.add(createTab(VaadinIcon.LAPTOP, TITLE_BLOCKS, BlocksView.class));
 
         tabs.add(logoutTab);
         return tabs.toArray(new Tab[tabs.size()]);

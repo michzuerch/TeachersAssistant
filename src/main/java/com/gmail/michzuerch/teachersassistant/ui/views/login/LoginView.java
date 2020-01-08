@@ -2,7 +2,8 @@ package com.gmail.michzuerch.teachersassistant.ui.views.login;
 
 import com.gmail.michzuerch.teachersassistant.app.security.SecurityUtils;
 import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
-import com.gmail.michzuerch.teachersassistant.ui.views.storefront.StorefrontView;
+import com.gmail.michzuerch.teachersassistant.ui.views.student.StudentsView;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
@@ -38,7 +39,8 @@ public class LoginView extends LoginOverlay
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         if (SecurityUtils.isUserLoggedIn()) {
-            event.forwardTo(StorefrontView.class);
+            UI.getCurrent().navigate("Students");
+            //event.forwardTo(StudentsView.class);
         } else {
             setOpened(true);
         }
