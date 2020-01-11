@@ -1,8 +1,9 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.login;
 
+import com.gmail.michzuerch.teachersassistant.app.HasLogger;
 import com.gmail.michzuerch.teachersassistant.app.security.SecurityUtils;
 import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
-import com.vaadin.flow.component.UI;
+import com.gmail.michzuerch.teachersassistant.ui.views.student.StudentsView;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.login.LoginI18n;
 import com.vaadin.flow.component.login.LoginOverlay;
@@ -14,7 +15,7 @@ import com.vaadin.flow.router.*;
 @JsModule("./styles/shared-styles.js")
 @Viewport(Pages.VIEWPORT)
 public class LoginView extends LoginOverlay
-        implements AfterNavigationObserver, BeforeEnterObserver {
+        implements HasLogger, AfterNavigationObserver, BeforeEnterObserver {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,8 +39,8 @@ public class LoginView extends LoginOverlay
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         if (SecurityUtils.isUserLoggedIn()) {
-            UI.getCurrent().navigate(Pages.PAGE_STUDENTS);
-            //event.forwardTo(StudentsView.class);
+            getLogger().debug("Logged in User:" + SecurityUtils.getUsername());
+            event.forwardTo(StudentsView.class);
         } else {
             setOpened(true);
         }
