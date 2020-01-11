@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.*;
+import static com.gmail.michzuerch.teachersassistant.ui.config.Pages.*;
 
 @Viewport(VIEWPORT)
 @PWA(name = "TeachersAssistant Starter", shortName = "TeachersAssistant-app",

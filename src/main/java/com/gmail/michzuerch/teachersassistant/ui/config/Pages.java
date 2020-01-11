@@ -1,10 +1,10 @@
-package com.gmail.michzuerch.teachersassistant.ui.i18n;
+package com.gmail.michzuerch.teachersassistant.ui.config;
 
 import org.springframework.data.domain.Sort;
 
 import java.util.Locale;
 
-public class I18nConst {
+public class Pages {
 
     public static final Locale APP_LOCALE = Locale.US;
 

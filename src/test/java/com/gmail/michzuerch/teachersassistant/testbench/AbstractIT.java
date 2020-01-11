@@ -1,21 +1,19 @@
 package com.gmail.michzuerch.teachersassistant.testbench;
 
-import org.junit.Rule;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.slf4j.LoggerFactory;
-
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
 import com.gmail.michzuerch.teachersassistant.testbench.elements.ui.LoginViewElement;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 import com.vaadin.testbench.IPAddress;
 import com.vaadin.testbench.ScreenshotOnFailureRule;
 import com.vaadin.testbench.TestBenchDriverProxy;
 import com.vaadin.testbench.TestBenchElement;
 import com.vaadin.testbench.parallel.ParallelTest;
-
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
+import org.junit.Rule;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractIT<E extends TestBenchElement> extends ParallelTest {
 	public String APP_URL = "http://localhost:8080/";
@@ -25,7 +23,7 @@ public abstract class AbstractIT<E extends TestBenchElement> extends ParallelTes
 		Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
 		root.setLevel(Level.INFO);
 		// Let notifications persist longer during tests
-		I18nConst.NOTIFICATION_DURATION = 10000;
+		Pages.NOTIFICATION_DURATION = 10000;
 	}
 
 	@Rule

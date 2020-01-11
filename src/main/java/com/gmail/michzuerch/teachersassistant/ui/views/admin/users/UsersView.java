@@ -5,8 +5,8 @@ import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.service.UserService;
 import com.gmail.michzuerch.teachersassistant.ui.MainView;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 import com.gmail.michzuerch.teachersassistant.ui.crud.AbstractBakeryCrudView;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.crud.BinderCrudEditor;
 import com.vaadin.flow.component.formlayout.FormLayout;
@@ -23,10 +23,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import static com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst.PAGE_USERS;
+import static com.gmail.michzuerch.teachersassistant.ui.config.Pages.PAGE_USERS;
 
 @Route(value = PAGE_USERS, layout = MainView.class)
-@PageTitle(I18nConst.TITLE_USERS)
+@PageTitle(Pages.TITLE_USERS)
 @Secured(Role.ADMIN)
 public class UsersView extends AbstractBakeryCrudView<User> {
 

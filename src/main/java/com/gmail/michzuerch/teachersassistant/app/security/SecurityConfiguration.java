@@ -3,7 +3,7 @@ package com.gmail.michzuerch.teachersassistant.app.security;
 import com.gmail.michzuerch.teachersassistant.backend.data.Role;
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.User;
 import com.gmail.michzuerch.teachersassistant.backend.repositories.UserRepository;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_PROCESSING_URL = "/login";
     private static final String LOGIN_FAILURE_URL = "/login?error";
     private static final String LOGIN_URL = "/login";
-    private static final String LOGOUT_SUCCESS_URL = "/" + I18nConst.PAGE_STUDENTS;
+    private static final String LOGOUT_SUCCESS_URL = "/" + Pages.PAGE_STUDENTS;
 
     private final UserDetailsService userDetailsService;
 

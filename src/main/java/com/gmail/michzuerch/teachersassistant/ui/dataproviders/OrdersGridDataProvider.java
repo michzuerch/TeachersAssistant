@@ -2,7 +2,7 @@ package com.gmail.michzuerch.teachersassistant.ui.dataproviders;
 
 import com.gmail.michzuerch.teachersassistant.backend.data.entity.Order;
 import com.gmail.michzuerch.teachersassistant.backend.service.OrderService;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 import com.vaadin.flow.data.provider.Query;
 import com.vaadin.flow.data.provider.QuerySortOrder;
 import com.vaadin.flow.data.provider.QuerySortOrderBuilder;
@@ -35,7 +35,7 @@ public class OrdersGridDataProvider extends FilterablePageableDataProvider<Order
 	@Autowired
 	public OrdersGridDataProvider(OrderService orderService) {
 		this.orderService = orderService;
-		setSortOrders(I18nConst.DEFAULT_SORT_DIRECTION, I18nConst.ORDER_SORT_FIELDS);
+		setSortOrders(Pages.DEFAULT_SORT_DIRECTION, Pages.ORDER_SORT_FIELDS);
 	}
 
 	private void setSortOrders(Sort.Direction direction, String[] properties) {

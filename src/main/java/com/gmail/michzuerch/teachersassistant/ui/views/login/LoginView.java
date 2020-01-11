@@ -1,8 +1,7 @@
 package com.gmail.michzuerch.teachersassistant.ui.views.login;
 
 import com.gmail.michzuerch.teachersassistant.app.security.SecurityUtils;
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
-import com.gmail.michzuerch.teachersassistant.ui.views.student.StudentsView;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.login.LoginI18n;
@@ -13,7 +12,7 @@ import com.vaadin.flow.router.*;
 @Route
 @PageTitle("TeachersAssistant")
 @JsModule("./styles/shared-styles.js")
-@Viewport(I18nConst.VIEWPORT)
+@Viewport(Pages.VIEWPORT)
 public class LoginView extends LoginOverlay
         implements AfterNavigationObserver, BeforeEnterObserver {
 
@@ -39,7 +38,7 @@ public class LoginView extends LoginOverlay
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         if (SecurityUtils.isUserLoggedIn()) {
-            UI.getCurrent().navigate("Students");
+            UI.getCurrent().navigate(Pages.PAGE_STUDENTS);
             //event.forwardTo(StudentsView.class);
         } else {
             setOpened(true);

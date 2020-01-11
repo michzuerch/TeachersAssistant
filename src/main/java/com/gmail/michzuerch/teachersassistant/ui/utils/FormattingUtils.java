@@ -1,6 +1,6 @@
 package com.gmail.michzuerch.teachersassistant.ui.utils;
 
-import com.gmail.michzuerch.teachersassistant.ui.i18n.I18nConst;
+import com.gmail.michzuerch.teachersassistant.ui.config.Pages;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -20,36 +20,36 @@ public class FormattingUtils {
      * 3 letter month name + day number E.g: Nov 20
      */
     public static final DateTimeFormatter MONTH_AND_DAY_FORMATTER = DateTimeFormatter.ofPattern("MMM d",
-            I18nConst.APP_LOCALE);
+            Pages.APP_LOCALE);
 
     /**
      * Full day name. E.g: Monday.
      */
     public static final DateTimeFormatter WEEKDAY_FULLNAME_FORMATTER = DateTimeFormatter.ofPattern("EEEE",
-            I18nConst.APP_LOCALE);
+            Pages.APP_LOCALE);
 
     /**
      * For getting the week of the year from the local date.
      */
-    public static final TemporalField WEEK_OF_YEAR_FIELD = WeekFields.of(I18nConst.APP_LOCALE).weekOfWeekBasedYear();
+    public static final TemporalField WEEK_OF_YEAR_FIELD = WeekFields.of(Pages.APP_LOCALE).weekOfWeekBasedYear();
 
     /**
      * 3 letter day of the week + day number. E.g: Mon 20
      */
     public static final DateTimeFormatter SHORT_DAY_FORMATTER = DateTimeFormatter.ofPattern("E d",
-            I18nConst.APP_LOCALE);
+            Pages.APP_LOCALE);
 
     /**
      * Full date format. E.g: 03.03.2001
      */
     public static final DateTimeFormatter FULL_DATE_FORMATTER = DateTimeFormatter
-            .ofPattern("dd.MM.yyyy", I18nConst.APP_LOCALE);
+            .ofPattern("dd.MM.yyyy", Pages.APP_LOCALE);
 
     /**
      * Formats hours with am/pm. E.g: 2:00 PM
      */
     public static final DateTimeFormatter HOUR_FORMATTER = DateTimeFormatter
-            .ofPattern("h:mm a", I18nConst.APP_LOCALE);
+            .ofPattern("h:mm a", Pages.APP_LOCALE);
 
     /**
      * Returns the month name of the date, according to the application locale.
@@ -58,16 +58,16 @@ public class FormattingUtils {
      * @return The full month name. E.g: November
      */
     public static String getFullMonthName(LocalDate date) {
-        return date.getMonth().getDisplayName(TextStyle.FULL, I18nConst.APP_LOCALE);
+        return date.getMonth().getDisplayName(TextStyle.FULL, Pages.APP_LOCALE);
     }
 
     public static String formatAsCurrency(int valueInCents) {
-        return NumberFormat.getCurrencyInstance(I18nConst.APP_LOCALE).format(BigDecimal.valueOf(valueInCents, 2));
+        return NumberFormat.getCurrencyInstance(Pages.APP_LOCALE).format(BigDecimal.valueOf(valueInCents, 2));
     }
 
     public static DecimalFormat getUiPriceFormatter() {
         DecimalFormat formatter = new DecimalFormat("#" + DECIMAL_ZERO,
-                DecimalFormatSymbols.getInstance(I18nConst.APP_LOCALE));
+                DecimalFormatSymbols.getInstance(Pages.APP_LOCALE));
         formatter.setGroupingUsed(false);
         return formatter;
     }
