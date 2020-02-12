@@ -2,10 +2,66 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.gmail.michzuerch.teachersassistant</groupId>
-    <artifactId>teachersassistant-app</artifactId>
+    <artifactId>TeachersAssistant</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>TeachersAssistant</name>
+    <description>Sample for Vaadin 14</description>
+    <url>https://github.com/michzuerch/TeachersAssistant</url>
+    <issueManagement>
+        <url>https://github.com/michzuerch/TeachersAssistant/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://choosealicense.com/licenses/gpl-3.0/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/michzuerch/TeachersAssistant</url>
+        <connection>scm:git:git://github.com/michzuerch/TeachersAssistant.git</connection>
+        <developerConnection>scm:git:git@github.com:michzuerch/TeachersAssistant.git</developerConnection>
+    </scm>
+    <organization>
+        <name>Michael Zuercher</name>
+        <url>https://michzuerch.github.io</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>michzuerch</id>
+            <name>Michael Zuercher</name>
+            <email>michzuerch@gmail.com</email>
+            <url>https://michzuerch.github.io</url>
+            <organization>Michael Zuercher</organization>
+            <organizationUrl>https://michzuerch.github.io</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Zurich</timezone>
+            <properties>
+                <picUrl>https://michzuerch.github.io/img/Avatar2018.jpg</picUrl>
+            </properties>
+        </developer>
+    </developers>
+    <contributors>
+        <contributor>
+            <name>Michael Zuercher</name>
+            <email>michzuerch@gmail.com</email>
+            <url>https://michzuerch.github.io</url>
+            <organization>Michael Zuercher</organization>
+            <organizationUrl>https://michzuerch.github.io</organizationUrl>
+            <roles>
+                <role>tester</role>
+            </roles>
+            <timezone>Europe/Zurich</timezone>
+            <properties>
+                <gtalk>michzuerch@gmail.com</gtalk>
+            </properties>
+        </contributor>
+    </contributors>
     <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
